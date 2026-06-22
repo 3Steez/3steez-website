@@ -4,23 +4,16 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>3Steez Media | Videos, DJ Mixes & Live Performances</title>
-<meta name="description" content="Watch 3Steez in action. Stream live DJ mixes on Mixcloud, watch performance videos on YouTube, and follow behind-the-scenes content on Instagram."/>
-<meta name="keywords" content="3Steez videos, DJ mix stream, Mixcloud DJ sets, YouTube DJ Michigan, live performance video, 3Steez Good Vibes Lounge"/>
+<meta name="description" content="Watch 3Steez in action. Stream live DJ mixes on Mixcloud, watch performance videos on YouTube, and follow live streams on Twitch and TikTok."/>
+<meta name="keywords" content="3Steez videos, DJ mix stream, Mixcloud DJ sets, YouTube DJ Michigan, live performance video"/>
 <meta property="og:title" content="3Steez Media | Videos, DJ Mixes & Live Performances"/>
-<meta property="og:description" content="Watch 3Steez in action. Stream live DJ mixes on Mixcloud, watch performance videos on YouTube, and follow behind-the-scenes content on Instagram."/>
+<meta property="og:description" content="Watch 3Steez in action. Stream live DJ mixes on Mixcloud, watch performance videos on YouTube, and follow live streams on Twitch and TikTok."/>
 <meta property="og:image" content="https://static.wixstatic.com/media/27707a_552057f016644179b62d92a87774eb6b~mv2.jpg"/>
 <meta property="og:type" content="website"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
-/* ── ABSOLUTE VISIBILITY GUARANTEE ── */
-.rv, .rvl,
-.rv.anim-ready, .rvl.anim-ready,
-.rv.anim-ready.vis, .rvl.anim-ready.vis { 
-  opacity: 1 !important; 
-  transform: none !important; 
-}
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -93,9 +86,9 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 
 
-.med-hero{background:var(--deep);padding:6rem 3rem 3rem;text-align:center;border-bottom:1px solid var(--border)}
-.med-yt{max-width:1100px;margin:0 auto}
-.yt-wrap{position:relative;aspect-ratio:16/9;background:var(--card);overflow:hidden;cursor:pointer;max-width:800px;margin:2.5rem auto 0;display:block}
+.med-hero{background:var(--deep);padding:8rem 3rem 4rem;border-bottom:1px solid var(--border)}
+.med-hero-in{max-width:1000px;margin:0 auto;text-align:center}
+.yt-wrap{position:relative;aspect-ratio:16/9;background:var(--card);overflow:hidden;cursor:pointer;max-width:760px;margin:2.5rem auto 0;display:block}
 .yt-wrap img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.82)}
 .yt-play-ring{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;background:rgba(7,7,7,.35);transition:background .3s}
 .yt-wrap:hover .yt-play-ring{background:rgba(7,7,7,.2)}
@@ -104,48 +97,51 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 .yt-label{font-family:var(--PD);font-style:italic;font-size:1rem;color:var(--white)}
 .yt-sub{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(248,246,240,.5);margin-top:.25rem}
 #ytFrame{position:absolute;inset:0;width:100%;height:100%;border:none;display:none}
-.med-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:1100px;margin:2rem auto 0}
-.med-card{background:var(--card);border:1px solid var(--border);padding:1.75rem;display:flex;align-items:center;gap:1rem;text-decoration:none;transition:border-color .25s}
-.med-card:hover{border-color:var(--gold)}
-.med-card-icon{font-size:1.6rem;flex-shrink:0}
-.med-card-text .med-card-label{font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem}
-.med-card-text .med-card-title{font-family:var(--PD);font-style:italic;font-size:.95rem;color:var(--white)}
-.med-card-text .med-card-sub{font-size:.72rem;color:var(--muted);margin-top:.15rem}
+.med-quick{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:900px;margin:2rem auto 0}
+.med-qcard{background:var(--card);border:1px solid var(--border);padding:1.5rem;display:flex;align-items:center;gap:1rem;text-decoration:none;transition:border-color .25s}
+.med-qcard:hover{border-color:var(--gold)}
+.med-qcard-icon{font-size:1.5rem;flex-shrink:0}
+.med-qcard-label{font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem}
+.med-qcard-title{font-family:var(--PD);font-style:italic;font-size:.9rem;color:var(--white)}
+.med-qcard-sub{font-size:.7rem;color:var(--muted);margin-top:.1rem}
 .med-mix{background:var(--black);padding:5rem 3rem;border-top:1px solid var(--border)}
 .med-mix-in{max-width:900px;margin:0 auto}
 .mix-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
 .mix-embed{background:var(--card);border:1px solid var(--border);overflow:hidden}
 .med-live{background:var(--deep);padding:5rem 3rem;border-top:1px solid var(--border)}
 .med-live-in{max-width:1100px;margin:0 auto}
-.live-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:2.5rem}
-.live-show-cards{display:flex;flex-direction:column;gap:1.25rem}
-.live-show-card{background:var(--card);border:1px solid var(--border);padding:1.75rem;border-left:3px solid var(--gold)}
-.show-thumb-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:1.25rem;max-width:380px}
-.show-thumb-grid a{display:block;border-radius:3px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
-.show-thumb-grid img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
-.live-platform-strip{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:3rem}
-.live-plat{background:var(--deep);padding:2rem;text-decoration:none;display:flex;align-items:center;gap:1.25rem;transition:background .25s}
-.live-plat:hover{background:var(--card)}
-.live-plat-icon{font-size:1.8rem;flex-shrink:0}
-.live-plat-label{font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.2rem}
-.live-plat-title{font-family:var(--PD);font-style:italic;font-size:.95rem;color:var(--white)}
-.live-plat-sub{font-size:.72rem;color:var(--muted);margin-top:.15rem}
-.med-socials{background:var(--black);padding:5rem 3rem;border-top:1px solid var(--border)}
-.med-socials-in{max-width:1100px;margin:0 auto}
-.social-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:2rem}
-.soc-item{background:var(--deep);padding:2rem;text-decoration:none;text-align:center;display:block;transition:background .25s}
+.live-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:2.5rem}
+.show-thumbs{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.5rem;max-width:100%}
+.show-thumbs a{display:block;border-radius:3px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.show-thumbs img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.live-cards{display:flex;flex-direction:column;gap:1.25rem}
+.live-card{background:var(--card);border:1px solid var(--border);padding:1.75rem}
+.live-card-name{font-family:var(--PD);font-style:italic;font-size:1.05rem;color:var(--white);margin-bottom:.5rem}
+.live-card-tag{font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.65rem;display:block}
+.live-card-desc{font-size:.87rem;color:var(--muted);line-height:1.75;margin-bottom:.85rem}
+.live-card-links{display:flex;gap:.75rem;flex-wrap:wrap}
+.live-card-links a{font-size:.57rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid;padding-bottom:.15rem}
+.plat-strip{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:3rem}
+.plat-item{background:var(--deep);padding:2rem;text-decoration:none;display:flex;align-items:center;gap:1.25rem;transition:background .25s}
+.plat-item:hover{background:var(--card)}
+.plat-icon{font-size:1.8rem;flex-shrink:0}
+.plat-label{font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.2rem}
+.plat-title{font-family:var(--PD);font-style:italic;font-size:.95rem;color:var(--white)}
+.plat-sub{font-size:.72rem;color:var(--muted);margin-top:.15rem}
+.med-soc{background:var(--black);padding:5rem 3rem;border-top:1px solid var(--border)}
+.med-soc-in{max-width:1100px;margin:0 auto}
+.soc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:2rem}
+.soc-item{background:var(--deep);padding:2rem;text-align:center;text-decoration:none;display:block;transition:background .25s}
 .soc-item:hover{background:var(--card)}
 .soc-icon{font-size:1.6rem;margin-bottom:.5rem}
-.soc-name{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem}
+.soc-name{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem}
 .soc-handle{font-family:var(--PD);font-style:italic;font-size:.9rem;color:var(--white)}
-@media(max-width:768px){
-  .med-cards,.mix-grid,.live-layout,.live-platform-strip,.social-grid{grid-template-columns:1fr}
-}
+@media(max-width:900px){.med-quick,.live-layout,.mix-grid,.plat-strip,.soc-grid{grid-template-columns:1fr}}
 
 </style>
 </head>
 <body>
-<div id="cur" style="left:-100px;top:-100px"></div><div id="cur-r" style="left:-100px;top:-100px"></div>
+<div id="cur"></div><div id="cur-r"></div>
 
 <nav id="nav">
   <div class="nav-logo"><a href="index.html"><img src="https://static.wixstatic.com/media/27707a_07541b50ed20405086f5149a1448237e~mv2.png" alt="3Steez"/></a></div>
@@ -166,16 +162,16 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
   <a href="index.html" onclick="cmo()">Home</a><a href="events.html" onclick="cmo()">Events</a><a href="about.html" onclick="cmo()">About</a><a href="services.html" onclick="cmo()">Services</a><a href="gallery.html" onclick="cmo()">Gallery</a><a href="media.html" onclick="cmo()">Media</a><a href="blog.html" onclick="cmo()">Blog</a><a href="booking.html" onclick="cmo()">Booking</a>
 </div>
 
-<section class="med-hero">
-  <div class="med-yt">
-    <div class="stag " style="opacity:1;transform:none">Watch &amp; Listen</div>
-    <h1 class="sh " style="opacity:1;transform:none" style="font-size:clamp(2rem,4vw,3.2rem)">See the <em>Work</em><br/>in Action</h1>
-    <p class=" " style="opacity:1;transform:none" style="color:var(--muted);font-size:.95rem;max-width:560px;margin:.75rem auto 0;line-height:1.85">Stream live mixes, watch event recaps, and experience the energy that makes 3Steez the obvious choice for elite entertainment.</p>
+<section class="med-hero" style="padding-top:8rem">
+  <div class="med-hero-in">
+    <div class="stag rv">Watch &amp; Listen</div>
+    <h1 class="sh rv">See the <em>Work</em><br/>in Action</h1>
+    <p class="rv" style="color:var(--muted);font-size:.95rem;max-width:520px;margin:.75rem auto 0;line-height:1.85">Stream live mixes, watch event recaps, and experience the energy that makes 3Steez the obvious choice for elite entertainment.</p>
 
-    <!-- Channel Trailer -->
-    <div class="stag " style="opacity:1;transform:none" style="margin-top:3rem">Channel Trailer</div>
-    <h2 class="sh " style="opacity:1;transform:none" style="font-size:clamp(1.5rem,3vw,2.4rem)">Press Play.<br/><em>Feel the Difference.</em></h2>
-    <div class="yt-wrap " style="opacity:1;transform:none" id="ytWrap" onclick="loadYT()" style="cursor:pointer">
+    <div class="stag rv" style="justify-content:center;margin-top:3rem">Channel Trailer</div>
+    <h2 class="sh rv" style="font-size:clamp(1.5rem,3vw,2.4rem)">Press Play. <em>Feel the Difference.</em></h2>
+
+    <div class="yt-wrap rv" id="ytWrap" onclick="loadYT()">
       <img src="https://img.youtube.com/vi/185vr7cVdKY/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/185vr7cVdKY/hqdefault.jpg'" alt="3Steez Channel Trailer" id="ytThumb"/>
       <div class="yt-play-ring" id="ytPlayRing">
         <div class="yt-btn"><svg width="26" height="26" viewBox="0 0 24 24" fill="#070707"><polygon points="6,3 20,12 6,21"/></svg></div>
@@ -184,48 +180,30 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
       <iframe id="ytFrame" src="" title="3Steez Channel Trailer" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
     </div>
 
-    <!-- Quick links -->
-    <div class="med-cards " style="opacity:1;transform:none">
-      <a href="https://www.youtube.com/@3STEEZ" target="_blank" rel="noopener" class="med-card">
-        <div class="med-card-icon">&#127910;</div>
-        <div class="med-card-text">
-          <div class="med-card-label">YouTube</div>
-          <div class="med-card-title">Event Recaps &amp; Full Sets</div>
-          <div class="med-card-sub">Subscribe &rarr; @3STEEZ</div>
-        </div>
+    <div class="med-quick rv">
+      <a href="https://www.youtube.com/@3STEEZ" target="_blank" rel="noopener" class="med-qcard">
+        <div class="med-qcard-icon">&#127910;</div>
+        <div><div class="med-qcard-label">YouTube</div><div class="med-qcard-title">Event Recaps &amp; Full Sets</div><div class="med-qcard-sub">@3STEEZ</div></div>
       </a>
-      <a href="https://www.instagram.com/3Steez" target="_blank" rel="noopener" class="med-card">
-        <div class="med-card-icon">&#128247;</div>
-        <div class="med-card-text">
-          <div class="med-card-label">Instagram</div>
-          <div class="med-card-title">Behind the Scenes</div>
-          <div class="med-card-sub">Follow &rarr; @3Steez</div>
-        </div>
+      <a href="https://www.instagram.com/3Steez" target="_blank" rel="noopener" class="med-qcard">
+        <div class="med-qcard-icon">&#128247;</div>
+        <div><div class="med-qcard-label">Instagram</div><div class="med-qcard-title">Behind the Scenes</div><div class="med-qcard-sub">@3Steez</div></div>
       </a>
-      <a href="onesheet.html" class="med-card">
-        <div class="med-card-icon">&#128196;</div>
-        <div class="med-card-text">
-          <div class="med-card-label">Press Kit</div>
-          <div class="med-card-title">Download One-Sheet</div>
-          <div class="med-card-sub">Full bio, services &amp; booking info</div>
-        </div>
+      <a href="onesheet.html" class="med-qcard">
+        <div class="med-qcard-icon">&#128196;</div>
+        <div><div class="med-qcard-label">Press Kit</div><div class="med-qcard-title">Download One-Sheet</div><div class="med-qcard-sub">Full bio &amp; booking info</div></div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- MIXCLOUD MIXES -->
 <section class="med-mix">
   <div class="med-mix-in">
-    <div class="stag " style="opacity:1;transform:none">Mixes</div>
-    <h2 class="sh " style="opacity:1;transform:none">Stream on <em>Mixcloud</em></h2>
-    <div class="mix-grid " style="opacity:1;transform:none">
-      <div class="mix-embed">
-        <iframe width="100%" height="180" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Ftrestyles%2Fweekend-wakeup-mix-vol-7%2F" frameborder="0"></iframe>
-      </div>
-      <div class="mix-embed">
-        <iframe width="100%" height="180" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Ftrestyles%2Fsoul-sunday-vol-3%2F" frameborder="0"></iframe>
-      </div>
+    <div class="stag rv">Mixes</div>
+    <h2 class="sh rv">Stream on <em>Mixcloud</em></h2>
+    <div class="mix-grid rv">
+      <div class="mix-embed"><iframe width="100%" height="180" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Ftrestyles%2Fweekend-wakeup-mix-vol-7%2F" frameborder="0"></iframe></div>
+      <div class="mix-embed"><iframe width="100%" height="180" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Ftrestyles%2Fsoul-sunday-vol-3%2F" frameborder="0"></iframe></div>
     </div>
     <div style="text-align:center;margin-top:1.75rem">
       <a href="https://www.mixcloud.com/trestyles/" target="_blank" rel="noopener" class="btn-ol">All Mixes on Mixcloud &rarr;</a>
@@ -233,21 +211,19 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
   </div>
 </section>
 
-<!-- LIVE & VIRTUAL -->
 <section class="med-live">
   <div class="med-live-in">
-    <div class="stag " style="opacity:1;transform:none">Live &amp; Virtual</div>
-    <h2 class="sh " style="opacity:1;transform:none">Catch 3Steez <em>Live</em><br/>Every Day</h2>
+    <div class="stag rv">Live &amp; Virtual</div>
+    <h2 class="sh rv">Catch 3Steez <em>Live</em> Every Day</h2>
     <div class="live-layout">
       <div>
-        <p class=" " style="opacity:1;transform:none" style="color:var(--muted);font-size:.95rem;line-height:1.85;margin-bottom:1rem">3Steez isn&rsquo;t just performing at venues &mdash; he&rsquo;s live on Twitch and TikTok daily, building a growing virtual community around two signature shows.</p>
-        <p class=" " style="opacity:1;transform:none" style="color:var(--muted);font-size:.95rem;line-height:1.85;margin-bottom:1.5rem">Whether you&rsquo;re at your desk or in the car, you can tap in and catch a live set any day of the week.</p>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap" class=" " style="opacity:1;transform:none">
-          <a href="https://www.twitch.tv/3steez" target="_blank" rel="noopener" class="btn-gold" style="cursor:pointer">Watch Live on Twitch</a>
-          <a href="https://www.tiktok.com/@3steez" target="_blank" rel="noopener" class="btn-ol" style="cursor:pointer">Follow on TikTok</a>
+        <p class="rv" style="color:var(--muted);font-size:.95rem;line-height:1.85;margin-bottom:1rem">3Steez is live on Twitch and TikTok daily, building a growing virtual community around two signature shows that bring real DJ energy straight to your screen.</p>
+        <p class="rv" style="color:var(--muted);font-size:.95rem;line-height:1.85;margin-bottom:1.5rem">Whether you&rsquo;re at your desk or in the car, you can tap in any day of the week.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap" class="rv">
+          <a href="https://www.twitch.tv/3steez" target="_blank" rel="noopener" class="btn-gold">Watch Live on Twitch</a>
+          <a href="https://www.tiktok.com/@3steez" target="_blank" rel="noopener" class="btn-ol">Follow on TikTok</a>
         </div>
-        <!-- Show thumbnails -->
-        <div class="show-thumb-grid " style="opacity:1;transform:none">
+        <div class="show-thumbs rv">
           <a href="https://www.youtube.com/watch?v=1yJUvnZ7W4E" target="_blank" rel="noopener" title="Laidback Lunch">
             <img src="show-thumb-1.jpg" alt="Laidback Lunch"/>
           </a>
@@ -256,77 +232,54 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
           </a>
         </div>
       </div>
-      <div class="live-show-cards">
-        <div class="live-show-card " style="opacity:1;transform:none">
-          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.65rem">
-            <span style="font-size:1.3rem">&#9749;</span>
-            <div>
-              <div style="font-family:var(--PD);font-size:1.1rem;font-style:italic;color:var(--white)">Laidback Lunch</div>
-              <div style="font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-top:.1rem">Live Show &middot; Growing Series</div>
-            </div>
-          </div>
-          <p style="font-size:.88rem;color:var(--muted);line-height:1.75">The midday vibe session &mdash; smooth, curated sets built for the lunch break crowd. Tr&eacute;s spins feel-good music live every week.</p>
-          <div style="display:flex;gap:.75rem;margin-top:1rem;flex-wrap:wrap">
-            <a href="https://www.twitch.tv/3steez" target="_blank" rel="noopener" style="font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:.2rem">Twitch &rarr;</a>
-            <a href="https://www.tiktok.com/@3steez" target="_blank" rel="noopener" style="font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:.2rem">TikTok &rarr;</a>
+      <div class="live-cards">
+        <div class="live-card rv">
+          <span class="live-card-tag" style="color:var(--gold)">&#9749; Live Show &middot; Growing Series</span>
+          <div class="live-card-name">Laidback Lunch</div>
+          <p class="live-card-desc">The midday vibe session &mdash; smooth, curated sets built for the lunch break crowd. Tr&eacute;s spins feel-good music live every week. VODs on YouTube.</p>
+          <div class="live-card-links">
+            <a href="https://www.twitch.tv/3steez" target="_blank" rel="noopener" style="color:var(--gold);border-color:rgba(201,168,76,.3)">Twitch &rarr;</a>
+            <a href="https://www.tiktok.com/@3steez" target="_blank" rel="noopener" style="color:var(--muted);border-color:var(--border)">TikTok &rarr;</a>
+            <a href="https://www.youtube.com/@3STEEZ" target="_blank" rel="noopener" style="color:var(--muted);border-color:var(--border)">YouTube VODs &rarr;</a>
           </div>
         </div>
-        <div class="live-show-card " style="opacity:1;transform:none" style="border-left-color:var(--crimson2)">
-          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.65rem">
-            <span style="font-size:1.3rem">&#127909;</span>
-            <div>
-              <div style="font-family:var(--PD);font-size:1.1rem;font-style:italic;color:var(--white)">Ride &amp; Vibe</div>
-              <div style="font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--crimson2);margin-top:.1rem">Live Show &middot; Growing Series</div>
-            </div>
-          </div>
-          <p style="font-size:.88rem;color:var(--muted);line-height:1.75">The drive-time companion &mdash; high-energy mixes built for the commute, the gym, or wherever you need a boost.</p>
-          <div style="display:flex;gap:.75rem;margin-top:1rem;flex-wrap:wrap">
-            <a href="https://www.twitch.tv/3steez" target="_blank" rel="noopener" style="font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:.2rem">Twitch &rarr;</a>
-            <a href="https://www.tiktok.com/@3steez" target="_blank" rel="noopener" style="font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:.2rem">TikTok &rarr;</a>
+        <div class="live-card rv">
+          <span class="live-card-tag" style="color:var(--crimson2)">&#127909; Live Show &middot; Growing Series</span>
+          <div class="live-card-name">Ride &amp; Vibe</div>
+          <p class="live-card-desc">The drive-time companion &mdash; high-energy mixes built for the commute, the gym, or wherever you need a boost. Catch it live or rewatch on YouTube.</p>
+          <div class="live-card-links">
+            <a href="https://www.twitch.tv/3steez" target="_blank" rel="noopener" style="color:var(--gold);border-color:rgba(201,168,76,.3)">Twitch &rarr;</a>
+            <a href="https://www.tiktok.com/@3steez" target="_blank" rel="noopener" style="color:var(--muted);border-color:var(--border)">TikTok &rarr;</a>
+            <a href="https://www.youtube.com/@3STEEZ" target="_blank" rel="noopener" style="color:var(--muted);border-color:var(--border)">YouTube VODs &rarr;</a>
           </div>
         </div>
-        <div class="live-show-card " style="opacity:1;transform:none">
-          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.65rem">
-            <span style="font-size:1.3rem">&#127760;</span>
-            <div>
-              <div style="font-family:var(--PD);font-size:1.1rem;font-style:italic;color:var(--white)">Virtual DJ &amp; Event Streaming</div>
-              <div style="font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-top:.1rem">Available for Hire</div>
-            </div>
-          </div>
-          <p style="font-size:.88rem;color:var(--muted);line-height:1.75">Need a DJ for a virtual event or live-streamed celebration? 3Steez is available for fully produced virtual DJ sets.</p>
-          <a href="booking.html" style="font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:.2rem;display:inline-block;margin-top:1rem;cursor:pointer">Inquire About Virtual Events &rarr;</a>
+        <div class="live-card rv">
+          <span class="live-card-tag" style="color:var(--gold)">&#127760; Available for Hire</span>
+          <div class="live-card-name">Virtual DJ &amp; Event Streaming</div>
+          <p class="live-card-desc">Need a DJ for a virtual event or live-streamed celebration? 3Steez is available for fully produced virtual DJ sets with broadcast-quality sound.</p>
+          <a href="booking.html" style="font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:.2rem;display:inline-block">Inquire About Virtual Events &rarr;</a>
         </div>
       </div>
     </div>
 
-    <!-- Platform strip -->
-    <div class="live-platform-strip " style="opacity:1;transform:none">
-      <a href="https://www.twitch.tv/3steez" target="_blank" rel="noopener" class="live-plat">
-        <div class="live-plat-icon">&#127917;</div>
-        <div>
-          <div class="live-plat-label" style="color:#9146FF">Twitch</div>
-          <div class="live-plat-title">Live Streams Daily</div>
-          <div class="live-plat-sub">twitch.tv/3steez &middot; Laidback Lunch &middot; Ride &amp; Vibe</div>
-        </div>
+    <div class="plat-strip rv">
+      <a href="https://www.twitch.tv/3steez" target="_blank" rel="noopener" class="plat-item">
+        <div class="plat-icon">&#127917;</div>
+        <div><div class="plat-label" style="color:#9146FF">Twitch</div><div class="plat-title">Live Streams Daily</div><div class="plat-sub">twitch.tv/3steez &middot; Laidback Lunch &middot; Ride &amp; Vibe</div></div>
       </a>
-      <a href="https://www.tiktok.com/@3steez" target="_blank" rel="noopener" class="live-plat">
-        <div class="live-plat-icon">&#127926;</div>
-        <div>
-          <div class="live-plat-label" style="color:var(--white)">TikTok</div>
-          <div class="live-plat-title">Short-Form &amp; Live Sets</div>
-          <div class="live-plat-sub">@3steez &middot; Daily clips &amp; live DJ content</div>
-        </div>
+      <a href="https://www.tiktok.com/@3steez" target="_blank" rel="noopener" class="plat-item">
+        <div class="plat-icon">&#127926;</div>
+        <div><div class="plat-label" style="color:var(--white)">TikTok</div><div class="plat-title">Short-Form &amp; Live Sets</div><div class="plat-sub">@3steez &middot; Daily clips &amp; live DJ content</div></div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- SOCIAL GRID -->
-<section class="med-socials">
-  <div class="med-socials-in">
-    <div class="stag " style="opacity:1;transform:none">Connect</div>
-    <h2 class="sh " style="opacity:1;transform:none">Find 3Steez <em>Everywhere</em></h2>
-    <div class="social-grid " style="opacity:1;transform:none">
+<section class="med-soc">
+  <div class="med-soc-in">
+    <div class="stag rv">Connect</div>
+    <h2 class="sh rv">Find 3Steez <em>Everywhere</em></h2>
+    <div class="soc-grid rv">
       <a href="https://www.instagram.com/3Steez" target="_blank" rel="noopener" class="soc-item"><div class="soc-icon">&#128247;</div><div class="soc-name">Instagram</div><div class="soc-handle">@3Steez</div></a>
       <a href="https://www.youtube.com/@3STEEZ" target="_blank" rel="noopener" class="soc-item"><div class="soc-icon">&#127910;</div><div class="soc-name">YouTube</div><div class="soc-handle">@3STEEZ</div></a>
       <a href="https://www.twitch.tv/3steez" target="_blank" rel="noopener" class="soc-item"><div class="soc-icon">&#127917;</div><div class="soc-name">Twitch</div><div class="soc-handle">3steez</div></a>
@@ -334,7 +287,7 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
       <a href="https://www.mixcloud.com/trestyles/" target="_blank" rel="noopener" class="soc-item"><div class="soc-icon">&#127911;</div><div class="soc-name">Mixcloud</div><div class="soc-handle">trestyles</div></a>
       <a href="https://www.facebook.com/3Steez" target="_blank" rel="noopener" class="soc-item"><div class="soc-icon">&#128100;</div><div class="soc-name">Facebook</div><div class="soc-handle">3Steez</div></a>
       <a href="https://www.linkedin.com/in/3steez/" target="_blank" rel="noopener" class="soc-item"><div class="soc-icon">&#128188;</div><div class="soc-name">LinkedIn</div><div class="soc-handle">/in/3steez</div></a>
-      <a href="onesheet.html" class="soc-item"><div class="soc-icon">&#128196;</div><div class="soc-name">Press Kit</div><div class="soc-handle">One-Sheet PDF</div></a>
+      <a href="onesheet.html" class="soc-item"><div class="soc-icon">&#128196;</div><div class="soc-name">Press Kit</div><div class="soc-handle">One-Sheet</div></a>
     </div>
   </div>
 </section>
