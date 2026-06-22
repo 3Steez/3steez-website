@@ -15,13 +15,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 
-/* ── CRITICAL VISIBILITY FIXES ── */
-/* Sections are visible by default — JS enhances but doesn't control visibility */
-.rv, .rvl { opacity: 1 !important; transform: none !important; }
-/* Re-enable animation only when JS has run and observer is active */
-.rv.anim-ready { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
-.rvl.anim-ready { opacity: 0; transform: translateX(-28px); transition: opacity .6s ease, transform .6s ease; }
-.rv.anim-ready.vis, .rvl.anim-ready.vis { opacity: 1 !important; transform: none !important; }
+/* ── ABSOLUTE VISIBILITY GUARANTEE ── */
+.rv, .rvl,
+.rv.anim-ready, .rvl.anim-ready,
+.rv.anim-ready.vis, .rvl.anim-ready.vis { 
+  opacity: 1 !important; 
+  transform: none !important; 
+}
 /* Ticker must scroll */
 .tick-track { animation: tickA 28s linear infinite !important; animation-play-state: running !important; }
 @keyframes tickA { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -46,8 +46,8 @@ a,button,[onclick],label,select,input,textarea{cursor:pointer!important;pointer-
 }
 html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--white);font-family:var(--IN);font-weight:300;line-height:1.7;overflow-x:hidden}a,button,[onclick]{cursor:pointer!important;pointer-events:auto!important}
-#cur{position:fixed;width:9px;height:9px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .18s,height .18s}
-#cur-r{position:fixed;width:34px;height:34px;border:1px solid rgba(201,168,76,.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .32s cubic-bezier(.25,.46,.45,.94),height .32s}
+#cur{position:fixed;width:9px;height:9px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .18s,height .18s;opacity:0}
+#cur-r{position:fixed;width:34px;height:34px;border:1px solid rgba(201,168,76,.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .32s cubic-bezier(.25,.46,.45,.94),height .32s;opacity:0}
 .cg #cur{width:16px;height:16px;background:var(--gold2)}.cg #cur-r{width:52px;height:52px}
 #nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.5rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:background .35s,padding .35s}
 #nav.solid{background:rgba(7,7,7,.97);backdrop-filter:blur(14px);padding:1rem 3rem;border-bottom:1px solid var(--border)}
@@ -89,9 +89,10 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 .ft-soc{display:flex;gap:1.4rem}
 .ft-soc a{font-size:.57rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
 .ft-soc a:hover{color:var(--gold)}
-.rv{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
-.rvl{opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease}
-.rv.vis,.rvl.vis{opacity:1;transform:none}
+.rv,.rvl{opacity:1;transform:none}
+.rv.anim-ready{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.rvl.anim-ready{opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease}
+.rv.anim-ready.vis,.rvl.anim-ready.vis{opacity:1!important;transform:none!important}
 .mq{background:var(--crimson);padding:.72rem 0;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
 .mq-t{display:flex;width:max-content;animation:mqa 20s linear infinite}
 .mq-t span{font-family:var(--BN);font-size:.95rem;letter-spacing:.18em;text-transform:uppercase;color:var(--white);padding:0 2.25rem;white-space:nowrap;opacity:.92}
@@ -327,7 +328,7 @@ textarea{resize:vertical;min-height:108px}
 </style>
 </head>
 <body>
-<div id="cur"></div><div id="cur-r"></div>
+<div id="cur" style="left:-100px;top:-100px"></div><div id="cur-r" style="left:-100px;top:-100px"></div>
 
 <nav id="nav">
   <div class="nav-logo"><a href="index.html"><img src="https://static.wixstatic.com/media/27707a_07541b50ed20405086f5149a1448237e~mv2.png" alt="3Steez"/></a></div>
