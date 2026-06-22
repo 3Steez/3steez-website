@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>3Steez Events | Ann Arbor Weekly Residencies & Live Shows</title>
+<meta name="description" content="See where 3Steez is performing. Weekly residencies at Alley Bar, The Rabbit Hole, and LIVE Nightclub. Summer festival dates including A2SF Top of the Park 2026."/>
+<meta name="keywords" content="3Steez events, Ann Arbor DJ events, Wayback Wednesday Alley Bar, Re:Up LIVE Nightclub, A2 After Work Party, A2SF 2026, Ann Arbor nightlife"/>
+<meta property="og:title" content="3Steez Events | Ann Arbor Weekly Residencies & Live Shows"/>
+<meta property="og:description" content="See where 3Steez is performing. Weekly residencies at Alley Bar, The Rabbit Hole, and LIVE Nightclub. Summer festival dates including A2SF Top of the Park 2026."/>
+<meta property="og:image" content="https://static.wixstatic.com/media/27707a_552057f016644179b62d92a87774eb6b~mv2.jpg"/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+
+/* ── CRITICAL VISIBILITY FIXES ── */
+/* Sections are visible by default — JS enhances but doesn't control visibility */
+.rv, .rvl { opacity: 1 !important; transform: none !important; }
+/* Re-enable animation only when JS has run and observer is active */
+.rv.anim-ready { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+.rvl.anim-ready { opacity: 0; transform: translateX(-28px); transition: opacity .6s ease, transform .6s ease; }
+.rv.anim-ready.vis, .rvl.anim-ready.vis { opacity: 1 !important; transform: none !important; }
+/* Ticker must scroll */
+.tick-track { animation: tickA 28s linear infinite !important; animation-play-state: running !important; }
+@keyframes tickA { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* Marquee must scroll */
+.mq-t { animation: mqa 20s linear infinite !important; }
+@keyframes mqa { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* Disable custom cursor on touch — stops freezing on mobile */
+@media (hover: none) and (pointer: coarse) {
+  #cur, #cur-r { display: none !important; }
+  * { cursor: auto !important; }
+}
+
+a,button,[onclick],label,select,input,textarea{cursor:pointer!important;pointer-events:auto!important}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#070707;--deep:#0d0d0d;--card:#141414;--border:rgba(255,255,255,0.07);
+  --gold:#C9A84C;--gold2:#E8C96A;--gold-dim:rgba(201,168,76,0.12);
+  --crimson:#8B1A1A;--crimson2:#B22222;
+  --white:#F8F6F0;--muted:rgba(248,246,240,0.52);
+  --PD:'Playfair Display',Georgia,serif;--BN:'Bebas Neue',sans-serif;--IN:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--IN);font-weight:300;line-height:1.7;overflow-x:hidden}a,button,[onclick]{cursor:pointer!important;pointer-events:auto!important}
+#cur{position:fixed;width:9px;height:9px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .18s,height .18s}
+#cur-r{position:fixed;width:34px;height:34px;border:1px solid rgba(201,168,76,.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .32s cubic-bezier(.25,.46,.45,.94),height .32s}
+.cg #cur{width:16px;height:16px;background:var(--gold2)}.cg #cur-r{width:52px;height:52px}
+#nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.5rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:background .35s,padding .35s}
+#nav.solid{background:rgba(7,7,7,.97);backdrop-filter:blur(14px);padding:1rem 3rem;border-bottom:1px solid var(--border)}
+.nav-logo img{height:40px;object-fit:contain}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:.63rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s,background .2s,padding .2s;padding:.28rem .6rem;border-radius:2px}
+.nav-links a:hover{color:var(--black);background:var(--gold)}
+.nav-book{font-size:.63rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;background:transparent;color:var(--gold);border:1px solid var(--gold);padding:.55rem 1.35rem;text-decoration:none;transition:background .2s,color .2s;cursor:pointer;white-space:nowrap}
+.nav-book:hover{background:var(--gold);color:var(--black)}
+.nav-burger{display:none;background:none;border:none;cursor:none;flex-direction:column;gap:5px;padding:4px}
+.nav-burger span{display:block;width:24px;height:1.5px;background:var(--white);transition:.3s}
+.mob-ov{display:none;position:fixed;inset:0;background:rgba(7,7,7,.97);z-index:600;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem}
+.mob-ov.open{display:flex}
+.mob-ov a{font-family:var(--PD);font-size:2.2rem;font-style:italic;color:var(--white);text-decoration:none;opacity:.8;transition:opacity .2s,color .2s}
+.mob-ov a:hover{opacity:1;color:var(--gold2)}
+.mob-x{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:none;opacity:.6}
+section{padding:7rem 3rem}
+.stag{display:inline-flex;align-items:center;gap:.7rem;font-size:.6rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.stag::before{content:'';width:30px;height:1px;background:var(--gold)}
+h1.sh,h2.sh{font-family:var(--PD);font-size:clamp(2.5rem,4.5vw,4.1rem);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+h1.sh em,h2.sh em{font-style:italic;color:var(--gold2)}
+h1.sh .cr,h2.sh .cr{color:var(--crimson2)}
+.lead{color:var(--muted);font-size:.97rem;line-height:1.85;max-width:560px}
+.btn-gold{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:var(--gold);color:var(--black);padding:1.05rem 2.4rem;border:none;text-decoration:none;display:inline-block;transition:background .2s,transform .15s;cursor:pointer}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-ol{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.25);padding:1.05rem 2.4rem;text-decoration:none;display:inline-block;transition:border-color .2s,color .2s;cursor:pointer}
+.btn-ol:hover{border-color:var(--gold);color:var(--gold)}
+.gd{height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);max-width:180px;margin:1.75rem auto}
+footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3rem 2.5rem}
+.ft-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:5rem;padding-bottom:3.25rem;border-bottom:1px solid var(--border);margin-bottom:1.85rem}
+.ft-brand img{height:36px;margin-bottom:1.2rem;object-fit:contain}
+.ft-tag{font-size:.86rem;color:var(--muted);line-height:1.8;max-width:275px}
+.ft-ch{font-size:.57rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
+.ft-lnks{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.ft-lnks a{font-size:.84rem;color:var(--muted);text-decoration:none;transition:color .2s}
+.ft-lnks a:hover{color:var(--white)}
+.ft-bot{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.ft-copy{font-size:.7rem;color:rgba(248,246,240,.25)}
+.ft-soc{display:flex;gap:1.4rem}
+.ft-soc a{font-size:.57rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.ft-soc a:hover{color:var(--gold)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.rvl{opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease}
+.rv.vis,.rvl.vis{opacity:1;transform:none}
+.mq{background:var(--crimson);padding:.72rem 0;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.mq-t{display:flex;width:max-content;animation:mqa 20s linear infinite}
+.mq-t span{font-family:var(--BN);font-size:.95rem;letter-spacing:.18em;text-transform:uppercase;color:var(--white);padding:0 2.25rem;white-space:nowrap;opacity:.92}
+.mq-t .dot{color:var(--gold);padding:0;font-size:.8rem}
+@keyframes mqa{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:1024px){.ft-in{grid-template-columns:1fr;gap:2.25rem}}
+@media(max-width:768px){
+  #nav{padding:1rem 1.5rem}.nav-links,.nav-book{display:none}.nav-burger{display:flex}
+  section{padding:5rem 1.5rem}.ft-bot{flex-direction:column;gap:1rem;text-align:center}
+}
+@media(max-width:480px){#nav{padding:1rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+
+@keyframes pd{0%,100%{opacity:1}50%{opacity:.4}}
+.page-hero{padding:11rem 3rem 5rem;background:var(--deep);position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+.page-hero::before{content:'EVENTS';font-family:'Bebas Neue',sans-serif;font-size:22vw;color:rgba(201,168,76,.03);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;line-height:1}
+.page-hero-in{max-width:1240px;margin:0 auto;position:relative;z-index:1}
+#ev-ticker{background:var(--black);padding:0;overflow:hidden;border-bottom:1px solid var(--border)}
+.tick-in{display:flex;align-items:stretch}
+.tick-lbl{background:var(--crimson);padding:0 2rem;display:flex;align-items:center;white-space:nowrap;font-size:.6rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--white);flex-shrink:0;gap:.6rem}
+.tick-lbl::after{content:'';width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:6px solid var(--white)}
+.tick-wrap{overflow:hidden;flex:1;padding:1rem 0}
+.tick-track{display:flex;width:max-content;animation:tickA 28s linear infinite}
+.tick-track:hover{animation-play-state:paused}
+.tick-item{display:inline-flex;align-items:center;gap:.5rem;padding:0 2.25rem;border-right:1px solid var(--border);white-space:nowrap;font-size:.72rem;color:var(--muted);cursor:pointer;transition:color .2s}
+.tick-item:hover{color:var(--gold)}
+.tick-item .td{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold);font-size:.78rem}
+.tick-item .tdot{color:var(--crimson);font-size:.5rem}
+@keyframes tickA{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ev-section{background:var(--black);padding:6rem 3rem}
+.ev-section-in{max-width:1240px;margin:0 auto}
+.ev-hdr{margin-bottom:2rem;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.ev-scroll-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:1.25rem;margin:0 -3rem;padding-left:3rem;padding-right:3rem;cursor:grab}
+.ev-scroll-wrap:active{cursor:grabbing}
+.ev-scroll-wrap::-webkit-scrollbar{height:2px}.ev-scroll-wrap::-webkit-scrollbar-thumb{background:var(--gold)}
+.ev-grid{display:flex;gap:1rem;width:max-content}
+.ev-card{position:relative;overflow:hidden;background:var(--card);border:1px solid rgba(255,255,255,.06);cursor:pointer;pointer-events:auto;transition:border-color .4s,transform .35s,box-shadow .4s;flex-shrink:0;width:420px;border-radius:2px}
+.ev-card:hover{border-color:rgba(201,168,76,.55);transform:translateY(-6px) scale(1.012);box-shadow:0 24px 60px rgba(0,0,0,.7)}
+.ev-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,.08),transparent 60%);opacity:0;transition:opacity .4s;z-index:1;pointer-events:none}
+.ev-card:hover::before{opacity:1}
+.ev-flyer{width:100%;height:520px;object-fit:cover;object-position:center top;filter:brightness(.68) saturate(.85) contrast(1.05);transition:transform .65s,filter .5s;display:block}
+.ev-card:hover .ev-flyer{transform:scale(1.06);filter:brightness(.88) saturate(1.1)}
+.ev-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,7,7,.98) 0%,rgba(7,7,7,.55) 40%,rgba(7,7,7,.1) 70%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:2rem 2rem 1.75rem;z-index:2}
+.ev-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);z-index:3;width:54px;height:54px;border-radius:50%;background:rgba(201,168,76,.18);border:1.5px solid rgba(201,168,76,.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .35s,transform .35s;backdrop-filter:blur(4px);pointer-events:none}
+.ev-card:hover .ev-play-btn{opacity:1;transform:translate(-50%,-50%)}
+.ev-status{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.65rem;display:flex;align-items:center;gap:.4rem}
+.ev-status.on{color:#4ade80}.ev-status.on::before{content:'';width:5px;height:5px;border-radius:50%;background:#4ade80;animation:pd 1.5s ease-in-out infinite}
+.ev-status.up{color:var(--gold2)}.ev-status.up::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.ev-title{font-family:'Playfair Display',serif;font-size:1.65rem;font-weight:400;color:var(--white);line-height:1.18;margin-bottom:.45rem}
+.ev-venue{font-size:.75rem;color:rgba(248,246,240,.6);margin-bottom:.9rem}
+.ev-meta{display:flex;gap:1.25rem;flex-wrap:wrap}
+.ev-meta-item{font-size:.65rem;letter-spacing:.06em;color:var(--muted)}
+.ev-cta{margin-top:1.1rem;display:inline-flex;align-items:center;gap:.5rem;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:.28rem;cursor:none}
+/* MODAL */
+.ev-modal-bg{position:fixed;inset:0;background:rgba(7,7,7,.95);z-index:800;opacity:0;pointer-events:none;transition:opacity .35s;backdrop-filter:blur(10px)}
+.ev-modal-bg.open{opacity:1;pointer-events:all}
+.ev-modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-48%) scale(.97);z-index:801;width:min(960px,96vw);max-height:92vh;overflow-y:hidden;background:var(--deep);border:1px solid rgba(255,255,255,.1);opacity:0;transition:opacity .35s,transform .35s;box-shadow:0 40px 100px rgba(0,0,0,.8)}
+.ev-modal-bg.open .ev-modal{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.ev-modal-tabs{display:none}
+
+
+
+.ev-modal-inner{display:grid;grid-template-columns:1fr 1fr;min-height:520px}
+.ev-modal-flyer-col{position:relative;overflow:hidden;background:var(--black)}
+.ev-modal-flyer-col img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;background:var(--black)}
+.ev-modal-body{padding:2.25rem 2rem;overflow-y:auto;max-height:80vh;display:flex;flex-direction:column}
+.ev-modal-status{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem}
+.ev-modal-title{font-family:'Playfair Display',serif;font-size:1.65rem;font-weight:400;line-height:1.18;margin-bottom:1rem}
+.ev-modal-desc{color:var(--muted);font-size:.88rem;line-height:1.82;margin-bottom:1.5rem}
+.ev-modal-details{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.5rem}
+.ev-modal-detail{padding:.7rem .9rem;background:rgba(255,255,255,.03);border:1px solid var(--border);display:grid;grid-template-columns:.9fr 1.8fr;gap:.5rem;align-items:start}
+.ev-modal-detail-l{font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);padding-top:.1rem}
+.ev-modal-detail-v{font-size:.82rem;color:var(--white);line-height:1.4}
+.ev-modal-cta{margin-top:auto;padding-top:1.25rem}
+.ev-modal-close{position:absolute;top:1rem;right:1.25rem;background:rgba(7,7,7,.6);border:1px solid var(--border);color:var(--white);font-size:1rem;cursor:pointer;opacity:.7;transition:opacity .2s;z-index:10;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%}
+.ev-modal-close:hover{opacity:1;border-color:var(--gold)}
+.ev-modal-video-wrap{position:relative;padding-top:177.78%;overflow:hidden;background:var(--black)}
+.ev-modal-video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+.ev-modal-video-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;text-align:center;padding:2rem}
+.ev-modal-video-placeholder p{font-size:.85rem;color:var(--muted);line-height:1.7;max-width:340px}
+@media(max-width:768px){
+  .ev-scroll-wrap{margin:0 -1.5rem;padding-left:1.5rem;padding-right:1.5rem}
+  .ev-section{padding:5rem 1.5rem}.ev-card{width:300px}.ev-flyer{height:380px}
+  .ev-modal-inner{grid-template-columns:1fr}.ev-modal-flyer-col{max-height:260px}
+  .ev-modal-flyer-col img{object-fit:cover}.ev-modal-body{max-height:none;padding:1.5rem}
+  .page-hero{padding:9rem 1.5rem 4rem}
+}
+
+
+/* Flyer → Reel slide transition */
+.ev-modal-slide-wrap{position:relative;overflow:hidden;display:flex;width:100%;transition:none}
+.ev-modal-inner{display:grid;grid-template-columns:1fr 1fr;min-height:520px;width:100%;transition:none}
+.ev-modal-flyer-col{position:relative;overflow:hidden;background:var(--black);transition:transform .45s cubic-bezier(.77,0,.18,1),opacity .35s ease}
+.ev-modal-body{padding:2.25rem 2rem;overflow-y:auto;max-height:80vh;display:flex;flex-direction:column;transition:transform .45s cubic-bezier(.77,0,.18,1),opacity .35s ease}
+
+/* Reel panel — starts off to the right, slides in */
+.ev-modal-reel-col{position:absolute;top:0;right:0;width:50%;height:100%;background:var(--black);transform:translateX(100%);transition:transform .45s cubic-bezier(.77,0,.18,1);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.ev-modal-reel-col.visible{transform:translateX(0)}
+.ev-modal-reel-col iframe{width:100%;height:100%;border:none;position:absolute;inset:0}
+.ev-modal-reel-placeholder{text-align:center;padding:2rem;color:var(--muted);font-size:.85rem}
+
+/* Slide state: flyer slides out left, reel slides in from right */
+.ev-modal-inner.reel-active .ev-modal-flyer-col{transform:translateX(-100%);opacity:0}
+.ev-modal-inner.reel-active .ev-modal-body{transform:translateX(-100%);opacity:0}
+
+/* Watch the Vibe button — replaces the old tab */
+.vibe-btn{margin-top:1.25rem;display:inline-flex;align-items:center;gap:.55rem;font-family:'Inter',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.3);padding:.65rem 1.1rem;cursor:pointer;transition:background .2s,border-color .2s}
+.vibe-btn:hover{background:rgba(201,168,76,.16);border-color:var(--gold)}
+.vibe-btn.active{background:var(--gold);color:var(--black)}
+.back-btn{display:none;margin-top:1rem;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);background:none;border:none;cursor:none;padding:0}
+.back-btn:hover{color:var(--white)}.back-btn{cursor:pointer}
+.ev-modal-inner.reel-active .back-btn{display:block}
+
+/* Wider modal for the reel view */
+.ev-modal{width:min(960px,96vw)}
+@media(max-width:700px){
+  .ev-modal-inner{grid-template-columns:1fr}
+  .ev-modal-flyer-col{max-height:260px}
+  .ev-modal-reel-col{width:100%;top:260px;height:calc(100% - 260px)}
+  .ev-modal-inner.reel-active .ev-modal-flyer-col{transform:translateY(-100%)}
+  .ev-modal-inner.reel-active .ev-modal-body{display:none}
+}
+
+/* Disable custom cursor on touch devices — saves significant CPU */
+@media (hover: none) and (pointer: coarse) {
+  #cur, #cur-r { display: none !important; }
+}
+</style>
+</head>
+<body>
+<div id="cur"></div><div id="cur-r"></div>
+
+<nav id="nav">
+  <div class="nav-logo"><a href="index.html"><img src="https://static.wixstatic.com/media/27707a_07541b50ed20405086f5149a1448237e~mv2.png" alt="3Steez"/></a></div>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li>
+    <li><a href="events.html" style="color:var(--black);background:var(--gold)">Events</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="media.html">Media</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="booking.html">Booking</a></li>
+    </ul>
+  <a href="booking.html" class="nav-book">Book Now</a>
+  <button class="nav-burger" onclick="omo()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-ov" id="mo">
+  <button class="mob-x" onclick="cmo()">&#x2715;</button>
+  <a href="index.html" onclick="cmo()">Home</a><a href="events.html" onclick="cmo()">Events</a><a href="about.html" onclick="cmo()">About</a><a href="services.html" onclick="cmo()">Services</a><a href="gallery.html" onclick="cmo()">Gallery</a><a href="media.html" onclick="cmo()">Media</a><a href="blog.html" onclick="cmo()">Blog</a><a href="booking.html" onclick="cmo()">Booking</a>
+</div>
+
+<div id="ev-ticker">
+  <div class="tick-in">
+    <div class="tick-lbl">&#128197; This Week</div>
+    <div class="tick-wrap"><div class="tick-track">
+      <span class="tick-item" onclick="openEvent(0)"><span class="td">Every Wed</span><span class="tdot">&#9679;</span>Wayback Wednesday @ Alley Bar<span class="tdot">&#9679;</span>9PM&ndash;1AM &middot; No Cover</span>
+      <span class="tick-item" onclick="openEvent(1)"><span class="td">Every Fri</span><span class="tdot">&#9679;</span>A2 After Work Party @ The Rabbit Hole<span class="tdot">&#9679;</span>9PM &middot; $5</span>
+      <span class="tick-item" onclick="openEvent(2)"><span class="td">2nd Saturdays</span><span class="tdot">&#9679;</span>The Re:Up @ LIVE Nightclub<span class="tdot">&#9679;</span>7&ndash;10PM &middot; Free w/ RSVP &middot; 21+</span>
+      <span class="tick-item" onclick="openEvent(3)"><span class="td">June 27, 2026</span><span class="tdot">&#9679;</span>A2SF Top of the Park &mdash; O&amp;W Grove Stage<span class="tdot">&#9679;</span>10PM &middot; Free</span>
+      <span class="tick-item" onclick="openEvent(0)"><span class="td">Every Wed</span><span class="tdot">&#9679;</span>Wayback Wednesday @ Alley Bar<span class="tdot">&#9679;</span>9PM&ndash;1AM &middot; No Cover</span>
+      <span class="tick-item" onclick="openEvent(1)"><span class="td">Every Fri</span><span class="tdot">&#9679;</span>A2 After Work Party @ The Rabbit Hole<span class="tdot">&#9679;</span>9PM &middot; $5</span>
+      <span class="tick-item" onclick="openEvent(2)"><span class="td">2nd Saturdays</span><span class="tdot">&#9679;</span>The Re:Up @ LIVE Nightclub<span class="tdot">&#9679;</span>7&ndash;10PM &middot; Free w/ RSVP &middot; 21+</span>
+      <span class="tick-item" onclick="openEvent(3)"><span class="td">June 27, 2026</span><span class="tdot">&#9679;</span>A2SF Top of the Park &mdash; O&amp;W Grove Stage<span class="tdot">&#9679;</span>10PM &middot; Free</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-in rv">
+    <div class="stag">Live &amp; in the Building</div>
+    <h1 class="sh">Where You&rsquo;ll Find<br/><em>3Steez</em> Next</h1>
+    <p class="lead" style="margin-top:1.25rem">Weekly residencies, festival main stages, and private affairs. Click any event for full details and to see the vibe in action.</p>
+  </div>
+</div>
+
+<section class="ev-section">
+  <div class="ev-section-in">
+    <div class="ev-hdr rv">
+      <div><div class="stag">Current &amp; Upcoming</div><h2 class="sh" style="font-size:clamp(1.6rem,2.8vw,2.4rem)">Weekly Residencies &amp; <em>Featured Shows</em></h2></div>
+      <span style="font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(248,246,240,.3)">&#8592; Drag to explore</span>
+    </div>
+    <div class="ev-scroll-wrap" id="evScroll">
+      <div class="ev-grid">
+        <div class="ev-card rv" onclick="openEvent(0)">
+          <div class="ev-play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="5,3 19,12 5,21"/></svg></div>
+          <img class="ev-flyer" src="flyer-wayback.jpg" alt="Wayback Wednesday Alley Bar 2026"/>
+          <div class="ev-ov"><div class="ev-status on">&#9679; Every Wednesday</div><div class="ev-title">Wayback Wednesday</div><div class="ev-venue">Alley Bar &mdash; Ann Arbor, MI</div><div class="ev-meta"><span class="ev-meta-item">9PM&ndash;1AM</span><span class="ev-meta-item">No Cover</span></div><span class="ev-cta">View Details &rarr;</span></div>
+        </div>
+        <div class="ev-card rv" onclick="openEvent(1)">
+          <div class="ev-play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="5,3 19,12 5,21"/></svg></div>
+          <img class="ev-flyer" src="flyer-afterwork.jpg" alt="A2 After Work Party 2026"/>
+          <div class="ev-ov"><div class="ev-status on">&#9679; Every Friday</div><div class="ev-title">A2 After Work Party</div><div class="ev-venue">The Rabbit Hole &mdash; Ann Arbor, MI</div><div class="ev-meta"><span class="ev-meta-item">9PM</span><span class="ev-meta-item">$5 Cover</span></div><span class="ev-cta">View Details &rarr;</span></div>
+        </div>
+        <div class="ev-card rv" onclick="openEvent(2)">
+          <div class="ev-play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="5,3 19,12 5,21"/></svg></div>
+          <img class="ev-flyer" src="flyer-reup.jpg" alt="The Re:Up Throwback RnB"/>
+          <div class="ev-ov"><div class="ev-status on">&#9679; 2nd Saturdays</div><div class="ev-title">The Re:Up</div><div class="ev-venue">LIVE Nightclub &mdash; Ann Arbor, MI</div><div class="ev-meta"><span class="ev-meta-item">7&ndash;10PM</span><span class="ev-meta-item">Free w/ RSVP &middot; 21+</span></div><span class="ev-cta">View Details &rarr;</span></div>
+        </div>
+        <div class="ev-card rv" onclick="openEvent(3)">
+          <img class="ev-flyer" src="flyer-a2sf.jpg" alt="A2SF Top of the Park 2026" style="object-fit:cover;object-position:center"/>
+          <div class="ev-ov"><div class="ev-status up">&#9679; Upcoming &mdash; June 27</div><div class="ev-title">A2SF Top of the Park</div><div class="ev-venue">O&amp;W Grove Stage &mdash; Ann Arbor Summer Festival</div><div class="ev-meta"><span class="ev-meta-item">10PM</span><span class="ev-meta-item">Free Admission</span></div><span class="ev-cta">View Details &rarr;</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT MODAL -->
+<div class="ev-modal-bg" id="evModalBg" onclick="closeEvent(event)">
+  <div class="ev-modal" id="evModal">
+    <button class="ev-modal-close" onclick="closeEvent()">&#x2715;</button>
+    <div class="ev-modal-tabs">
+      <button class="ev-modal-tab active" onclick="switchTab('details',this)">Event Details</button>
+      <button class="ev-modal-tab" id="reelTabBtn" onclick="switchTab('reel',this)">&#9654; Watch the Vibe</button>
+    </div>
+    <div class="ev-modal-tab-panel active" id="tabDetails">
+      <div class="ev-modal-inner">
+        <div class="ev-modal-flyer-col"><img id="evModalImg" src="" alt="Event Flyer"/></div>
+        <div class="ev-modal-body">
+          <div class="ev-modal-status" id="evModalStatus"></div>
+          <div class="ev-modal-title" id="evModalTitle"></div>
+          <div class="ev-modal-desc" id="evModalDesc"></div>
+          <div class="ev-modal-details" id="evModalDetails"></div>
+          <div class="ev-modal-cta"><a class="btn-gold" href="booking.html" style="display:inline-block;font-size:.66rem;padding:.9rem 1.75rem;cursor:none;width:100%;text-align:center">Book 3Steez for Your Event &rarr;</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="ev-modal-tab-panel" id="tabReel">
+      <div class="ev-modal-video-wrap" id="evModalVideoWrap"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+var EVENTS=[
+  {img:'flyer-wayback.jpg',status:'&#9679; Weekly Residency',title:'Wayback Wednesday',desc:"Presented by Props Over Here \u2014 Wayback Wednesday at Alley Bar is your weekly throwback. 3Steez spins the best vibes from the 80s, 90s & 2000s: hip-hop, R&B, dance, and party anthems. Buff1 of AML pulls up as guest every 3rd Wednesday. No cover, no excuses.",details:[{l:'Venue',v:'Alley Bar \u2014 Ann Arbor, MI'},{l:'Hosted By',v:'3Steez wsg. Buff1 of AML'},{l:'Schedule',v:'Every Wednesday (Buff1 guest: 3rd Wed each month)'},{l:'Hours',v:'9 PM \u2013 1 AM'},{l:'Cover',v:'No Cover Charge'}],reel:'https://www.instagram.com/reel/DRw_ut_Dlw9/',reelNote:""},
+  {img:'flyer-afterwork.jpg',status:'&#9679; Weekly Residency',title:'A2 After Work Party',desc:"Props Over Here presents The A2 After Work Party \u2014 hosted by 3Steez at The Rabbit Hole in downtown Ann Arbor. The perfect Friday transition from the grind to the weekend. Drink & food specials, great music, and a crowd that knows how to have a good time. Every Friday at 9PM.",details:[{l:'Venue',v:'The Rabbit Hole, 210 S. 1st St \u2014 Ann Arbor, MI'},{l:'Hosted By',v:'3Steez'},{l:'Schedule',v:'Every Friday'},{l:'Hours',v:'9 PM'},{l:'Perks',v:'Drink & Food Specials'},{l:'Follow',v:'@getpropsoverhere'}],reel:'https://www.instagram.com/reel/DVZjmvtkhGb/',reelNote:""},
+  {img:'flyer-reup.jpg',status:'&#9679; Monthly \u00b7 2nd Saturdays',title:'The Re:Up \u2014 Throwback R&B Only',desc:"Downtown Ann Arbor's premier Throwback R&B experience, hosted & curated by 3Steez at LIVE Nightclub. Good vibes. Classic sounds. Timeless R&B \u2014 only. 21+ event, free with RSVP. Limited capacity. Come early.",details:[{l:'Venue',v:'LIVE Nightclub, 102 S. First St \u2014 Ann Arbor, MI'},{l:'Hosted By',v:'3Steez'},{l:'Schedule',v:'2nd Saturday of Every Month'},{l:'Hours',v:'7 PM \u2013 10 PM'},{l:'Admission',v:'Free with RSVP \u00b7 21+ Only \u00b7 Limited Capacity'},{l:'Vibe',v:'Good Vibes. Classic Sounds. Timeless R&B.'}],reel:'https://www.instagram.com/reel/DYXv-XyJRbX/',reelNote:""},
+  {img:'flyer-a2sf.jpg',status:'&#9679; Upcoming \u2014 June 27, 2026',title:'A2SF \u2014 Top of the Park 2026',desc:"3Steez closes out the Ann Arbor Summer Festival season on the O&W Grove Stage \u2014 blending hip-hop, R&B, funk, and global grooves with seamless precision. Free admission, outdoor stage, summer energy. Don't miss the season closer.",details:[{l:'Venue',v:"O&W Grove Stage \u2014 Top of the Park, Ann Arbor"},{l:'Date',v:'Saturday, June 27, 2026'},{l:'Time',v:'10:00 PM'},{l:'Admission',v:'Free'},{l:'Genre',v:'Hip-Hop \u00b7 House \u00b7 R&B \u00b7 Funk \u00b7 Global Grooves'},{l:'Tickets',v:'a2sf.org/events/3steez-26'}],reel:null,reelNote:"Drop your A2SF 2026 reel URL here."}
+];
+var currentEventIdx=0;
+  document.querySelectorAll('.ev-modal-tab-panel').forEach(function(p){p.classList.remove('active')});
+  btn.classList.add('active');
+  var id='tab'+tab.charAt(0).toUpperCase()+tab.slice(1);
+  document.getElementById(id).classList.add('active');
+  if(tab==='reel'){
+    var e=EVENTS[currentEventIdx],wrap=document.getElementById('evModalVideoWrap');
+    if(e.reel){
+      var html='';
+      if(e.reel.indexOf('instagram.com')>-1){html='<iframe src="'+e.reel.replace(/\/$/,'')+'/embed/" scrolling="no" allowtransparency="true" allowfullscreen="true" style="position:absolute;inset:0;width:100%;height:100%;border:none"></iframe>';}
+      else if(e.reel.indexOf('tiktok.com')>-1){var vid=e.reel.split('/video/')[1].split('?')[0];html='<iframe src="https://www.tiktok.com/embed/'+vid+'" allowfullscreen allow="autoplay" style="position:absolute;inset:0;width:100%;height:100%;border:none"></iframe>';}
+      wrap.innerHTML=html;
+    } else {
+      wrap.innerHTML='<div class="ev-modal-video-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.4)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="rgba(201,168,76,.4)" stroke="none"/></svg><p style="color:var(--gold);font-family:\'Playfair Display\',serif;font-style:italic;font-size:1.1rem">Coming Soon</p><p>'+e.reelNote+'</p></div>';
+    }
+  }
+}
+function openEvent(i){
+  currentEventIdx=i;
+  var ev=EVENTS[i];
+  // Reset slide state
+  hideReel();
+  document.getElementById('evModalInner').classList.remove('reel-active');
+  document.getElementById('evReelCol').classList.remove('visible');
+  document.getElementById('evReelContent').innerHTML='';
+  if(document.getElementById('vibeBtn'))document.getElementById('vibeBtn').classList.remove('active');
+  // Show/hide vibe button based on reel availability
+  var vibeBtn=document.getElementById('vibeBtn');
+  if(vibeBtn)vibeBtn.style.display=ev.reel?'inline-flex':'none';
+  document.getElementById('evModalImg').src=ev.img;
+  document.getElementById('evModalStatus').innerHTML=ev.status;
+  document.getElementById('evModalTitle').textContent=ev.title;
+  document.getElementById('evModalDesc').textContent=ev.desc;
+  document.getElementById('evModalDetails').innerHTML=ev.details.map(function(d){return '<div class="ev-modal-detail"><div class="ev-modal-detail-l">'+d.l+'</div><div class="ev-modal-detail-v">'+d.v+'</div></div>';}).join('');
+  document.getElementById('evModalBg').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeEvent(ev){
+  if(ev&&ev.target!==document.getElementById('evModalBg')&&!ev.target.classList.contains('ev-modal-close'))return;
+  hideReel();
+  document.getElementById('evModalBg').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){hideReel();document.getElementById('evModalBg').classList.remove('open');document.body.style.overflow='';});
+(function(){
+  var el=document.getElementById('evScroll');
+  if(!el)return;
+  var d=false,sx=0,sl=0;
+  el.addEventListener('mousedown',function(e){d=true;sx=e.pageX-el.offsetLeft;sl=el.scrollLeft;});
+  el.addEventListener('mouseleave',function(){d=false;});
+  el.addEventListener('mouseup',function(){d=false;});
+  el.addEventListener('mousemove',function(e){if(!d)return;e.preventDefault();el.scrollLeft=sl-(e.pageX-el.offsetLeft-sx)*1.2;});
+})();
+</script>
+
+
+<footer>
+  <div class="ft-in">
+    <div class="ft-brand">
+      <img src="https://static.wixstatic.com/media/27707a_cdc47ea85f7245499dbf9ee9de18afd2~mv2.png" alt="3Steez"/>
+      <p class="ft-tag">Michigan&rsquo;s premier MC, DJ, and music producer &mdash; delivering elite entertainment for corporate events, festivals, nightclubs, and private affairs. Nationwide availability.</p>
+    </div>
+    <div>
+      <div class="ft-ch">Navigate</div>
+      <ul class="ft-lnks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="booking.html">Book an Event</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="ft-ch">Connect</div>
+      <ul class="ft-lnks">
+        <li><a href="https://www.instagram.com/3Steez" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.youtube.com/@3STEEZ" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.twitch.tv/3steez" target="_blank" rel="noopener">Twitch &mdash; Live Daily</a></li>
+        <li><a href="https://www.tiktok.com/@3steez" target="_blank" rel="noopener">TikTok</a></li>
+        <li><a href="https://www.mixcloud.com/trestyles/" target="_blank" rel="noopener">Mixcloud</a></li>
+        <li><a href="https://www.facebook.com/3Steez" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.linkedin.com/in/3steez/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="onesheet.html" target="_blank" rel="noopener">Download Press Kit</a></li>
+        <li><a href="https://www.ylccreative.com" target="_blank" rel="noopener">YLC Creative Partners</a></li>
+        <li><a href="https://www.djgraffiti.com" target="_blank" rel="noopener">DJ Graffiti</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span class="ft-copy">&copy; 2025 3Steez / Forekast Music, LLC &mdash; All Rights Reserved</span>
+    <div class="ft-soc">
+      <a href="https://www.instagram.com/3Steez" target="_blank" rel="noopener">IG</a>
+      <a href="https://www.youtube.com/@3STEEZ" target="_blank" rel="noopener">YT</a>
+      <a href="https://www.mixcloud.com/trestyles/" target="_blank" rel="noopener">MC</a>
+      <a href="https://www.linkedin.com/in/3steez/" target="_blank" rel="noopener">LI</a>
+    </div>
+  </div>
+</footer>
+<script>
+var _cur=document.getElementById('cur'),_curR=document.getElementById('cur-r');
+if(_cur){
+  document.addEventListener('mousemove',function(e){
+    _cur.style.left=e.clientX+'px';_cur.style.top=e.clientY+'px';
+    _curR.style.left=e.clientX+'px';_curR.style.top=e.clientY+'px';
+  });
+}
+document.querySelectorAll('a,button,.ev-card,.tc,.mi,.stat,.pl,.mc,.chip,.svc,.blog-card').forEach(function(el){
+  el.addEventListener('mouseenter',function(){document.body.classList.add('cg');});
+  el.addEventListener('mouseleave',function(){document.body.classList.remove('cg');});
+});
+var _nav=document.getElementById('nav');
+if(_nav){window.addEventListener('scroll',function(){_nav.classList.toggle('solid',window.scrollY>60);});}
+function omo(){var m=document.getElementById('mo');if(m){m.classList.add('open');document.body.style.overflow='hidden';}}
+function cmo(){var m=document.getElementById('mo');if(m){m.classList.remove('open');document.body.style.overflow='';}}
+</script>
+<script>
+// Visibility observer — safe version
+(function() {
+  var els = document.querySelectorAll('.rv, .rvl');
+  if (!els.length || !('IntersectionObserver' in window)) return;
+  els.forEach(function(el, i) {
+    el.classList.add('anim-ready');
+    el.style.transitionDelay = (i % 5) * 0.07 + 's';
+  });
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+  els.forEach(function(el) { obs.observe(el); });
+})();
+</script>
+</body>
+</html>

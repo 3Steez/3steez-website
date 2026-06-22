@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>3Steez | Elite MC, DJ & Music Producer — Detroit, Michigan</title>
+<meta name="description" content="Trés Styles aka 3Steez is Michigan’s premier MC, DJ, and music producer. Delivering elite entertainment for corporate events, festivals, nightclubs, and private affairs. Book now."/>
+<meta name="keywords" content="3Steez, Tres Styles, Detroit DJ, Michigan MC, corporate event DJ, festival DJ, Ann Arbor DJ, book a DJ Michigan"/>
+<meta property="og:title" content="3Steez | Elite MC, DJ & Music Producer — Detroit, Michigan"/>
+<meta property="og:description" content="Trés Styles aka 3Steez is Michigan’s premier MC, DJ, and music producer. Delivering elite entertainment for corporate events, festivals, nightclubs, and private affairs. Book now."/>
+<meta property="og:image" content="https://static.wixstatic.com/media/27707a_552057f016644179b62d92a87774eb6b~mv2.jpg"/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+
+/* ── CRITICAL VISIBILITY FIXES ── */
+/* Sections are visible by default — JS enhances but doesn't control visibility */
+.rv, .rvl { opacity: 1 !important; transform: none !important; }
+/* Re-enable animation only when JS has run and observer is active */
+.rv.anim-ready { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+.rvl.anim-ready { opacity: 0; transform: translateX(-28px); transition: opacity .6s ease, transform .6s ease; }
+.rv.anim-ready.vis, .rvl.anim-ready.vis { opacity: 1 !important; transform: none !important; }
+/* Ticker must scroll */
+.tick-track { animation: tickA 28s linear infinite !important; animation-play-state: running !important; }
+@keyframes tickA { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* Marquee must scroll */
+.mq-t { animation: none !important; flex-wrap: wrap; justify-content: center; }
+
+/* Disable custom cursor on touch — stops freezing on mobile */
+@media (hover: none) and (pointer: coarse) {
+  #cur, #cur-r { display: none !important; }
+  * { cursor: auto !important; }
+}
+
+a,button,[onclick],label,select,input,textarea{cursor:pointer!important;pointer-events:auto!important}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#070707;--deep:#0d0d0d;--card:#141414;--border:rgba(255,255,255,0.07);
+  --gold:#C9A84C;--gold2:#E8C96A;--gold-dim:rgba(201,168,76,0.12);
+  --crimson:#8B1A1A;--crimson2:#B22222;
+  --white:#F8F6F0;--muted:rgba(248,246,240,0.52);
+  --PD:'Playfair Display',Georgia,serif;--BN:'Bebas Neue',sans-serif;--IN:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--IN);font-weight:300;line-height:1.7;overflow-x:hidden}
+#cur{position:fixed;width:9px;height:9px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .18s,height .18s}
+#cur-r{position:fixed;width:34px;height:34px;border:1px solid rgba(201,168,76,.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .32s cubic-bezier(.25,.46,.45,.94),height .32s}
+.cg #cur{width:16px;height:16px}.cg #cur-r{width:52px;height:52px}
+#nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.5rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:background .35s,padding .35s}
+#nav.solid{background:rgba(7,7,7,.97);backdrop-filter:blur(14px);padding:1rem 3rem;border-bottom:1px solid var(--border)}
+.nav-logo img{height:40px;object-fit:contain}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:.63rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s,background .2s,padding .2s;padding:.28rem .6rem;border-radius:2px}
+.nav-links a:hover{color:var(--black);background:var(--gold)}
+.nav-book{font-size:.63rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;background:transparent;color:var(--gold);border:1px solid var(--gold);padding:.55rem 1.35rem;text-decoration:none;transition:background .2s,color .2s;cursor:pointer;white-space:nowrap}
+.nav-book:hover{background:var(--gold);color:var(--black)}
+.nav-burger{display:none;background:none;border:none;cursor:none;flex-direction:column;gap:5px;padding:4px}
+.nav-burger span{display:block;width:24px;height:1.5px;background:var(--white);transition:.3s}
+.mob-ov{display:none;position:fixed;inset:0;background:rgba(7,7,7,.97);z-index:600;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem}
+.mob-ov.open{display:flex}
+.mob-ov a{font-family:var(--PD);font-size:2.2rem;font-style:italic;color:var(--white);text-decoration:none;opacity:.8;transition:opacity .2s,color .2s}
+.mob-ov a:hover{opacity:1;color:var(--gold2)}
+.mob-x{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:none;opacity:.6}
+section{padding:7rem 3rem}
+.stag{display:inline-flex;align-items:center;gap:.7rem;font-size:.6rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.stag::before{content:'';width:30px;height:1px;background:var(--gold)}
+h1.sh,h2.sh{font-family:var(--PD);font-size:clamp(2.5rem,4.5vw,4.1rem);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+h1.sh em,h2.sh em{font-style:italic;color:var(--gold2)}
+h1.sh .cr,h2.sh .cr{color:var(--crimson2)}
+.lead{color:var(--muted);font-size:.97rem;line-height:1.85;max-width:560px}
+.btn-gold{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:var(--gold);color:var(--black);padding:1.05rem 2.4rem;border:none;text-decoration:none;display:inline-block;transition:background .2s,transform .15s;cursor:none}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-ol{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.25);padding:1.05rem 2.4rem;text-decoration:none;display:inline-block;transition:border-color .2s,color .2s;cursor:none}
+.btn-ol:hover{border-color:var(--gold);color:var(--gold)}
+.gd{height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);max-width:180px;margin:1.75rem auto}
+footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3rem 2.5rem}
+.ft-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:5rem;padding-bottom:3.25rem;border-bottom:1px solid var(--border);margin-bottom:1.85rem}
+.ft-brand img{height:36px;margin-bottom:1.2rem;object-fit:contain}
+.ft-tag{font-size:.86rem;color:var(--muted);line-height:1.8;max-width:275px}
+.ft-ch{font-size:.57rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
+.ft-lnks{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.ft-lnks a{font-size:.84rem;color:var(--muted);text-decoration:none;transition:color .2s}
+.ft-lnks a:hover{color:var(--white)}
+.ft-bot{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.ft-copy{font-size:.7rem;color:rgba(248,246,240,.25)}
+.ft-soc{display:flex;gap:1.4rem}
+.ft-soc a{font-size:.57rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.ft-soc a:hover{color:var(--gold)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.rvl{opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease}
+.rv.vis,.rvl.vis{opacity:1;transform:none}
+.mq{background:var(--crimson);padding:.72rem 0;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.mq-t{display:flex;width:max-content;flex-wrap:wrap;justify-content:center}
+.mq-t span{font-family:var(--BN);font-size:.95rem;letter-spacing:.18em;text-transform:uppercase;color:var(--white);padding:0 2.25rem;white-space:nowrap;opacity:.92}
+.mq-t .dot{color:var(--gold);padding:0;font-size:.8rem}
+@keyframes mqa{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:1024px){.ft-in{grid-template-columns:1fr;gap:2.25rem}}
+@media(max-width:768px){
+  #nav{padding:1rem 1.5rem}.nav-links,.nav-book{display:none}.nav-burger{display:flex}
+  section{padding:5rem 1.5rem}.ft-bot{flex-direction:column;gap:1rem;text-align:center}
+}
+@media(max-width:480px){#nav{padding:1rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+
+/* All keyframes properly closed */
+@keyframes fu{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes sa{0%{left:-100%}100%{left:100%}}
+@keyframes pd{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes kb{to{transform:scale(1)}}
+@keyframes tickA{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Pointer events fix */
+a,button,[onclick]{cursor:pointer!important;pointer-events:auto!important}
+
+#hero{position:relative;height:100vh;min-height:700px;display:flex;align-items:center;overflow:hidden;z-index:2}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 22%;transform:scale(1.07);animation:kb 14s ease forwards}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(108deg,rgba(7,7,7,.93) 0%,rgba(7,7,7,.5) 60%,rgba(7,7,7,.7) 100%);z-index:1}
+.hero-ov2{position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,var(--black),transparent);z-index:2}
+.hero-cnt{position:relative;z-index:3;padding:0 3rem;max-width:860px;margin-top:3rem}
+.h-kick{display:flex;align-items:center;gap:.9rem;margin-bottom:1.75rem;opacity:0;animation:fu .8s .3s forwards}
+.h-kick-ln{width:46px;height:1px;background:var(--gold)}
+.h-kick span{font-size:.62rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.hero-h1{font-family:var(--PD);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:400;line-height:1.02;letter-spacing:-.02em;margin-bottom:1.75rem;opacity:0;animation:fu .9s .5s forwards}
+.hero-h1 .it{font-style:italic;color:var(--gold2)}
+.hero-h1 .cr{color:var(--crimson2)}
+.hero-sub{font-size:1rem;color:rgba(248,246,240,.72);max-width:520px;line-height:1.82;margin-bottom:2.75rem;opacity:0;animation:fu .8s .8s forwards}
+.hero-act{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fu .8s 1s forwards}
+.h-scroll{position:absolute;bottom:2.5rem;left:3rem;z-index:3;display:flex;align-items:center;gap:1rem;opacity:0;animation:fu .6s 1.4s forwards}
+.h-scroll span{font-size:.57rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+.scroll-t{width:56px;height:1px;background:rgba(255,255,255,.12);position:relative;overflow:hidden}
+.scroll-f{position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--gold);animation:sa 2.2s 1.8s ease-in-out infinite}
+.h-num{position:absolute;right:3rem;bottom:2.5rem;z-index:3;text-align:right;opacity:0;animation:fu .6s 1.4s forwards}
+.h-num-n{font-family:var(--PD);font-size:3.8rem;font-style:italic;color:var(--gold);line-height:1;opacity:.28}
+.h-num-l{font-size:.57rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+#ev-ticker{background:var(--black);padding:0;overflow:hidden;border-bottom:1px solid var(--border);margin-top:72px}
+.tick-in{display:flex;align-items:stretch}
+.tick-lbl{background:var(--crimson);padding:0 2rem;display:flex;align-items:center;white-space:nowrap;font-size:.6rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--white);flex-shrink:0;gap:.6rem}
+.tick-lbl::after{content:'';width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:6px solid var(--white)}
+.tick-wrap{overflow:hidden;flex:1;padding:1rem 0}
+.tick-track{display:flex;width:max-content;animation:tickA 28s linear infinite}
+.tick-track:hover{animation-play-state:paused}
+.tick-item{display:inline-flex;align-items:center;gap:.5rem;padding:0 2.25rem;border-right:1px solid var(--border);white-space:nowrap;font-size:.72rem;color:var(--muted);cursor:pointer;transition:color .2s;text-decoration:none}
+.tick-item:hover{color:var(--gold)}
+.tick-item .td{font-family:var(--PD);font-style:italic;color:var(--gold);font-size:.78rem}
+.tick-item .tdot{color:var(--crimson);font-size:.5rem}
+.about-strip{background:var(--deep);padding:5.5rem 3rem}
+.about-strip-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:6rem;align-items:center}
+.about-strip-img{position:relative}
+.about-strip-img img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block;filter:contrast(1.04)}
+.about-strip-badge{position:absolute;bottom:-1.5rem;right:-1.5rem;background:var(--crimson);padding:1.2rem;text-align:center;min-width:100px}
+.asb-n{font-family:var(--PD);font-size:2.2rem;font-style:italic;color:var(--white);line-height:1}
+.asb-l{font-size:.5rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:.2rem}
+.about-strip-text .a-quote{font-family:var(--PD);font-size:1.35rem;font-style:italic;color:var(--gold2);line-height:1.45;border-left:2px solid var(--crimson);padding-left:1.35rem;margin:1.75rem 0}
+.about-strip-text p{color:var(--muted);font-size:.95rem;line-height:1.85;margin-bottom:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.42rem;margin-top:1.65rem}
+.chip{font-size:.56rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:.36rem .9rem;border:1px solid var(--border);color:var(--muted);transition:border-color .2s,color .2s}
+.chip:hover{border-color:var(--gold);color:var(--gold)}
+.stats{background:var(--black);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0 3rem;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:2.6rem 2rem;border-right:1px solid var(--border);text-align:center;transition:background .3s}
+.stat:last-child{border-right:none}
+.stat:hover{background:var(--card)}
+.stat-n{font-family:var(--PD);font-size:3rem;font-style:italic;color:var(--gold);line-height:1}
+.stat-l{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:.4rem}
+.ev-preview{background:var(--deep);padding:6rem 3rem;position:relative;z-index:1;overflow:hidden}
+.ev-preview-in{max-width:1240px;margin:0 auto}
+.ev-preview-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
+.ev-scroll-wrap{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;padding-bottom:1rem;margin:0 -3rem;padding-left:3rem;padding-right:3rem;cursor:grab}
+.ev-scroll-wrap:active{cursor:grabbing}
+.ev-scroll-wrap::-webkit-scrollbar{height:2px}
+.ev-scroll-wrap::-webkit-scrollbar-thumb{background:var(--gold)}
+.ev-grid{display:flex;gap:1rem;width:max-content;align-items:stretch}
+.ev-card{position:relative;overflow:hidden;background:var(--card);border:1px solid rgba(255,255,255,.06);cursor:pointer;transition:border-color .4s,transform .35s,box-shadow .4s;flex-shrink:0;width:300px;border-radius:2px;text-decoration:none;display:block;pointer-events:auto}
+.ev-card:hover{border-color:rgba(201,168,76,.55);transform:translateY(-6px) scale(1.012);box-shadow:0 24px 60px rgba(0,0,0,.7)}
+.ev-flyer{width:100%;height:400px;object-fit:cover;object-position:center top;filter:brightness(.68) saturate(.85);transition:transform .65s,filter .5s;display:block}
+.ev-card:hover .ev-flyer{transform:scale(1.06);filter:brightness(.88) saturate(1.1)}
+.ev-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,7,7,.98) 0%,rgba(7,7,7,.5) 40%,transparent 70%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
+.ev-status{font-size:.53rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem}
+.ev-status.on{color:#4ade80}
+.ev-status.on::before{content:'';width:5px;height:5px;border-radius:50%;background:#4ade80;animation:pd 1.5s ease-in-out infinite}
+.ev-status.up{color:var(--gold2)}
+.ev-status.up::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.ev-title{font-family:var(--PD);font-size:1.1rem;font-weight:400;color:var(--white);line-height:1.2;margin-bottom:.35rem}
+.ev-venue{font-size:.68rem;color:rgba(248,246,240,.55);margin-bottom:.75rem}
+.ev-cta-sm{font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:.2rem;display:inline-block}
+.home-video{background:var(--black);padding:6rem 3rem}
+.home-video-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:center}
+.yt-wrap{position:relative;aspect-ratio:16/9;background:var(--card);overflow:hidden;cursor:pointer}
+.yt-wrap img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.82)}
+.yt-play-ring{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;background:rgba(7,7,7,.35);transition:background .3s}
+.yt-wrap:hover .yt-play-ring{background:rgba(7,7,7,.25)}
+.yt-btn{width:72px;height:72px;border-radius:50%;background:rgba(201,168,76,.9);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(201,168,76,.2);transition:transform .2s}
+.yt-wrap:hover .yt-btn{transform:scale(1.1);background:var(--gold)}
+.yt-label{font-family:var(--PD);font-style:italic;font-size:1rem;color:var(--white);text-shadow:0 2px 8px rgba(0,0,0,.8)}
+.yt-sub{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(248,246,240,.5);margin-top:.25rem}
+#ytFrame{position:absolute;inset:0;width:100%;height:100%;border:none;display:none}
+.video-copy p{color:var(--muted);font-size:.95rem;line-height:1.85;margin-top:1.25rem;margin-bottom:2rem}
+.names{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2.5rem 3rem;text-align:center}
+.names-lbl{font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:1.65rem}
+.names-list{display:flex;flex-wrap:wrap;justify-content:center;gap:.85rem 2.5rem;list-style:none}
+.names-list li{font-family:var(--PD);font-size:1.05rem;font-style:italic;color:var(--white);opacity:.5;transition:opacity .2s,color .2s;cursor:default}
+.names-list li:hover{opacity:1;color:var(--gold2)}
+.cta-banner{background:var(--crimson);padding:5rem 3rem;text-align:center;position:relative;overflow:hidden}
+.cta-banner::before{content:'BOOK';font-family:var(--BN);font-size:22vw;color:rgba(255,255,255,.04);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;white-space:nowrap;line-height:1}
+.cta-banner h2{font-family:var(--PD);font-size:clamp(2rem,4vw,3.5rem);font-style:italic;font-weight:400;color:var(--white);margin-bottom:1rem;position:relative;z-index:1}
+.cta-banner p{color:rgba(255,255,255,.75);font-size:.95rem;max-width:480px;margin:0 auto 2.5rem;position:relative;z-index:1}
+.btn-white{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:var(--white);color:var(--crimson);padding:1.05rem 2.5rem;text-decoration:none;display:inline-block;transition:background .2s,transform .15s;cursor:pointer;position:relative;z-index:1}
+.btn-white:hover{background:var(--gold2);transform:translateY(-2px)}
+@media(max-width:1024px){
+  .about-strip-in,.home-video-in{grid-template-columns:1fr;gap:3.5rem}
+  .about-strip-img img{aspect-ratio:16/9}
+  .about-strip-badge{bottom:-.5rem;right:1rem}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .hero-cnt{padding:0 1.5rem}
+  .h-num{display:none}
+  .ev-preview,.home-video,.about-strip,.cta-banner{padding:5rem 1.5rem}
+  .ev-preview-hdr{flex-direction:column;align-items:flex-start}
+  .ev-scroll-wrap{margin:0 -1.5rem;padding-left:1.5rem;padding-right:1.5rem}
+}
+
+
+/* Disable custom cursor on touch devices — saves significant CPU */
+@media (hover: none) and (pointer: coarse) {
+  #cur, #cur-r { display: none !important; }
+}
+</style>
+</head>
+<body>
+<div id="cur"></div><div id="cur-r"></div>
+
+<nav id="nav">
+  <div class="nav-logo"><a href="index.html"><img src="https://static.wixstatic.com/media/27707a_07541b50ed20405086f5149a1448237e~mv2.png" alt="3Steez"/></a></div>
+  <ul class="nav-links"><li><a href="index.html" style="color:var(--black);background:var(--gold)">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="media.html">Media</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="booking.html">Booking</a></li>
+    </ul>
+  <a href="booking.html" class="nav-book">Book Now</a>
+  <button class="nav-burger" onclick="omo()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-ov" id="mo">
+  <button class="mob-x" onclick="cmo()">&#x2715;</button>
+  <a href="index.html" onclick="cmo()">Home</a><a href="events.html" onclick="cmo()">Events</a><a href="about.html" onclick="cmo()">About</a><a href="services.html" onclick="cmo()">Services</a><a href="gallery.html" onclick="cmo()">Gallery</a><a href="media.html" onclick="cmo()">Media</a><a href="blog.html" onclick="cmo()">Blog</a><a href="booking.html" onclick="cmo()">Booking</a>
+</div>
+
+<div id="ev-ticker">
+  <div class="tick-in">
+    <div class="tick-lbl">&#128197; Upcoming Events</div>
+    <div class="tick-wrap"><div class="tick-track">
+      <a href="events.html" class="tick-item"><span class="td">Every Wed</span><span class="tdot">&#9679;</span>Wayback Wednesday @ Alley Bar &mdash; Ann Arbor<span class="tdot">&#9679;</span>9PM&ndash;1AM &middot; No Cover</a>
+      <a href="events.html" class="tick-item"><span class="td">Every Fri</span><span class="tdot">&#9679;</span>A2 After Work Party @ The Rabbit Hole<span class="tdot">&#9679;</span>9PM &middot; $5 Cover</a>
+      <a href="events.html" class="tick-item"><span class="td">2nd Saturdays</span><span class="tdot">&#9679;</span>The Re:Up &mdash; Throwback R&amp;B @ LIVE Nightclub<span class="tdot">&#9679;</span>7&ndash;10PM &middot; Free w/ RSVP</a>
+      <a href="events.html" class="tick-item"><span class="td">June 27, 2026</span><span class="tdot">&#9679;</span>A2SF Top of the Park &mdash; O&amp;W Grove Stage<span class="tdot">&#9679;</span>10PM &middot; Free</a>
+      <a href="events.html" class="tick-item"><span class="td">Every Wed</span><span class="tdot">&#9679;</span>Wayback Wednesday @ Alley Bar &mdash; Ann Arbor<span class="tdot">&#9679;</span>9PM&ndash;1AM &middot; No Cover</a>
+      <a href="events.html" class="tick-item"><span class="td">Every Fri</span><span class="tdot">&#9679;</span>A2 After Work Party @ The Rabbit Hole<span class="tdot">&#9679;</span>9PM &middot; $5 Cover</a>
+      <a href="events.html" class="tick-item"><span class="td">2nd Saturdays</span><span class="tdot">&#9679;</span>The Re:Up &mdash; Throwback R&amp;B @ LIVE Nightclub<span class="tdot">&#9679;</span>7&ndash;10PM &middot; Free w/ RSVP</a>
+      <a href="events.html" class="tick-item"><span class="td">June 27, 2026</span><span class="tdot">&#9679;</span>A2SF Top of the Park &mdash; O&amp;W Grove Stage<span class="tdot">&#9679;</span>10PM &middot; Free</a>
+    </div></div>
+  </div>
+</div>
+
+<section id="hero">
+  <div class="hero-bg"><img src="https://static.wixstatic.com/media/27707a_552057f016644179b62d92a87774eb6b~mv2.jpg/v1/fill/w_2500,h_1666,al_c/27707a_552057f016644179b62d92a87774eb6b~mv2.jpg" alt="3Steez live performance" fetchpriority="high"/></div>
+  <div class="hero-ov"></div><div class="hero-ov2"></div>
+  <div class="hero-cnt">
+    <div class="h-kick"><div class="h-kick-ln"></div><span>MC &middot; DJ &middot; Producer &middot; Event Professional</span></div>
+    <h1 class="hero-h1">The <span class="it">Energy</span><br/>Your Event<br/><span class="cr">Commands.</span></h1>
+    <p class="hero-sub">Tr&eacute;s Styles doesn&rsquo;t just perform &mdash; he transforms. From corporate boardrooms to festival main stages, 3Steez delivers concert-grade entertainment with the precision elite events demand.</p>
+    <div class="hero-act">
+      <a href="booking.html" class="btn-gold">Book an Event</a>
+      <a href="about.html" class="btn-ol">Meet Tr&eacute;s</a>
+    </div>
+  </div>
+  <div class="h-scroll"><span>Scroll</span><div class="scroll-t"><div class="scroll-f"></div></div></div>
+  <div class="h-num"><div class="h-num-n">20+</div><div class="h-num-l">Years in the game</div></div>
+</section>
+
+<div class="mq"><div class="mq-t">
+  <span>Corporate Events</span><span class="dot">&#x2736;</span><span>Festival Main Stage</span><span class="dot">&#x2736;</span><span>Nightclub Residencies</span><span class="dot">&#x2736;</span><span>Brand Activations</span><span class="dot">&#x2736;</span><span>Private Affairs</span><span class="dot">&#x2736;</span><span>Music Production</span><span class="dot">&#x2736;</span><span>Live MC Hosting</span><span class="dot">&#x2736;</span><span>Event Consulting</span><span class="dot">&#x2736;</span><span>Corporate Events</span><span class="dot">&#x2736;</span><span>Festival Main Stage</span><span class="dot">&#x2736;</span><span>Nightclub Residencies</span><span class="dot">&#x2736;</span><span>Brand Activations</span><span class="dot">&#x2736;</span><span>Private Affairs</span><span class="dot">&#x2736;</span><span>Music Production</span><span class="dot">&#x2736;</span><span>Live MC Hosting</span><span class="dot">&#x2736;</span><span>Event Consulting</span><span class="dot">&#x2736;</span>
+</div></div>
+
+<section class="about-strip">
+  <div class="about-strip-in">
+    <div class="about-strip-img rvl">
+      <img src="https://static.wixstatic.com/media/27707a_de9ce9f6a4374b6399b93988df65fdda~mv2.jpg/v1/fill/w_800,h_1200,al_c,q_90,enc_avif,quality_auto/27707a_de9ce9f6a4374b6399b93988df65fdda~mv2.jpg" alt="Tr&eacute;s Styles 3Steez"/>
+      <div class="about-strip-badge"><div class="asb-n">20+</div><div class="asb-l">Yrs Experience</div></div>
+    </div>
+    <div class="about-strip-text rv">
+      <div class="stag">The Artist</div>
+      <h2 class="sh">Internationally Known.<br/><em>Locally Respected.</em></h2>
+      <blockquote class="a-quote">&ldquo;Tr&eacute;s Steez is the vibe your event is missing.&rdquo;</blockquote>
+      <p>Michigan-born MC, DJ, and music producer Tr&eacute;s Styles has spent over two decades mastering the art of commanding a room. From Detroit&rsquo;s most electric club nights to festival main stages alongside ?uestlove, Kool DJ Red Alert, and Stretch Armstrong &mdash; 3Steez brings a depth of craft no ordinary entertainer can match.</p>
+      <p>Concert-level energy. Boardroom-level professionalism. The rare combination that makes every event an experience people talk about long after it&rsquo;s over.</p>
+      <div class="chips"><span class="chip">Live MC</span><span class="chip">DJ Sets</span><span class="chip">Music Production</span><span class="chip">Corporate Events</span><span class="chip">Festivals</span><span class="chip">Event Hosting</span></div>
+      <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="about.html" class="btn-gold">Full Bio</a>
+        <a href="services.html" class="btn-ol">View Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat rv"><div class="stat-n">20+</div><div class="stat-l">Years in the Industry</div></div>
+  <div class="stat rv"><div class="stat-n">4</div><div class="stat-l">Disciplines Mastered</div></div>
+  <div class="stat rv"><div class="stat-n">100s</div><div class="stat-l">Events Delivered</div></div>
+  <div class="stat rv"><div class="stat-n">#1</div><div class="stat-l">Michigan&rsquo;s Elite MC/DJ</div></div>
+</div>
+
+<section class="ev-preview">
+  <div class="ev-preview-in">
+    <div class="ev-preview-hdr rv">
+      <div>
+        <div class="stag">On the Calendar</div>
+        <h2 class="sh" style="font-size:clamp(1.8rem,3vw,2.8rem)">Where You&rsquo;ll Find <em>3Steez</em> Next</h2>
+      </div>
+      <a href="events.html" class="btn-ol" style="padding:.7rem 1.5rem;font-size:.6rem">All Events &rarr;</a>
+    </div>
+    <div class="ev-scroll-wrap" id="evScroll">
+      <div class="ev-grid">
+        <a href="events.html" class="ev-card">
+          <div style="height:400px;overflow:hidden;position:relative"><img src="flyer-wayback.jpg" alt="Wayback Wednesday" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:brightness(.68) saturate(.85)"/></div>
+          <div class="ev-ov"><div class="ev-status on">Every Wednesday</div><div class="ev-title">Wayback Wednesday</div><div class="ev-venue">Alley Bar &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div>
+        </a>
+        <a href="events.html" class="ev-card">
+          <div style="height:400px;overflow:hidden;position:relative"><img src="flyer-afterwork.jpg" alt="A2 After Work Party" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:brightness(.68) saturate(.85)"/></div>
+          <div class="ev-ov"><div class="ev-status on">Every Friday</div><div class="ev-title">A2 After Work Party</div><div class="ev-venue">The Rabbit Hole &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div>
+        </a>
+        <a href="events.html" class="ev-card">
+          <div style="height:400px;overflow:hidden;position:relative"><img src="flyer-reup.jpg" alt="The Re:Up" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:brightness(.68) saturate(.85)"/></div>
+          <div class="ev-ov"><div class="ev-status on">2nd Saturdays</div><div class="ev-title">The Re:Up</div><div class="ev-venue">LIVE Nightclub &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div>
+        </a>
+        <a href="events.html" class="ev-card">
+          <div style="height:400px;overflow:hidden;position:relative"><img src="flyer-a2sf.jpg" alt="A2SF Top of the Park 2026" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:brightness(.68) saturate(.85)"/></div>
+          <div class="ev-ov"><div class="ev-status up">&#9679; June 27, 2026</div><div class="ev-title">A2SF Top of the Park</div><div class="ev-venue">O&amp;W Grove Stage &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="home-video">
+  <div class="home-video-in">
+    <div class="yt-wrap rv" id="ytWrap" onclick="loadYT()">
+      <img src="https://img.youtube.com/vi/185vr7cVdKY/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/185vr7cVdKY/hqdefault.jpg'" alt="3Steez Channel Trailer" id="ytThumb"/>
+      <div class="yt-play-ring" id="ytPlayRing">
+        <div class="yt-btn"><svg width="26" height="26" viewBox="0 0 24 24" fill="#070707"><polygon points="6,3 20,12 6,21"/></svg></div>
+        <div style="text-align:center"><div class="yt-label">3Steez &mdash; Channel Trailer</div><div class="yt-sub">Click to Play</div></div>
+      </div>
+      <iframe id="ytFrame" src="" title="3Steez Channel Trailer" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video-copy rv">
+      <div class="stag">Watch &amp; Listen</div>
+      <h2 class="sh">See What <em>3Steez</em><br/>Brings to Every Stage</h2>
+      <p>This is the energy your event is missing. Hit play, feel the difference &mdash; then book the experience for yourself.</p>
+      <div style="display:flex;flex-direction:column;gap:.85rem">
+        <a href="https://www.youtube.com/@3STEEZ" target="_blank" rel="noopener" class="btn-gold">Subscribe on YouTube</a>
+        <a href="media.html" class="btn-ol">Full Media Page</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="names">
+  <div class="names-lbl">Performed &amp; collaborated alongside</div>
+  <ul class="names-list">
+    <li>?uestlove</li><li>Stretch Armstrong</li><li>Kool DJ Red Alert</li><li>DJ Graffiti</li><li>Jake One</li><li>14KT</li><li>Mayer Hawthorne</li><li>DJ House Shoes</li><li>Souls of Mischief</li><li>Little Brother</li><li>Phat Kat</li><li>MC J.U.I.C.E.</li>
+  </ul>
+</div>
+
+<div class="cta-banner">
+  <h2>Ready to Elevate<br/>Your Next Event?</h2>
+  <p>Corporate galas, festival stages, nightclub residencies &mdash; 3Steez delivers at the highest level. Let&rsquo;s make it unforgettable.</p>
+  <a href="booking.html" class="btn-white">Book 3Steez Now</a>
+</div>
+
+<script>
+function loadYT(){
+  var frame=document.getElementById('ytFrame');
+  if(frame.src)return;
+  frame.src='https://www.youtube.com/embed/185vr7cVdKY?autoplay=1&rel=0&modestbranding=1';
+  frame.style.display='block';
+  document.getElementById('ytThumb').style.display='none';
+  document.getElementById('ytPlayRing').style.display='none';
+}
+(function(){
+  var el=document.getElementById('evScroll');
+  if(!el)return;
+  var d=false,sx=0,sl=0;
+  el.addEventListener('mousedown',function(e){d=true;sx=e.pageX-el.offsetLeft;sl=el.scrollLeft;});
+  el.addEventListener('mouseleave',function(){d=false;});
+  el.addEventListener('mouseup',function(){d=false;});
+  el.addEventListener('mousemove',function(e){if(!d)return;e.preventDefault();el.scrollLeft=sl-(e.pageX-el.offsetLeft-sx)*1.2;});
+})();
+window.addEventListener('scroll',function(){
+  var bg=document.querySelector('.hero-bg img');
+  if(bg)bg.style.transform='scale(1) translateY('+(window.scrollY*.18)+'px)';
+});
+</script>
+
+
+<footer>
+  <div class="ft-in">
+    <div class="ft-brand">
+      <img src="https://static.wixstatic.com/media/27707a_cdc47ea85f7245499dbf9ee9de18afd2~mv2.png" alt="3Steez"/>
+      <p class="ft-tag">Michigan&rsquo;s premier MC, DJ, and music producer &mdash; delivering elite entertainment for corporate events, festivals, nightclubs, and private affairs. Nationwide availability.</p>
+    </div>
+    <div>
+      <div class="ft-ch">Navigate</div>
+      <ul class="ft-lnks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="booking.html">Book an Event</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="ft-ch">Connect</div>
+      <ul class="ft-lnks">
+        <li><a href="https://www.instagram.com/3Steez" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.youtube.com/@3STEEZ" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.mixcloud.com/trestyles/" target="_blank" rel="noopener">Mixcloud</a></li>
+        <li><a href="https://www.facebook.com/3Steez" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.linkedin.com/in/3steez/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.3steez.com/_files/ugd/27707a_721caa73008c4117ae2fa9617cf812b6.pdf" target="_blank" rel="noopener">Download Press Kit</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span class="ft-copy">&copy; 2025 3Steez / Forekast Music, LLC &mdash; All Rights Reserved</span>
+    <div class="ft-soc">
+      <a href="https://www.instagram.com/3Steez" target="_blank" rel="noopener">IG</a>
+      <a href="https://www.youtube.com/@3STEEZ" target="_blank" rel="noopener">YT</a>
+      <a href="https://www.mixcloud.com/trestyles/" target="_blank" rel="noopener">MC</a>
+      <a href="https://www.linkedin.com/in/3steez/" target="_blank" rel="noopener">LI</a>
+    </div>
+  </div>
+</footer>
+<script>
+var _cur=document.getElementById('cur'),_curR=document.getElementById('cur-r');
+if(_cur){
+  document.addEventListener('mousemove',function(e){
+    _cur.style.left=e.clientX+'px';_cur.style.top=e.clientY+'px';
+    _curR.style.left=e.clientX+'px';_curR.style.top=e.clientY+'px';
+  });
+}
+document.querySelectorAll('a,button,.ev-card,.tc,.mi,.stat,.pl,.mc,.chip,.svc,.blog-card').forEach(function(el){
+  el.addEventListener('mouseenter',function(){document.body.classList.add('cg');});
+  el.addEventListener('mouseleave',function(){document.body.classList.remove('cg');});
+});
+var _nav=document.getElementById('nav');
+if(_nav){window.addEventListener('scroll',function(){_nav.classList.toggle('solid',window.scrollY>60);});}
+function omo(){var m=document.getElementById('mo');if(m){m.classList.add('open');document.body.style.overflow='hidden';}}
+function cmo(){var m=document.getElementById('mo');if(m){m.classList.remove('open');document.body.style.overflow='';}}
+</script>
+<script>
+// Visibility observer — safe version
+(function() {
+  var els = document.querySelectorAll('.rv, .rvl');
+  if (!els.length || !('IntersectionObserver' in window)) return;
+  els.forEach(function(el, i) {
+    el.classList.add('anim-ready');
+    el.style.transitionDelay = (i % 5) * 0.07 + 's';
+  });
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+  els.forEach(function(el) { obs.observe(el); });
+})();
+</script>
+</body>
+</html>

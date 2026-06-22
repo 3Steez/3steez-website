@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3Steez — DJ & MC One Sheet | Trés Styles</title>
+<meta name="description" content="Official one-sheet for 3Steez (Trés Styles) — DJ, MC & Event Producer. Southeast Michigan's premier DJ/MC for clubs, festivals, and corporate events.">
+<meta property="og:title" content="3Steez — DJ & MC One Sheet">
+<meta property="og:description" content="Premier DJ, MC & Event Producer. Residencies at Alley Bar, Rabbit Hole & Live. Former resident MC at The Necto — SE Michigan's largest weekly party.">
+<meta property="og:image" content="https://static.wixstatic.com/media/27707a_552057f016644179b62d92a87774eb6b~mv2.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="3Steez — DJ & MC One Sheet">
+<meta name="twitter:description" content="Premier DJ, MC & Event Producer based in Ann Arbor / Detroit Metro.">
+<meta name="twitter:image" content="https://static.wixstatic.com/media/27707a_552057f016644179b62d92a87774eb6b~mv2.jpg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500&display=swap');
+
+  :root {
+    --black:   #0A0A0A;
+    --charcoal:#141414;
+    --gold:    #C9972A;
+    --gold-lt: #E8B84B;
+    --red:     #C0281A;
+    --white:   #F5F2EC;
+    --muted:   #9A9080;
+    --rule:    #2A2318;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page-wrapper {
+    width: 850px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Top nav bar */
+  .site-nav {
+    background: #000;
+    border-bottom: 1px solid var(--rule);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .site-nav a {
+    color: var(--gold);
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .site-nav a:hover { color: var(--white); }
+
+  .site-nav .logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--white);
+    letter-spacing: 0.05em;
+  }
+
+  .site-nav .logo span { color: var(--gold); }
+
+  .nav-links { display: flex; gap: 20px; align-items: center; }
+
+  .nav-book {
+    background: var(--red) !important;
+    color: var(--white) !important;
+    padding: 5px 14px !important;
+    font-size: 10px !important;
+  }
+
+  .nav-book:hover { background: #a01f10 !important; }
+
+  @media (max-width: 880px) {
+    .page-wrapper { width: 100%; }
+    .body { grid-template-columns: 1fr !important; }
+    .side-col {
+      border-left: none !important;
+      border-top: 1px solid var(--rule);
+    }
+    .header { grid-template-columns: 1fr !important; }
+    .header-photo { min-height: 220px; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr) !important; }
+    .venues-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .nav-links .hide-mobile { display: none; }
+  }
+
+  /* ── HEADER ── */
+  .header {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: 260px;
+    border-bottom: 3px solid var(--gold);
+  }
+
+  .header-photo {
+    background: var(--charcoal);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(20%) contrast(1.1);
+  }
+
+  .header-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent 70%, var(--black));
+  }
+
+  .header-right {
+    background: var(--black);
+    padding: 32px 32px 24px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    line-height: 0.9;
+    color: var(--white);
+    letter-spacing: 0.02em;
+  }
+
+  .name span {
+    color: var(--gold);
+  }
+
+  .subname {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .tagline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--white);
+    font-style: italic;
+    line-height: 1.4;
+    border-left: 3px solid var(--red);
+    padding-left: 12px;
+    margin-top: 16px;
+  }
+
+  .services-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .service-tag {
+    background: var(--rule);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 1px;
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--gold);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stat {
+    padding: 14px 20px;
+    border-right: 1px solid rgba(0,0,0,0.2);
+    text-align: center;
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--black);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.6);
+    margin-top: 2px;
+  }
+
+  /* ── BODY ── */
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 0;
+  }
+
+  .main-col {
+    padding: 28px 28px 28px 28px;
+    border-right: 1px solid var(--rule);
+  }
+
+  .side-col {
+    padding: 28px 20px;
+    background: var(--charcoal);
+  }
+
+  /* section label */
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* BIO */
+  .bio {
+    font-size: 13.5px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #D4CEBE;
+    margin-bottom: 24px;
+  }
+
+  .bio strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  /* VENUES */
+  .venues-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+
+  .venue-chip {
+    background: var(--rule);
+    border-left: 2px solid var(--gold);
+    padding: 6px 10px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.05em;
+  }
+
+  .venue-chip .venue-city {
+    font-size: 9px;
+    color: var(--muted);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 1px;
+  }
+
+  /* NOTABLE CONNECTIONS */
+  .connections {
+    margin-bottom: 24px;
+  }
+
+  .connection-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .connection-tag {
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--muted);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+  }
+
+  .connection-tag.highlight {
+    border-color: var(--gold);
+    color: var(--gold-lt);
+  }
+
+  /* CLIENTS */
+  .clients-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .client-tag {
+    background: var(--red);
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+  }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    background: var(--rule);
+    border-left: 3px solid var(--red);
+    padding: 14px 16px;
+    margin-bottom: 20px;
+  }
+
+  .pull-quote p {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.5;
+  }
+
+  .pull-quote cite {
+    display: block;
+    margin-top: 6px;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* SIDE: NECTO HIGHLIGHT */
+  .necto-box {
+    background: var(--gold);
+    padding: 14px;
+    margin-bottom: 18px;
+  }
+
+  .necto-box .necto-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.5);
+    margin-bottom: 4px;
+  }
+
+  .necto-box .necto-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--black);
+    line-height: 1.1;
+  }
+
+  .necto-box .necto-detail {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.7);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  /* SIDE: WHAT YOU GET */
+  .offering {
+    margin-bottom: 18px;
+  }
+
+  .offering-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .offering-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+
+  .offering-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.4;
+  }
+
+  .offering-sub {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--muted);
+    display: block;
+  }
+
+  /* CONTACT FOOTER */
+  .footer {
+    background: var(--charcoal);
+    border-top: 2px solid var(--gold);
+    padding: 18px 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .contact-block {}
+
+  .contact-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 3px;
+  }
+
+  .contact-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .footer-logo {
+    text-align: center;
+  }
+
+  .footer-logo .logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-logo .logo-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .socials {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-end;
+  }
+
+  .social-link {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.05em;
+  }
+
+  .social-link span {
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  /* Availability badge */
+  .avail-badge {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    margin-bottom: 14px;
+  }
+
+  @media print {
+    @page {
+      size: Letter portrait;
+      margin: 0;
+    }
+    body {
+      width: 1050px;
+      transform: scale(0.78);
+      transform-origin: top left;
+    }
+    .header { min-height: 200px; }
+    .main-col { padding: 18px 20px; }
+    .side-col { padding: 18px 14px; }
+    .bio { font-size: 11.5px; line-height: 1.55; margin-bottom: 14px; }
+    .stat { padding: 10px 12px; }
+    .stat-num { font-size: 24px; }
+    .section-label { margin-bottom: 6px; padding-bottom: 4px; }
+    .venues-grid { gap: 4px; margin-bottom: 14px; }
+    .venue-chip { padding: 4px 8px; font-size: 10px; }
+    .connections { margin-bottom: 14px; }
+    .connection-tag { font-size: 9px; padding: 2px 6px; }
+    .clients-row { gap: 4px; }
+    .client-tag { font-size: 9px; padding: 2px 8px; }
+    .pull-quote { padding: 10px 12px; margin-bottom: 14px; }
+    .pull-quote p { font-size: 13px; }
+    .necto-box { padding: 10px; margin-bottom: 10px; }
+    .necto-box .necto-title { font-size: 18px; }
+    .necto-box .necto-detail { font-size: 10px; }
+    .offering-item { margin-bottom: 6px; }
+    .offering-text { font-size: 10.5px; }
+    .footer { padding: 12px 20px; }
+    .avail-badge { margin-bottom: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SITE NAV -->
+<nav class="site-nav">
+  <a href="https://www.3steez.com" class="logo">3<span>STEEZ</span></a>
+  <div class="nav-links">
+    <a href="https://www.3steez.com" class="hide-mobile">← Back to Site</a>
+    <a href="https://www.3steez.com/about.html" class="hide-mobile">About</a>
+    <a href="https://www.3steez.com/services.html" class="hide-mobile">Services</a>
+    <a href="https://www.3steez.com/booking.html" class="nav-book">Book Now</a>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-photo">
+    <!-- Replace src with your actual high-res performance photo -->
+    <img src="https://static.wixstatic.com/media/27707a_552057f016644179b62d92a87774eb6b~mv2.jpg" alt="3Steez performing" />
+  </div>
+  <div class="header-right">
+    <div>
+      <div class="eyebrow">Ann Arbor · Detroit Metro · Available Now</div>
+      <div class="name">3<span>STEEZ</span></div>
+      <div class="subname">Trés Styles &nbsp;·&nbsp; DJ &amp; MC</div>
+      <div class="tagline">"The DJ/MC combo that turns any room into the livest night of the year."</div>
+    </div>
+    <div class="services-row">
+      <span class="service-tag">DJ Sets</span>
+      <span class="service-tag">Live MC / Host</span>
+      <span class="service-tag">Club Nights</span>
+      <span class="service-tag">Festivals</span>
+      <span class="service-tag">Corporate Events</span>
+      <span class="service-tag">R&amp;B · Hip-Hop · Soul</span>
+    </div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-num">750–1,200</div>
+    <div class="stat-label">Necto Draw · Lines Down the Block</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">3× Nom.</div>
+    <div class="stat-label">Best MC · Best Nightclub · Best DJ</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">11K+</div>
+    <div class="stat-label">Combined Social Reach</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">5</div>
+    <div class="stat-label">Active Platforms</div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="body">
+
+  <!-- MAIN COLUMN -->
+  <div class="main-col">
+
+    <div class="section-label">About</div>
+    <p class="bio">
+      <strong>3Steez (Trés Styles)</strong> is a Southeast Michigan DJ, MC, and event producer with a decade-plus track record of commanding rooms from 150 to 1,200 people. For <strong>6 years</strong> as the resident MC/Host of <strong>Frequency Saturdays at The Necto</strong> — alongside resident DJ Skoob E — Trés helped build and curate what became the largest weekly party in Southeast Michigan, drawing <strong>750 to 1,200 people every Saturday, with lines down the block on packed nights.</strong> He played a key role in reshaping the night into a premier ladies' night and driving the event's comeback post-Covid. During that run, The Necto was nominated for <strong>Best Nightclub in Washtenaw County three years in a row</strong>, DJ Skoob E won <strong>Best DJ three consecutive years</strong>, and Trés earned a <strong>Best MC nomination each year</strong> as the event's only resident MC.
+    </p>
+    <p class="bio" style="margin-top: 8px;">
+      Now active across multiple Detroit-area rooms, Trés currently holds residencies at <strong>Alley Bar (Wednesdays), Rabbit Hole (Fridays)</strong>, and a monthly at <strong>Live</strong> — spinning R&amp;B, Hip-Hop, and Soul sets that read the crowd and keep the floor locked from open to close.
+    </p>
+
+    <div class="pull-quote">
+      <p>"Tre Steez is the vibe your event is missing."</p>
+      <cite>— 3Steez.com</cite>
+    </div>
+
+    <div class="section-label">Venues Played</div>
+    <div class="venues-grid">
+      <div class="venue-chip">The Necto<span class="venue-city">Ann Arbor · 6yr Residency</span></div>
+      <div class="venue-chip">The Blind Pig<span class="venue-city">Ann Arbor</span></div>
+      <div class="venue-chip">Alley Bar ★<span class="venue-city">Ann Arbor · Wed Residency</span></div>
+      <div class="venue-chip">Rabbit Hole ★<span class="venue-city">Ann Arbor · Fri Residency</span></div>
+      <div class="venue-chip">Live ★<span class="venue-city">Ann Arbor · Monthly</span></div>
+      <div class="venue-chip">Spotlite<span class="venue-city">Detroit</span></div>
+      <div class="venue-chip">St. Andrews Hall<span class="venue-city">Detroit</span></div>
+      <div class="venue-chip">Speakerbox<span class="venue-city">Detroit</span></div>
+      <div class="venue-chip">DEMF / Movement<span class="venue-city">Detroit · Festival</span></div>
+      <div class="venue-chip">Ann Arbor Club<span class="venue-city">Ann Arbor · Private</span></div>
+    </div>
+    <p style="font-size:9px; color: var(--muted); margin-top: 4px; margin-bottom: 20px; font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.08em;">★ Current Residency</p>
+
+    <div class="section-label" style="margin-top:4px;">Notable Connections &amp; Shared Stages</div>
+    <div class="connections">
+      <div class="connection-list">
+        <span class="connection-tag highlight">?uestlove</span>
+        <span class="connection-tag highlight">Mayer Hawthorne</span>
+        <span class="connection-tag highlight">Little Brother</span>
+        <span class="connection-tag highlight">Souls of Mischief</span>
+        <span class="connection.tag highlight">Jake One</span>
+        <span class="connection-tag highlight">Phat Kat</span>
+        <span class="connection-tag highlight">DJ House Shoes</span>
+        <span class="connection-tag highlight">Kool DJ Red Alert</span>
+        <span class="connection-tag highlight">Stretch Armstrong</span>
+        <span class="connection-tag highlight">MC J.U.I.C.E.</span>
+        <span class="connection-tag highlight">14KT</span>
+        <span class="connection-tag">Detroit Pistons Sports Summit</span>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:4px;">Brand Clients</div>
+    <div class="clients-row">
+      <span class="client-tag">Reebok</span>
+      <span class="client-tag">Adidas</span>
+      <span class="client-tag">Red Bull</span>
+      <span class="client-tag">Michigan Tech Week</span>
+      <span class="client-tag">AA Smiles</span>
+      <span class="client-tag">Necto Nightclub</span>
+    </div>
+
+  </div>
+
+  <!-- SIDE COLUMN -->
+  <div class="side-col">
+
+    <div class="avail-badge">Now Booking Detroit</div>
+
+    <div class="necto-box">
+      <div class="necto-label">Former Residency · 6 Years</div>
+      <div class="necto-title">Frequency Saturdays<br>@ The Necto</div>
+      <div class="necto-detail">SE Michigan's Largest Weekly Party<br>750–1,200 cap · Lines down the block<br>Nom: Best MC · 3 Years Running<br>Nom: Best Nightclub · 3 Years Running</div>
+    </div>
+
+    <div class="necto-box" style="background: var(--red); margin-top: -10px; margin-bottom: 18px;">
+      <div class="necto-label" style="color: rgba(255,255,255,0.6);">Current Residencies</div>
+      <div class="necto-title" style="color: var(--white); font-size: 15px; line-height:1.5;">Alley Bar — Wednesdays<br>Rabbit Hole — Fridays<br>Live — Monthly</div>
+    </div>
+
+    <div class="section-label">What You Get</div>
+    <div class="offering">
+      <div class="offering-item">
+        <div class="offering-dot"></div>
+        <div class="offering-text">High-energy DJ sets
+          <span class="offering-sub">R&amp;B, Hip-Hop, Soul, genre-fluid</span>
+        </div>
+      </div>
+      <div class="offering-item">
+        <div class="offering-dot"></div>
+        <div class="offering-text">Live MC/host presence
+          <span class="offering-sub">Crowd engagement, hype, transitions</span>
+        </div>
+      </div>
+      <div class="offering-item">
+        <div class="offering-dot"></div>
+        <div class="offering-text">Event production
+          <span class="offering-sub">Clubs, festivals, corporate</span>
+        </div>
+      </div>
+      <div class="offering-item">
+        <div class="offering-dot"></div>
+        <div class="offering-text">Music production
+          <span class="offering-sub">Custom beats, brand audio, themes</span>
+        </div>
+      </div>
+      <div class="offering-item">
+        <div class="offering-dot"></div>
+        <div class="offering-text">Proven draw
+          <span class="offering-sub">150–1,200 depending on room size</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">Listen / Watch / Follow</div>
+    <div style="margin-bottom: 8px;">
+      <div class="contact-label">🎬 Sizzle Reel</div>
+      <div class="contact-value" style="font-size:11px;"><a href="https://www.dropbox.com/scl/fi/eadhskjirbnfwzeaqz18b/3Steez-Sizzle-Reel.mp4?rlkey=4xakndjkuiw8abkwn2qi2wo4o&st=2pw5jklh&dl=0" style="color: var(--gold-lt); text-decoration: none; font-weight: 700;">▶ Watch Now</a></div>
+    </div>
+    <div style="margin-bottom: 8px;">
+      <div class="contact-label">📁 Full Press Kit</div>
+      <div class="contact-value" style="font-size:11px;"><a href="https://www.dropbox.com/scl/fo/z0hic5lvgf6txc6iqv3mp/AJ5bIgt4a8tB9_kNb82SgOM?rlkey=rsac0mml1rttpr0vslqlry48x&st=30gs24sp&dl=0" style="color: var(--gold-lt); text-decoration: none; font-weight: 700;">View EPK</a></div>
+    </div>
+    <div style="margin-bottom: 6px;">
+      <div class="contact-label">Mixcloud Mixes</div>
+      <div class="contact-value" style="font-size:11px;"><a href="https://www.mixcloud.com/trestyles/" style="color: var(--white); text-decoration: none;">mixcloud.com/trestyles</a></div>
+    </div>
+    <div style="margin-bottom: 6px;">
+      <div class="contact-label">YouTube · 2,800 subs</div>
+      <div class="contact-value" style="font-size:11px;"><a href="https://www.youtube.com/@3STEEZ" style="color: var(--white); text-decoration: none;">youtube.com/@3STEEZ</a></div>
+    </div>
+    <div style="margin-bottom: 6px;">
+      <div class="contact-label">Instagram · 5,122</div>
+      <div class="contact-value" style="font-size:11px;"><a href="http://instagram.com/3Steez" style="color: var(--white); text-decoration: none;">@3Steez</a> &nbsp;+&nbsp; <a href="http://instagram.com/getpropsoverhere" style="color: var(--white); text-decoration: none;">@getpropsoverhere</a></div>
+    </div>
+    <div>
+      <div class="contact-label">Website</div>
+      <div class="contact-value" style="font-size:11px;"><a href="https://www.3steez.com" style="color: var(--white); text-decoration: none;">3Steez.com</a></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div>
+    <div class="contact-block">
+      <div class="contact-label">Phone</div>
+      <div class="contact-value">734-262-0755</div>
+    </div>
+    <div class="contact-block" style="margin-top:10px;">
+      <div class="contact-label">Email</div>
+      <div class="contact-value" style="font-size:11px;"><a href="mailto:tres@ylccreative.com" style="color:var(--white); text-decoration:none;">tres@ylccreative.com</a></div>
+    </div>
+  </div>
+
+  <div class="footer-logo">
+    <div class="logo-text">3STEEZ</div>
+    <div class="logo-sub">Trés Styles · DJ &amp; MC</div>
+    <div class="logo-sub" style="margin-top:4px; color: var(--gold); font-size:9px;">Ann Arbor · Detroit Metro</div>
+  </div>
+
+  <div class="socials">
+    <div class="social-link"><span>Instagram</span> <a href="http://instagram.com/3Steez" style="color:var(--white); text-decoration:none;">@3Steez</a> &nbsp;·&nbsp; 5,122</div>
+    <div class="social-link"><span>Instagram</span> <a href="http://instagram.com/getpropsoverhere" style="color:var(--white); text-decoration:none;">@getpropsoverhere</a> &nbsp;·&nbsp; 635</div>
+    <div class="social-link"><span>YouTube</span> <a href="https://www.youtube.com/@3STEEZ" style="color:var(--white); text-decoration:none;">@3STEEZ</a> &nbsp;·&nbsp; 2,800</div>
+    <div class="social-link"><span>Facebook</span> <a href="http://www.facebook.com/3Steez" style="color:var(--white); text-decoration:none;">3Steez</a> &nbsp;·&nbsp; 2,000+</div>
+    <div class="social-link"><span>TikTok</span> @3Steez &nbsp;·&nbsp; 647 <span style="color:var(--gold);font-size:9px;">(since Feb '25)</span></div>
+    <div class="social-link"><span>Snapchat</span> ~1,000</div>
+  </div>
+</div>
+
+</div><!-- end page-wrapper -->
+
+</body>
+</html>
