@@ -153,6 +153,8 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
   .ev-reel-col{min-width:unset!important;width:100%!important}
 }
 
+.ev-reel-wrap{position:absolute;inset:0}
+.ev-reel-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
 </style>
 </head>
 <body>
@@ -286,12 +288,10 @@ function showReel(){
   var ev=EVENTS[curIdx];
   if(!ev.reel)return;
   var wrap=document.getElementById('evReelWrap');
-  var url=ev.reel.replace(/\/$/,'');
-    // Convert Instagram reel URL to embed URL
-    if(url.indexOf('instagram.com/reel')>-1){
-      url=url.replace('instagram.com/reel','instagram.com/p').replace(/\/?$/,'/embed/');
-    }
-  wrap.innerHTML='<div class="ev-reel-wrap"><iframe src="'+url+'/embed/" scrolling="no" allowtransparency="true" allowfullscreen="true" allow="autoplay"></iframe></div>';
+  var url=ev.reel;
+  var reelId=url.match(/reel\/([A-Za-z0-9_-]+)/);
+  var embedUrl=reelId?'https://www.instagram.com/reel/'+reelId[1]+'/embed/':url;
+  wrap.innerHTML='<div class="ev-reel-wrap"><iframe src="'+embedUrl+'" scrolling="no" allowtransparency="true" allowfullscreen="true" allow="autoplay;encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none"></iframe></div>';
   wrap.style.display='block';
   document.getElementById('evMFlyer').style.display='none';
 }
