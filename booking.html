@@ -24,6 +24,7 @@
   --PD:'Playfair Display',Georgia,serif;--BN:'Bebas Neue',sans-serif;--IN:'Inter',sans-serif;
 }
 html{scroll-behavior:smooth}
+a{color:inherit;text-decoration:none}
 body{background:var(--black);color:var(--white);font-family:var(--IN);font-weight:300;line-height:1.7;overflow-x:hidden}
 #cur{position:fixed;width:9px;height:9px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .18s,height .18s;opacity:0}
 #cur-r{position:fixed;width:34px;height:34px;border:1px solid rgba(201,168,76,.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .32s cubic-bezier(.25,.46,.45,.94),height .32s;opacity:0}
@@ -111,6 +112,22 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 .bk-info-title{font-family:var(--PD);font-size:1rem;font-style:italic;color:var(--white);margin-bottom:.5rem}
 .bk-info-text{font-size:.85rem;color:var(--muted);line-height:1.7}
 @media(max-width:768px){.form-grid{grid-template-columns:1fr}.bk-info-in{grid-template-columns:1fr}}
+
+
+/* ── OPTION C: Light content sections ── */
+.light-section{background:#FAFAF8 !important}
+.light-section h1,.light-section h2,.light-section h3,.light-section .sh{color:#0a0a0a !important}
+.light-section .sh em{color:#9a7a2e !important}
+.light-section .sh .cr{color:#8B1A1A !important}
+.light-section p,.light-section li,.light-section .stag{color:#444 !important}
+.light-section .stag{color:#9a7a2e !important;border-left-color:#9a7a2e !important}
+.light-section .muted{color:#666 !important}
+.light-section .btn-gold{background:var(--gold);color:#0a0a0a}
+.light-section .btn-ol{border-color:var(--gold);color:#0a0a0a}
+.light-section .btn-ol:hover{background:var(--gold);color:#0a0a0a}
+.light-section input,.light-section textarea,.light-section select{background:#fff !important;color:#0a0a0a !important;border-color:#ddd !important}
+.light-section label{color:#333 !important}
+.light-section .section-divider{background:#ddd !important}
 
 </style>
 </head>

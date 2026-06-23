@@ -24,6 +24,7 @@
   --PD:'Playfair Display',Georgia,serif;--BN:'Bebas Neue',sans-serif;--IN:'Inter',sans-serif;
 }
 html{scroll-behavior:smooth}
+a{color:inherit;text-decoration:none}
 body{background:var(--black);color:var(--white);font-family:var(--IN);font-weight:300;line-height:1.7;overflow-x:hidden}
 #cur{position:fixed;width:9px;height:9px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .18s,height .18s;opacity:0}
 #cur-r{position:fixed;width:34px;height:34px;border:1px solid rgba(201,168,76,.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .32s cubic-bezier(.25,.46,.45,.94),height .32s;opacity:0}
@@ -129,6 +130,22 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
   .ab-hero-left{padding:5rem 2rem}
 }
 
+
+/* ── OPTION C: Light content sections ── */
+.light-section{background:#FAFAF8 !important}
+.light-section h1,.light-section h2,.light-section h3,.light-section .sh{color:#0a0a0a !important}
+.light-section .sh em{color:#9a7a2e !important}
+.light-section .sh .cr{color:#8B1A1A !important}
+.light-section p,.light-section li,.light-section .stag{color:#444 !important}
+.light-section .stag{color:#9a7a2e !important;border-left-color:#9a7a2e !important}
+.light-section .muted{color:#666 !important}
+.light-section .btn-gold{background:var(--gold);color:#0a0a0a}
+.light-section .btn-ol{border-color:var(--gold);color:#0a0a0a}
+.light-section .btn-ol:hover{background:var(--gold);color:#0a0a0a}
+.light-section input,.light-section textarea,.light-section select{background:#fff !important;color:#0a0a0a !important;border-color:#ddd !important}
+.light-section label{color:#333 !important}
+.light-section .section-divider{background:#ddd !important}
+
 </style>
 </head>
 <body>
@@ -176,8 +193,8 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
     <p class="rv">He&rsquo;s not just a DJ who plays records or an MC who talks between songs. He&rsquo;s an event architect &mdash; someone who understands the arc of a night and executes it with precision. Whether he&rsquo;s spinning R&amp;B, Hip-Hop, and Soul at a nightclub residency or commanding a corporate stage in front of 500 executives, 3Steez brings the same concert-level energy and boardroom-level professionalism.</p>
 
     <div class="ab-necto rv">
-      <div class="ab-necto-title">Frequency Saturdays @ The Necto &mdash; 6 Year Residency</div>
-      <p>For <strong>6 years</strong> as the resident MC/Host of <strong>Frequency Saturdays at The Necto</strong> alongside resident DJ Skoob E, Tr&eacute;s helped build and curate what became the <strong>largest weekly party in Southeast Michigan</strong>, drawing 750 to 1,200 people every Saturday.</p>
+      <div class="ab-necto-title">Frequency Saturdays @ The Necto &mdash; 4 Year Residency</div>
+      <p>For <strong>4 years</strong> as the resident MC/Host of <strong>Frequency Saturdays at The Necto</strong> alongside resident DJ Skoob E (the main resident DJ), Tr&eacute;s helped build and curate what became the <strong>largest weekly party in Southeast Michigan</strong>, drawing 750 to 1,200 people every Saturday.</p>
       <p>During that run, The Necto was nominated for <strong>Best Nightclub three years in a row</strong>, DJ Skoob E won <strong>Best DJ three consecutive years</strong>, and Tr&eacute;s earned a <strong>Best MC nomination each year</strong> as the event&rsquo;s only resident MC.</p>
     </div>
 
@@ -191,7 +208,7 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
   </div>
 </section>
 
-<section class="ab-testimonials">
+<section class="ab-testimonials light-section">
   <div class="ab-test-in">
     <div class="stag rv">Social Proof</div>
     <h2 class="sh rv">What They&rsquo;re <em>Saying</em></h2>

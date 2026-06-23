@@ -73,7 +73,7 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 .rvl.anim-ready{opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease}
 .rv.anim-ready.vis,.rvl.anim-ready.vis{opacity:1!important;transform:none!important}
 .mq{background:var(--crimson);padding:.72rem 0;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
-.mq-t{display:flex;width:max-content;animation:mqa 20s linear infinite}
+.mq-t{display:flex;flex-wrap:wrap;justify-content:center;width:100%;animation:none}
 .mq-t span{font-family:var(--BN);font-size:.95rem;letter-spacing:.18em;text-transform:uppercase;color:var(--white);padding:0 2.25rem;white-space:nowrap;opacity:.92}
 .mq-t .dot{color:var(--gold);padding:0;font-size:.8rem}
 @keyframes mqa{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -197,6 +197,22 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
   .ev-preview-hdr{flex-direction:column;align-items:flex-start}
   .ev-scroll-wrap{margin:0 -1.5rem;padding-left:1.5rem;padding-right:1.5rem}
 }
+
+
+/* ── OPTION C: Light content sections ── */
+.light-section{background:#FAFAF8 !important}
+.light-section h1,.light-section h2,.light-section h3,.light-section .sh{color:#0a0a0a !important}
+.light-section .sh em{color:#9a7a2e !important}
+.light-section .sh .cr{color:#8B1A1A !important}
+.light-section p,.light-section li,.light-section .stag{color:#444 !important}
+.light-section .stag{color:#9a7a2e !important;border-left-color:#9a7a2e !important}
+.light-section .muted{color:#666 !important}
+.light-section .btn-gold{background:var(--gold);color:#0a0a0a}
+.light-section .btn-ol{border-color:var(--gold);color:#0a0a0a}
+.light-section .btn-ol:hover{background:var(--gold);color:#0a0a0a}
+.light-section input,.light-section textarea,.light-section select{background:#fff !important;color:#0a0a0a !important;border-color:#ddd !important}
+.light-section label{color:#333 !important}
+.light-section .section-divider{background:#ddd !important}
 
 </style>
 </head>
@@ -352,7 +368,7 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 <script>
 function loadYT(){
   var f=document.getElementById('ytFrame');
-  if(!f||f.src)return;
+  if(!f||f.getAttribute('src'))return;
   f.src='https://www.youtube.com/embed/185vr7cVdKY?autoplay=1&rel=0&modestbranding=1';
   f.style.display='block';
   document.getElementById('ytThumb').style.display='none';

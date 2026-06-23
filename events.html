@@ -24,6 +24,7 @@
   --PD:'Playfair Display',Georgia,serif;--BN:'Bebas Neue',sans-serif;--IN:'Inter',sans-serif;
 }
 html{scroll-behavior:smooth}
+a{color:inherit;text-decoration:none}
 body{background:var(--black);color:var(--white);font-family:var(--IN);font-weight:300;line-height:1.7;overflow-x:hidden}
 #cur{position:fixed;width:9px;height:9px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .18s,height .18s;opacity:0}
 #cur-r{position:fixed;width:34px;height:34px;border:1px solid rgba(201,168,76,.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .32s cubic-bezier(.25,.46,.45,.94),height .32s;opacity:0}
@@ -108,8 +109,8 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 /* MODAL */
 .ev-modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:800;align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(6px)}
 .ev-modal-bg.open{display:flex}
-.ev-modal{background:var(--deep);border:1px solid var(--border);width:100%;max-width:900px;max-height:90vh;overflow-y:auto;position:relative;display:grid;grid-template-columns:1fr 1fr}
-.ev-modal-left{position:relative;min-height:400px}
+.ev-modal{background:var(--deep);border:1px solid var(--border);width:100%;max-width:960px;max-height:90vh;overflow-y:auto;position:relative;display:grid;grid-template-columns:1fr 1fr}
+.ev-modal-left{position:relative;min-height:520px}
 .ev-modal-left img{width:100%;height:100%;object-fit:cover;display:block}
 .ev-modal-right{padding:2.5rem}
 .ev-modal-close{position:absolute;top:1rem;right:1rem;background:rgba(7,7,7,.8);border:1px solid var(--border);color:var(--white);font-size:1rem;cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;z-index:10;border-radius:2px}
@@ -125,6 +126,22 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 .ev-reel-wrap{position:relative;aspect-ratio:9/16;background:#000;overflow:hidden}
 .ev-reel-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
 @media(max-width:700px){.ev-modal{grid-template-columns:1fr}}
+
+
+/* ── OPTION C: Light content sections ── */
+.light-section{background:#FAFAF8 !important}
+.light-section h1,.light-section h2,.light-section h3,.light-section .sh{color:#0a0a0a !important}
+.light-section .sh em{color:#9a7a2e !important}
+.light-section .sh .cr{color:#8B1A1A !important}
+.light-section p,.light-section li,.light-section .stag{color:#444 !important}
+.light-section .stag{color:#9a7a2e !important;border-left-color:#9a7a2e !important}
+.light-section .muted{color:#666 !important}
+.light-section .btn-gold{background:var(--gold);color:#0a0a0a}
+.light-section .btn-ol{border-color:var(--gold);color:#0a0a0a}
+.light-section .btn-ol:hover{background:var(--gold);color:#0a0a0a}
+.light-section input,.light-section textarea,.light-section select{background:#fff !important;color:#0a0a0a !important;border-color:#ddd !important}
+.light-section label{color:#333 !important}
+.light-section .section-divider{background:#ddd !important}
 
 </style>
 </head>
@@ -260,6 +277,10 @@ function showReel(){
   if(!ev.reel)return;
   var wrap=document.getElementById('evReelWrap');
   var url=ev.reel.replace(/\/$/,'');
+    // Convert Instagram reel URL to embed URL
+    if(url.indexOf('instagram.com/reel')>-1){
+      url=url.replace('instagram.com/reel','instagram.com/p').replace(/\/?$/,'/embed/');
+    }
   wrap.innerHTML='<div class="ev-reel-wrap"><iframe src="'+url+'/embed/" scrolling="no" allowtransparency="true" allowfullscreen="true" allow="autoplay"></iframe></div>';
   wrap.style.display='block';
   document.getElementById('evMFlyer').style.display='none';
