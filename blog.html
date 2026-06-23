@@ -3,17 +3,31 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>3Steez Blog | Music, Events & Industry Insights</title>
-<meta name="description" content="Thoughts on music, events, culture, and the craft of commanding a room from Michigan's premier MC and DJ, Trés Styles."/>
-<meta name="keywords" content="3Steez blog, DJ insights, event entertainment tips, Michigan music scene, DJ MC blog"/>
-<meta property="og:title" content="3Steez Blog | Music, Events & Industry Insights"/>
-<meta property="og:description" content="Thoughts on music, events, culture, and the craft of commanding a room from Michigan's premier MC and DJ, Trés Styles."/>
+<title>3Steez Blog | Insights on Music, Events & the Entertainment Industry</title>
+<meta name="description" content="Original thoughts from Trés Styles on DJ craft, live events, corporate entertainment, Detroit music culture, and the business of creativity. Updated via LinkedIn."/>
+<meta name="keywords" content="DJ blog Michigan, entertainment industry insights, music producer thoughts, event DJ advice, 3Steez blog, Tres Styles LinkedIn"/>
+<meta property="og:title" content="3Steez Blog | Insights on Music, Events & the Entertainment Industry"/>
+<meta property="og:description" content="Original thoughts from Trés Styles on DJ craft, live events, corporate entertainment, Detroit music culture, and the business of creativity. Updated via LinkedIn."/>
 <meta property="og:image" content="https://static.wixstatic.com/media/27707a_552057f016644179b62d92a87774eb6b~mv2.jpg"/>
 <meta property="og:type" content="website"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
+/* Fix clicks on all browsers */
+a,button,[onclick],label,select,input,textarea{pointer-events:auto!important}
+/* Cursor hidden until mousemove */
+#cur,#cur-r{opacity:0;transition:opacity .3s}
+/* Sections visible by default - JS enhances */
+.rv,.rvl{opacity:1!important;transform:none!important}
+.rv.anim-ready{opacity:0;transform:translateY(28px);transition:opacity .6s,transform .6s}
+.rvl.anim-ready{opacity:0;transform:translateX(-28px);transition:opacity .6s,transform .6s}
+.rv.anim-ready.vis,.rvl.anim-ready.vis{opacity:1!important;transform:none!important}
+/* Stop marquee */
+.mq-t{animation:none!important}
+/* Disable cursor on touch */
+@media(hover:none) and (pointer:coarse){#cur,#cur-r{display:none!important}}
+
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -24,10 +38,9 @@
   --PD:'Playfair Display',Georgia,serif;--BN:'Bebas Neue',sans-serif;--IN:'Inter',sans-serif;
 }
 html{scroll-behavior:smooth}
-a{color:inherit;text-decoration:none}
 body{background:var(--black);color:var(--white);font-family:var(--IN);font-weight:300;line-height:1.7;overflow-x:hidden}
-#cur{position:fixed;width:9px;height:9px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .18s,height .18s;opacity:0}
-#cur-r{position:fixed;width:34px;height:34px;border:1px solid rgba(201,168,76,.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .32s cubic-bezier(.25,.46,.45,.94),height .32s;opacity:0}
+#cur{position:fixed;width:9px;height:9px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .18s,height .18s}
+#cur-r{position:fixed;width:34px;height:34px;border:1px solid rgba(201,168,76,.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .32s cubic-bezier(.25,.46,.45,.94),height .32s}
 .cg #cur{width:16px;height:16px}.cg #cur-r{width:52px;height:52px}
 #nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.5rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:background .35s,padding .35s}
 #nav.solid{background:rgba(7,7,7,.97);backdrop-filter:blur(14px);padding:1rem 3rem;border-bottom:1px solid var(--border)}
@@ -35,15 +48,15 @@ body{background:var(--black);color:var(--white);font-family:var(--IN);font-weigh
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{font-size:.63rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s,background .2s,padding .2s;padding:.28rem .6rem;border-radius:2px}
 .nav-links a:hover{color:var(--black);background:var(--gold)}
-.nav-book{font-size:.63rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;background:transparent;color:var(--gold);border:1px solid var(--gold);padding:.55rem 1.35rem;text-decoration:none;transition:background .2s,color .2s;cursor:pointer;white-space:nowrap}
+.nav-book{font-size:.63rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;background:transparent;color:var(--gold);border:1px solid var(--gold);padding:.55rem 1.35rem;text-decoration:none;transition:background .2s,color .2s;cursor:none;white-space:nowrap}
 .nav-book:hover{background:var(--gold);color:var(--black)}
-.nav-burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
+.nav-burger{display:none;background:none;border:none;cursor:none;flex-direction:column;gap:5px;padding:4px}
 .nav-burger span{display:block;width:24px;height:1.5px;background:var(--white);transition:.3s}
 .mob-ov{display:none;position:fixed;inset:0;background:rgba(7,7,7,.97);z-index:600;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem}
 .mob-ov.open{display:flex}
 .mob-ov a{font-family:var(--PD);font-size:2.2rem;font-style:italic;color:var(--white);text-decoration:none;opacity:.8;transition:opacity .2s,color .2s}
 .mob-ov a:hover{opacity:1;color:var(--gold2)}
-.mob-x{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;opacity:.6}
+.mob-x{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:none;opacity:.6}
 section{padding:7rem 3rem}
 .stag{display:inline-flex;align-items:center;gap:.7rem;font-size:.6rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
 .stag::before{content:'';width:30px;height:1px;background:var(--gold)}
@@ -51,9 +64,9 @@ h1.sh,h2.sh{font-family:var(--PD);font-size:clamp(2.5rem,4.5vw,4.1rem);font-weig
 h1.sh em,h2.sh em{font-style:italic;color:var(--gold2)}
 h1.sh .cr,h2.sh .cr{color:var(--crimson2)}
 .lead{color:var(--muted);font-size:.97rem;line-height:1.85;max-width:560px}
-.btn-gold{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:var(--gold);color:var(--black);padding:1.05rem 2.4rem;border:none;text-decoration:none;display:inline-block;transition:background .2s,transform .15s;cursor:pointer}
+.btn-gold{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:var(--gold);color:var(--black);padding:1.05rem 2.4rem;border:none;text-decoration:none;display:inline-block;transition:background .2s,transform .15s}
 .btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
-.btn-ol{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.25);padding:1.05rem 2.4rem;text-decoration:none;display:inline-block;transition:border-color .2s,color .2s;cursor:pointer}
+.btn-ol{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.25);padding:1.05rem 2.4rem;text-decoration:none;display:inline-block;transition:border-color .2s,color .2s}
 .btn-ol:hover{border-color:var(--gold);color:var(--gold)}
 .gd{height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);max-width:180px;margin:1.75rem auto}
 footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3rem 2.5rem}
@@ -69,10 +82,9 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 .ft-soc{display:flex;gap:1.4rem}
 .ft-soc a{font-size:.57rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
 .ft-soc a:hover{color:var(--gold)}
-.rv,.rvl{opacity:1;transform:none}
-.rv.anim-ready{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
-.rvl.anim-ready{opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease}
-.rv.anim-ready.vis,.rvl.anim-ready.vis{opacity:1!important;transform:none!important}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.rvl{opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease}
+.rv.vis,.rvl.vis{opacity:1;transform:none}
 .mq{background:var(--crimson);padding:.72rem 0;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
 .mq-t{display:flex;width:max-content;animation:mqa 20s linear infinite}
 .mq-t span{font-family:var(--BN);font-size:.95rem;letter-spacing:.18em;text-transform:uppercase;color:var(--white);padding:0 2.25rem;white-space:nowrap;opacity:.92}
@@ -87,35 +99,125 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 
 
-.blog-hero{background:var(--deep);padding:8rem 3rem 4rem;text-align:center;border-bottom:1px solid var(--border)}
-.blog-grid{max-width:1100px;margin:0 auto;padding:5rem 3rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.blog-card{background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color .25s,transform .25s;cursor:pointer}
-.blog-card:hover{border-color:rgba(201,168,76,.4);transform:translateY(-4px)}
-.blog-card-title{font-family:var(--PD);font-size:1.1rem;font-style:italic;color:var(--white);line-height:1.4;margin-bottom:.75rem}
-.blog-card-excerpt{font-size:.86rem;color:var(--muted);line-height:1.75;margin-bottom:1.25rem}
-.blog-read-more{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:.2rem}
-.curator-section{background:var(--deep);padding:5rem 3rem;border-top:1px solid var(--border)}
-.curator-in{max-width:1100px;margin:0 auto}
-.li-follow{background:var(--card);border:1px solid var(--border);padding:2rem;text-align:center;margin-top:3rem}
-@media(max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.blog-grid{grid-template-columns:1fr}}
+.page-hero{padding:11rem 3rem 5rem;background:var(--deep);border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.page-hero::before{content:'BLOG';font-family:'Bebas Neue',sans-serif;font-size:22vw;color:rgba(201,168,76,.03);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;line-height:1}
+.page-hero-in{max-width:1240px;margin:0 auto;position:relative;z-index:1}
+
+/* LinkedIn embed section */
+.li-live-section{background:var(--card);padding:2.5rem 3rem;border-bottom:1px solid var(--border)}
+.li-live-in{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap}
+.li-live-copy .stag{margin-bottom:1rem;display:block}
+.li-live-copy h2{margin-bottom:.65rem;font-size:clamp(1.4rem,2.2vw,2rem)}
+.li-live-copy p{color:var(--muted);font-size:.95rem;line-height:1.85;margin-bottom:1.5rem}
+.li-widget-wrap{background:var(--deep);border:1px solid var(--border);padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+.li-widget-label{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+
+/* Blog cards */
+.blog-section{background:var(--black);padding:6rem 3rem}
+.blog-in{max-width:1240px;margin:0 auto}
+.blog-grid-main{display:grid;grid-template-columns:1.5fr 1fr;gap:1.5rem;margin-bottom:1.5rem}
+.blog-grid-sub{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.blog-card{background:var(--card);border:1px solid var(--border);overflow:hidden;transition:border-color .3s,transform .25s;cursor:none;display:flex;flex-direction:column}
+.blog-card:hover{border-color:rgba(201,168,76,.4);transform:translateY(-3px)}
+.blog-card-img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;filter:brightness(.8) saturate(.85);transition:transform .45s,filter .35s}
+.blog-card:hover .blog-card-img{transform:scale(1.04);filter:brightness(.95) saturate(1)}
+.blog-card-body{padding:1.75rem;flex:1;display:flex;flex-direction:column}
+.blog-card.featured .blog-card-body{padding:2.25rem}
+.blog-platform{font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem;display:flex;align-items:center;gap:.5rem}
+.blog-platform::before{content:'in';font-weight:700;background:#0A66C2;color:#fff;padding:.1rem .4rem;font-size:.55rem;border-radius:2px;flex-shrink:0}
+.blog-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-style:italic;line-height:1.38;color:var(--white);margin-bottom:.8rem;transition:color .2s}
+.blog-card.featured .blog-title{font-size:1.65rem}
+.blog-card:hover .blog-title{color:var(--gold2)}
+.blog-excerpt{color:var(--muted);font-size:.84rem;line-height:1.75;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.blog-card.featured .blog-excerpt{-webkit-line-clamp:6}
+.blog-meta{display:flex;align-items:center;justify-content:space-between;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border)}
+.blog-date{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.blog-read{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:gap .2s}
+.blog-read:hover{gap:.7rem}
+.blog-note{margin-top:3rem;padding:1.5rem 2rem;background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);display:flex;align-items:start;gap:1rem}
+.blog-note p{font-size:.84rem;color:var(--muted);line-height:1.75}
+.blog-note strong{color:var(--white)}
+@media(max-width:1024px){
+  .blog-grid-main{grid-template-columns:1fr}
+  .blog-grid-sub{grid-template-columns:1fr 1fr}
+  .li-live-in{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .page-hero{padding:9rem 1.5rem 4rem}
+  .blog-section{padding:5rem 1.5rem}
+  .li-live-section{padding:4rem 1.5rem}
+  .blog-grid-sub{grid-template-columns:1fr}
+}
 
 
 /* ── OPTION C: Light content sections ── */
 .light-section{background:#FAFAF8 !important}
-.light-section h1,.light-section h2,.light-section h3,.light-section .sh{color:#0a0a0a !important}
+.light-section h1,.light-section h2,.light-section h3,.light-section .sh,
+.light-section .sh em{color:#0a0a0a !important}
 .light-section .sh em{color:#9a7a2e !important}
 .light-section .sh .cr{color:#8B1A1A !important}
-.light-section p,.light-section li,.light-section .stag{color:#444 !important}
-.light-section .stag{color:#9a7a2e !important;border-left-color:#9a7a2e !important}
-.light-section .muted{color:#666 !important}
-.light-section .btn-gold{background:var(--gold);color:#0a0a0a}
-.light-section .btn-ol{border-color:var(--gold);color:#0a0a0a}
-.light-section .btn-ol:hover{background:var(--gold);color:#0a0a0a}
-.light-section input,.light-section textarea,.light-section select{background:#fff !important;color:#0a0a0a !important;border-color:#ddd !important}
-.light-section label{color:#333 !important}
-.light-section .section-divider{background:#ddd !important}
-
+.light-section .lead,.light-section .a-p,.light-section p,
+.light-section li,.light-section .bi-v{color:#444 !important}
+.light-section .stag{color:#9a7a2e !important}
+.light-section .stag::before{background:#9a7a2e !important}
+.light-section .a-quote{color:#9a7a2e !important;border-left-color:#8B1A1A !important}
+.light-section .chip{border-color:rgba(0,0,0,.12) !important;color:#555 !important}
+.light-section .chip:hover{border-color:#9a7a2e !important;color:#9a7a2e !important}
+.light-section .btn-ol{color:#0a0a0a !important;border-color:rgba(0,0,0,.25) !important}
+.light-section .btn-ol:hover{border-color:#9a7a2e !important;color:#9a7a2e !important}
+.light-section .svc{background:#FAFAF8 !important}
+.light-section .svc:hover{background:#f0ede8 !important}
+.light-section .svc-grid{background:rgba(0,0,0,.08) !important}
+.light-section .svc-nm{color:#0a0a0a !important}
+.light-section .svc:hover .svc-nm{color:#9a7a2e !important}
+.light-section .svc-d{color:#555 !important}
+.light-section .blog-card{background:#fff !important;border-color:rgba(0,0,0,.1) !important}
+.light-section .blog-card:hover{border-color:rgba(154,122,46,.5) !important}
+.light-section .blog-title{color:#0a0a0a !important}
+.light-section .blog-card:hover .blog-title{color:#9a7a2e !important}
+.light-section .blog-excerpt{color:#555 !important}
+.light-section .blog-date{color:#999 !important}
+.light-section .blog-meta{border-top-color:rgba(0,0,0,.1) !important}
+.light-section .blog-note{background:#f0ede8 !important;border-color:rgba(0,0,0,.1) !important}
+.light-section .blog-note p{color:#444 !important}
+.light-section .blog-note strong{color:#0a0a0a !important}
+.light-section .tcard,.light-section .tc{background:#fff !important;border-color:rgba(0,0,0,.1) !important}
+.light-section .tcard:hover,.light-section .tc:hover{border-color:rgba(154,122,46,.4) !important}
+.light-section .tcard-text,.light-section .tc-t{color:#222 !important}
+.light-section .bi-row{border-bottom-color:rgba(0,0,0,.1) !important}
+.light-section .bi-l{color:#9a7a2e !important}
+.light-section input,.light-section select,.light-section textarea{background:rgba(0,0,0,.04) !important;border-color:rgba(0,0,0,.15) !important;color:#0a0a0a !important}
+.light-section input::placeholder,.light-section textarea::placeholder{color:rgba(0,0,0,.3) !important}
+.light-section input:focus,.light-section select:focus,.light-section textarea:focus{border-color:#9a7a2e !important;background:#fff !important}
+.light-section label{color:#666 !important}
+.light-section .uz{border-color:rgba(154,122,46,.4) !important}
+.light-section .uz:hover{background:rgba(154,122,46,.06) !important}
+.light-section .f-note{color:#888 !important}
+.light-section .names-list li{color:#0a0a0a !important}
+.light-section .masonry .mi-cap{color:#9a7a2e !important}
+.light-section .mc{background:#fff !important;border-color:rgba(0,0,0,.1) !important}
+.light-section .mc:hover{background:#f5f3ee !important;border-color:#9a7a2e !important}
+.light-section .mc-p{color:#9a7a2e !important}
+.light-section .mc-t{color:#0a0a0a !important}
+.light-section .mc-s{color:#666 !important}
+.light-section .stat{background:#FAFAF8}
+.light-section .stat:hover{background:#f0ede8 !important}
+.light-section .stat-l{color:#666 !important}
+.light-section .li-live-section{background:#f0ede8 !important}
+.light-section [style*="background:var(--card)"]{background:#fff !important}
+.light-section [style*="background:var(--deep)"]{background:#f5f3ee !important}
+.light-section [style*="color:var(--muted)"]{color:#555 !important}
+.light-section [style*="color:var(--white)"]{color:#0a0a0a !important}
+.light-section [style*="border:1px solid var(--border)"]{border-color:rgba(0,0,0,.1) !important}
+.light-section [style*="border-top:1px solid var(--border)"]{border-top-color:rgba(0,0,0,.1) !important}
+.light-section [style*="border-bottom:1px solid var(--border)"]{border-bottom-color:rgba(0,0,0,.1) !important}
+.light-section [style*="background:var(--black)"]{background:#FAFAF8 !important}
+/* Keep gold/crimson accents vibrant on light */
+.light-section .btn-gold{background:#C9A84C !important;color:#0a0a0a !important}
+.light-section .btn-gold:hover{background:#b8943e !important}
+.light-section .stag{color:#9a7a2e !important}
+/* Dividers on light */
+.light-section .gd{background:linear-gradient(to right,transparent,#9a7a2e,transparent) !important}
 </style>
 </head>
 <body>
@@ -140,57 +242,101 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
   <a href="index.html" onclick="cmo()">Home</a><a href="events.html" onclick="cmo()">Events</a><a href="about.html" onclick="cmo()">About</a><a href="services.html" onclick="cmo()">Services</a><a href="gallery.html" onclick="cmo()">Gallery</a><a href="media.html" onclick="cmo()">Media</a><a href="blog.html" onclick="cmo()">Blog</a><a href="booking.html" onclick="cmo()">Booking</a>
 </div>
 
-<div class="blog-hero" style="padding-top:8rem">
-  <div class="stag rv">Blog</div>
-  <h1 class="sh rv">Insights from <em>the Booth</em></h1>
-  <p class="rv" style="color:var(--muted);font-size:.95rem;max-width:520px;margin:.75rem auto 0;line-height:1.85">Thoughts on music, events, culture, and the craft of commanding a room.</p>
-</div>
-
-<div class="blog-grid"><div class="blog-card rv">
-  <div class="blog-card-body">
-    <h3 class="blog-card-title">Why Detroit's Club Scene Is Thriving Again</h3>
-    <p class="blog-card-excerpt">The resurgence of independent club nights and what it means for promoters, DJs, and the culture at large.</p>
-    <a href="https://www.linkedin.com/in/3steez/" target="_blank" rel="noopener" class="blog-read-more">Read More &rarr;</a>
-  </div>
-</div><div class="blog-card rv">
-  <div class="blog-card-body">
-    <h3 class="blog-card-title">What Corporate Events Get Wrong About Entertainment</h3>
-    <p class="blog-card-excerpt">Most corporate events settle for background music. Here's why that's a mistake — and what the best ones do differently.</p>
-    <a href="https://www.linkedin.com/in/3steez/" target="_blank" rel="noopener" class="blog-read-more">Read More &rarr;</a>
-  </div>
-</div><div class="blog-card rv">
-  <div class="blog-card-body">
-    <h3 class="blog-card-title">Building a Brand as a DJ/MC in 2026</h3>
-    <p class="blog-card-excerpt">Lessons from over two decades in the game — on staying relevant, building community, and why authenticity always wins.</p>
-    <a href="https://www.linkedin.com/in/3steez/" target="_blank" rel="noopener" class="blog-read-more">Read More &rarr;</a>
-  </div>
-</div><div class="blog-card rv">
-  <div class="blog-card-body">
-    <h3 class="blog-card-title">The Necto Years: What I Learned from 6 Years at SE Michigan's Biggest Weekly Party</h3>
-    <p class="blog-card-excerpt">From 100 people to 1,200 on the floor — the lessons, the moments, and the music that defined an era.</p>
-    <a href="https://www.linkedin.com/in/3steez/" target="_blank" rel="noopener" class="blog-read-more">Read More &rarr;</a>
-  </div>
-</div><div class="blog-card rv">
-  <div class="blog-card-body">
-    <h3 class="blog-card-title">How 3Steez Approaches Corporate Events Differently</h3>
-    <p class="blog-card-excerpt">Concert-level energy meets boardroom professionalism. Here's the philosophy behind every 3Steez performance.</p>
-    <a href="https://www.linkedin.com/in/3steez/" target="_blank" rel="noopener" class="blog-read-more">Read More &rarr;</a>
-  </div>
-</div></div>
-
-<div class="curator-section">
-  <div class="curator-in">
-    <div class="stag rv">Latest Updates</div>
-    <h2 class="sh rv" style="margin-bottom:2rem">Live from <em>LinkedIn &amp; Instagram</em></h2>
-    <div id="curator-feed-3steez" class="rv"></div>
-    <div class="li-follow rv">
-      <p style="color:var(--muted);font-size:.95rem;margin-bottom:1.25rem">Follow 3Steez on LinkedIn for industry insights, event recaps, and behind-the-scenes content.</p>
-      <a href="https://www.linkedin.com/in/3steez/" target="_blank" rel="noopener" class="btn-gold">Follow on LinkedIn</a>
+<div class="page-hero">
+  <div class="page-hero-in rv">
+    <div class="stag">Insights &amp; Industry</div>
+    <h1 class="sh">From the <em>Desk</em><br/>of Tr&eacute;s Styles</h1>
+    <p class="lead" style="margin-top:1.25rem">Original thoughts on music, live events, the entertainment industry, and the business of creativity &mdash; posted fresh onarr;</a>
+      </div>
     </div>
   </div>
 </div>
 
-<script type="text/javascript" async src="https://cdn.curator.io/published/71b3ffac-6e4c-4a5d-a42b-149d8d256655.js"></script>
+<!-- BLOG POSTS -->
+<section class="blog-section light-section" style="background:#FAFAF8">
+  <div class="blog-in">
+    <div class="rv" style="margin-bottom:2.5rem">
+      <div class="stag">Latest Posts</div>
+      <h2 class="sh" style="font-size:clamp(1.8rem,3vw,2.8rem)">Recent <em>Insights</em></h2>
+    </div>
+
+    <!-- Featured + second post -->
+    <div class="blog-grid-main rv">
+      <!-- FEATURED -->
+      <div class="blog-card featured">
+        <img class="blog-card-img" src="https://static.wixstatic.com/media/27707a_6ece2713ea9f41ada34b135485eab9d3~mv2.jpg/v1/fill/w_900,h_506,fp_0.68_0.57,q_90,enc_avif,quality_auto/27707a_6ece2713ea9f41ada34b135485eab9d3~mv2.jpg" alt="The Art of Reading a Room" style="aspect-ratio:16/9"/>
+        <div class="blog-card-body">
+          <div class="blog-platform">LinkedIn</div>
+          <div class="blog-title">The Art of Reading a Room: Why the Best DJs Are Actually Emotional Intelligence Masters</div>
+          <div class="blog-excerpt">What separates a good DJ from an unforgettable one isn&rsquo;t technical skill &mdash; it&rsquo;s the ability to read energy. After 20+ years behind the decks, here&rsquo;s what I&rsquo;ve learned about crowd psychology, energy management, and why the most important tool in my bag isn&rsquo;t in the crate. Reading a room is a skill. Most people think DJing is about the music you know. The truth is, it&rsquo;s about knowing when to play it...</div>
+          <div class="blog-meta">
+            <div class="blog-date">Latest Post</div>
+            <a class="blog-read" href="https://www.linkedin.com/in/3steez/recent-activity/all/" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <!-- POST 2 -->
+      <div class="blog-card">
+        <img class="blog-card-img" src="https://static.wixstatic.com/media/27707a_ca168e63a1af4241a194fcf937968ac3~mv2.jpg/v1/fill/w_600,h_338,q_90,enc_avif,quality_auto/27707a_ca168e63a1af4241a194fcf937968ac3~mv2.jpg" alt="Corporate Events"/>
+        <div class="blog-card-body">
+          <div class="blog-platform">LinkedIn</div>
+          <div class="blog-title">Why Corporate Events Deserve Better Entertainment Than a Spotify Playlist</div>
+          <div class="blog-excerpt">A live DJ and MC isn&rsquo;t a luxury &mdash; it&rsquo;s the difference between an event people attend and one they talk about for months. Here&rsquo;s what most event planners get wrong about entertainment budgets.</div>
+          <div class="blog-meta">
+            <div class="blog-date">Recent</div>
+            <a class="blog-read" href="https://www.linkedin.com/in/3steez/recent-activity/all/" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 more posts -->
+    <div class="blog-grid-sub rv">
+      <div class="blog-card">
+        <img class="blog-card-img" src="https://static.wixstatic.com/media/27707a_9131b84f1e7e4009af4859ab52273930~mv2.jpg/v1/fill/w_700,h_394,q_90,enc_avif,quality_auto/27707a_9131b84f1e7e4009af4859ab52273930~mv2.jpg" alt="DJ Booth to Boardroom"/>
+        <div class="blog-card-body">
+          <div class="blog-platform">LinkedIn</div>
+          <div class="blog-title">From the Booth to the Boardroom: What Event Clients Actually Need</div>
+          <div class="blog-excerpt">Booking entertainment isn&rsquo;t just about sound. It&rsquo;s about trust, communication, and a shared vision for the experience you&rsquo;re creating.</div>
+          <div class="blog-meta">
+            <div class="blog-date">Recent</div>
+            <a class="blog-read" href="https://www.linkedin.com/in/3steez/recent-activity/all/" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img class="blog-card-img" src="https://static.wixstatic.com/media/27707a_129eff3f6c044ba6a09cdca38cfa57c9~mv2.jpg/v1/fill/w_700,h_394,q_90,enc_avif,quality_auto/27707a_129eff3f6c044ba6a09cdca38cfa57c9~mv2.jpg" alt="Detroit Music Culture"/>
+        <div class="blog-card-body">
+          <div class="blog-platform">LinkedIn</div>
+          <div class="blog-title">Detroit&rsquo;s Music Culture Is a Blueprint. Here&rsquo;s What the Rest of the Country Still Hasn&rsquo;t Figured Out.</div>
+          <div class="blog-excerpt">Motor City didn&rsquo;t just export cars &mdash; it exported a philosophy of craft, community, and relentless originality that every creative professional can learn from.</div>
+          <div class="blog-meta">
+            <div class="blog-date">Recent</div>
+            <a class="blog-read" href="https://www.linkedin.com/in/3steez/recent-activity/all/" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img class="blog-card-img" src="https://static.wixstatic.com/media/27707a_e5c6b34ff601405db3b2a4208df88d70~mv2.jpg/v1/fill/w_900,h_506,q_90,enc_avif,quality_auto/27707a_e5c6b34ff601405db3b2a4208df88d70~mv2.jpg" alt="Virtual Events"/>
+        <div class="blog-card-body">
+          <div class="blog-platform">LinkedIn</div>
+          <div class="blog-title">Virtual Events Are Here to Stay &mdash; and Most Companies Are Still Getting the Entertainment Wrong</div>
+          <div class="blog-excerpt">The camera changes everything. Here&rsquo;s how to think about entertainment for virtual and hybrid events, and why a real DJ still makes all the difference.</div>
+          <div class="blog-meta">
+            <div class="blog-date">Recent</div>
+            <a class="blog-read" href="https://www.linkedin.com/in/3steez/recent-activity/all/" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Honest note about auto-updating -->
+    <div class="blog-note rv">
+      <span style="font-size:1.4rem;flex-shrink:0">&#128161;</span>
+      <p><strong>Want these posts to update automatically?</strong> LinkedIn doesn&rsquo;t give websites direct access to personal post feeds without a paid integration. The best current option is to use a service like <strong>Zapier</strong> or <strong>Make.com</strong> to automatically push new LinkedIn posts to this page every time you publish. Send me the exact LinkedIn post URLs for each card above and I&rsquo;ll link them directly. For true auto-updating, I can set up a simple webhook integration.</p>
+    </div>
+  </div>
+</section>
 
 
 <footer>
@@ -221,6 +367,8 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
         <li><a href="https://www.facebook.com/3Steez" target="_blank" rel="noopener">Facebook</a></li>
         <li><a href="https://www.linkedin.com/in/3steez/" target="_blank" rel="noopener">LinkedIn</a></li>
         <li><a href="https://www.3steez.com/_files/ugd/27707a_721caa73008c4117ae2fa9617cf812b6.pdf" target="_blank" rel="noopener">Download Press Kit</a></li>
+        <li><a href="https://www.ylccreative.com" target="_blank" rel="noopener">YLC Creative Partners</a></li>
+        <li><a href="https://www.djgraffiti.com" target="_blank" rel="noopener">DJ Graffiti</a></li>
       </ul>
     </div>
   </div>
@@ -235,27 +383,18 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
   </div>
 </footer>
 <script>
-// Cursor
+
+// Show cursor on first mousemove
 var _C=document.getElementById('cur'),_R=document.getElementById('cur-r');
 if(_C){
   document.addEventListener('mousemove',function(e){
-    _C.style.left=e.clientX+'px';_C.style.top=e.clientY+'px';
-    _C.style.opacity='1';
+    _C.style.left=e.clientX+'px';_C.style.top=e.clientY+'px';_C.style.opacity='1';
     if(_R){_R.style.left=e.clientX+'px';_R.style.top=e.clientY+'px';_R.style.opacity='1';}
-  },{ once: false });
+  });
 }
-// Hover glow on interactive elements
-document.querySelectorAll('a,button,.ev-card,.tc,.mi,.stat,.pl,.mc,.chip,.svc,.blog-card').forEach(function(el){
-  el.addEventListener('mouseenter',function(){document.body.classList.add('cg');});
-  el.addEventListener('mouseleave',function(){document.body.classList.remove('cg');});
-});
-// Nav scroll
-var _nav=document.getElementById('nav');
-if(_nav){window.addEventListener('scroll',function(){_nav.classList.toggle('solid',window.scrollY>60);});}
-// Mobile menu
-function omo(){var m=document.getElementById('mo');if(m){m.classList.add('open');document.body.style.overflow='hidden';}}
-function cmo(){var m=document.getElementById('mo');if(m){m.classList.remove('open');document.body.style.overflow='';}}
-// Intersection observer — safe version
+
+
+// Safe IntersectionObserver
 (function(){
   var els=document.querySelectorAll('.rv,.rvl');
   if(!els.length||!('IntersectionObserver' in window))return;
@@ -265,6 +404,7 @@ function cmo(){var m=document.getElementById('mo');if(m){m.classList.remove('ope
   },{threshold:0.05,rootMargin:'0px 0px -20px 0px'});
   els.forEach(function(el){obs.observe(el);});
 })();
+
 </script>
 </body>
 </html>

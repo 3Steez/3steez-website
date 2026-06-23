@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>About 3Steez | Trés Styles — MC, DJ & Music Producer from Detroit</title>
 <meta name="description" content="Meet Trés Styles — the Michigan-born MC, DJ, and music producer behind 3Steez. 20+ years commanding stages alongside ?uestlove, Kool DJ Red Alert, and Stretch Armstrong."/>
-<meta name="keywords" content="Tres Styles biography, 3Steez about, Detroit MC DJ, Michigan music producer, hip hop DJ biography"/>
+<meta name="keywords" content="Tres Styles biography, 3Steez about, Detroit MC DJ, Michigan music producer, hip hop DJ biography, Ann Arbor DJ"/>
 <meta property="og:title" content="About 3Steez | Trés Styles — MC, DJ & Music Producer from Detroit"/>
 <meta property="og:description" content="Meet Trés Styles — the Michigan-born MC, DJ, and music producer behind 3Steez. 20+ years commanding stages alongside ?uestlove, Kool DJ Red Alert, and Stretch Armstrong."/>
 <meta property="og:image" content="https://static.wixstatic.com/media/27707a_552057f016644179b62d92a87774eb6b~mv2.jpg"/>
@@ -14,20 +14,34 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
+/* Fix clicks on all browsers */
+a,button,[onclick],label,select,input,textarea{pointer-events:auto!important}
+/* Cursor hidden until mousemove */
+#cur,#cur-r{opacity:0;transition:opacity .3s}
+/* Sections visible by default - JS enhances */
+.rv,.rvl{opacity:1!important;transform:none!important}
+.rv.anim-ready{opacity:0;transform:translateY(28px);transition:opacity .6s,transform .6s}
+.rvl.anim-ready{opacity:0;transform:translateX(-28px);transition:opacity .6s,transform .6s}
+.rv.anim-ready.vis,.rvl.anim-ready.vis{opacity:1!important;transform:none!important}
+/* Stop marquee */
+.mq-t{animation:none!important}
+/* Disable cursor on touch */
+@media(hover:none) and (pointer:coarse){#cur,#cur-r{display:none!important}}
+
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --black:#070707;--deep:#0d0d0d;--card:#141414;--border:rgba(255,255,255,0.07);
   --gold:#C9A84C;--gold2:#E8C96A;--gold-dim:rgba(201,168,76,0.12);
   --crimson:#8B1A1A;--crimson2:#B22222;
+  --crimson-dim:rgba(139,26,26,0.15);
   --white:#F8F6F0;--muted:rgba(248,246,240,0.52);
   --PD:'Playfair Display',Georgia,serif;--BN:'Bebas Neue',sans-serif;--IN:'Inter',sans-serif;
 }
 html{scroll-behavior:smooth}
-a{color:inherit;text-decoration:none}
 body{background:var(--black);color:var(--white);font-family:var(--IN);font-weight:300;line-height:1.7;overflow-x:hidden}
-#cur{position:fixed;width:9px;height:9px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .18s,height .18s;opacity:0}
-#cur-r{position:fixed;width:34px;height:34px;border:1px solid rgba(201,168,76,.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .32s cubic-bezier(.25,.46,.45,.94),height .32s;opacity:0}
+#cur{position:fixed;width:9px;height:9px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .18s,height .18s}
+#cur-r{position:fixed;width:34px;height:34px;border:1px solid rgba(201,168,76,.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .32s cubic-bezier(.25,.46,.45,.94),height .32s}
 .cg #cur{width:16px;height:16px}.cg #cur-r{width:52px;height:52px}
 #nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.5rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:background .35s,padding .35s}
 #nav.solid{background:rgba(7,7,7,.97);backdrop-filter:blur(14px);padding:1rem 3rem;border-bottom:1px solid var(--border)}
@@ -35,15 +49,15 @@ body{background:var(--black);color:var(--white);font-family:var(--IN);font-weigh
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{font-size:.63rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s,background .2s,padding .2s;padding:.28rem .6rem;border-radius:2px}
 .nav-links a:hover{color:var(--black);background:var(--gold)}
-.nav-book{font-size:.63rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;background:transparent;color:var(--gold);border:1px solid var(--gold);padding:.55rem 1.35rem;text-decoration:none;transition:background .2s,color .2s;cursor:pointer;white-space:nowrap}
+.nav-book{font-size:.63rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;background:transparent;color:var(--gold);border:1px solid var(--gold);padding:.55rem 1.35rem;text-decoration:none;transition:background .2s,color .2s;cursor:none;white-space:nowrap}
 .nav-book:hover{background:var(--gold);color:var(--black)}
-.nav-burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
+.nav-burger{display:none;background:none;border:none;cursor:none;flex-direction:column;gap:5px;padding:4px}
 .nav-burger span{display:block;width:24px;height:1.5px;background:var(--white);transition:.3s}
 .mob-ov{display:none;position:fixed;inset:0;background:rgba(7,7,7,.97);z-index:600;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem}
 .mob-ov.open{display:flex}
 .mob-ov a{font-family:var(--PD);font-size:2.2rem;font-style:italic;color:var(--white);text-decoration:none;opacity:.8;transition:opacity .2s,color .2s}
 .mob-ov a:hover{opacity:1;color:var(--gold2)}
-.mob-x{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;opacity:.6}
+.mob-x{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:none;opacity:.6}
 section{padding:7rem 3rem}
 .stag{display:inline-flex;align-items:center;gap:.7rem;font-size:.6rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
 .stag::before{content:'';width:30px;height:1px;background:var(--gold)}
@@ -51,9 +65,9 @@ h1.sh,h2.sh{font-family:var(--PD);font-size:clamp(2.5rem,4.5vw,4.1rem);font-weig
 h1.sh em,h2.sh em{font-style:italic;color:var(--gold2)}
 h1.sh .cr,h2.sh .cr{color:var(--crimson2)}
 .lead{color:var(--muted);font-size:.97rem;line-height:1.85;max-width:560px}
-.btn-gold{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:var(--gold);color:var(--black);padding:1.05rem 2.4rem;border:none;text-decoration:none;display:inline-block;transition:background .2s,transform .15s;cursor:pointer}
+.btn-gold{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:var(--gold);color:var(--black);padding:1.05rem 2.4rem;border:none;text-decoration:none;display:inline-block;transition:background .2s,transform .15s}
 .btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
-.btn-ol{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.25);padding:1.05rem 2.4rem;text-decoration:none;display:inline-block;transition:border-color .2s,color .2s;cursor:pointer}
+.btn-ol{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.25);padding:1.05rem 2.4rem;text-decoration:none;display:inline-block;transition:border-color .2s,color .2s}
 .btn-ol:hover{border-color:var(--gold);color:var(--gold)}
 .gd{height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);max-width:180px;margin:1.75rem auto}
 footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3rem 2.5rem}
@@ -69,10 +83,9 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 .ft-soc{display:flex;gap:1.4rem}
 .ft-soc a{font-size:.57rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
 .ft-soc a:hover{color:var(--gold)}
-.rv,.rvl{opacity:1;transform:none}
-.rv.anim-ready{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
-.rvl.anim-ready{opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease}
-.rv.anim-ready.vis,.rvl.anim-ready.vis{opacity:1!important;transform:none!important}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.rvl{opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease}
+.rv.vis,.rvl.vis{opacity:1;transform:none}
 .mq{background:var(--crimson);padding:.72rem 0;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
 .mq-t{display:flex;width:max-content;animation:mqa 20s linear infinite}
 .mq-t span{font-family:var(--BN);font-size:.95rem;letter-spacing:.18em;text-transform:uppercase;color:var(--white);padding:0 2.25rem;white-space:nowrap;opacity:.92}
@@ -87,65 +100,236 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 
 
-.ab-hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh;margin-top:72px}
-.ab-hero-left{background:var(--black);padding:6rem 4rem;display:flex;flex-direction:column;justify-content:center}
-.ab-hero-right{position:relative;overflow:hidden}
-.ab-hero-right img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.ab-bio{background:var(--deep);padding:6rem 3rem}
-.ab-bio-in{max-width:880px;margin:0 auto}
-.ab-bio-in p{color:var(--muted);font-size:.97rem;line-height:1.9;margin-bottom:1.5rem}
-.ab-bio-in p strong{color:var(--white);font-weight:500}
-.ab-necto{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--gold);padding:2.25rem;margin:2.5rem 0}
-.ab-necto-title{font-family:var(--PD);font-size:1.5rem;font-style:italic;color:var(--gold2);margin-bottom:.75rem}
-.ab-necto p{color:var(--muted);font-size:.9rem;line-height:1.8;margin-bottom:.5rem}
-.ab-necto p strong{color:var(--white);font-weight:500}
-.ab-res{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin:2.5rem 0}
-.ab-res-item{background:var(--card);padding:1.5rem;text-align:center}
-.ab-res-name{font-family:var(--PD);font-style:italic;font-size:1.05rem;color:var(--white);margin-bottom:.3rem}
-.ab-res-detail{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
-.ab-res-note{font-size:.75rem;color:var(--muted);margin-top:.2rem}
-.ab-testimonials{background:var(--black);padding:6rem 3rem;border-top:1px solid var(--border)}
-.ab-test-in{max-width:1000px;margin:0 auto}
-.ab-test-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem}
-.ab-test-card{background:var(--card);border:1px solid var(--border);border-top:2px solid var(--gold);padding:2rem}
-.ab-test-quote{font-family:var(--PD);font-size:1rem;font-style:italic;color:var(--white);line-height:1.7;margin-bottom:1rem}
-.ab-test-stars{color:var(--gold);letter-spacing:.1em;margin-bottom:.4rem}
-.ab-test-attr{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.ab-aml{background:var(--deep);padding:5rem 3rem;border-top:1px solid var(--border);text-align:center}
-.ab-aml-in{max-width:700px;margin:0 auto}
-.ab-aml-vid{position:relative;aspect-ratio:16/9;background:var(--card);overflow:hidden;cursor:pointer;margin:2rem auto 0;max-width:560px;display:block}
-.ab-aml-vid img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.75)}
-.ab-aml-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(7,7,7,.3)}
-.ab-aml-play-btn{width:64px;height:64px;border-radius:50%;background:rgba(201,168,76,.9);display:flex;align-items:center;justify-content:center}
-#amlFrame{position:absolute;inset:0;width:100%;height:100%;border:none;display:none}
-.ylc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:680px;margin:2rem auto 0;text-align:left}
-.ylc-card{background:var(--card);border:1px solid var(--border);padding:1.75rem}
-.ylc-card-name{font-family:var(--PD);font-style:italic;font-size:1.05rem;color:var(--white);margin-bottom:.5rem}
-.ylc-card-desc{font-size:.82rem;color:var(--muted);line-height:1.7;margin-bottom:.75rem}
-.ylc-card a{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:.2rem}
-@media(max-width:900px){
-  .ab-hero{grid-template-columns:1fr}
-  .ab-hero-right{min-height:300px}
-  .ab-test-grid,.ab-res,.ylc-grid{grid-template-columns:1fr}
-  .ab-hero-left{padding:5rem 2rem}
+.page-hero{padding:11rem 3rem 5rem;background:var(--deep);border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.page-hero-in{max-width:1240px;margin:0 auto;position:relative;z-index:1}
+.page-hero::before{content:attr(data-bg);font-family:'Bebas Neue',sans-serif;font-size:20vw;color:rgba(201,168,76,.03);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;line-height:1}
+.inner{max-width:1240px;margin:0 auto}
+.two-col{display:grid;grid-template-columns:1fr 1.1fr;gap:7rem;align-items:center}
+.a-photo{width:100%;aspect-ratio:2/3;object-fit:cover;object-position:center top;display:block;filter:contrast(1.04)}
+.a-photo-wrap{position:relative}
+.a-border{position:absolute;top:2rem;left:-2rem;right:2rem;bottom:-2rem;border:1px solid var(--gold);z-index:0;pointer-events:none}
+.a-badge{position:absolute;bottom:-2rem;right:-2rem;z-index:2;background:var(--crimson);padding:1.4rem;text-align:center;min-width:110px}
+.a-badge-n{font-family:'Playfair Display',serif;font-size:2.4rem;font-style:italic;color:var(--white);line-height:1}
+.a-badge-l{font-size:.52rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:.2rem}
+.a-quote{font-family:'Playfair Display',serif;font-size:1.45rem;font-style:italic;color:var(--gold2);line-height:1.45;border-left:2px solid var(--crimson);padding-left:1.4rem;margin:1.85rem 0}
+.a-p{color:var(--muted);line-height:1.85;margin-bottom:1.1rem;font-size:.96rem}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.85rem}
+.chip{font-size:.57rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.38rem .95rem;border:1px solid var(--border);color:var(--muted);transition:border-color .2s,color .2s}
+.chip:hover{border-color:var(--gold);color:var(--gold)}
+.names{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2.75rem 3rem;text-align:center}
+.names-lbl{font-size:.57rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:1.85rem}
+.names-list{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem 2.75rem;list-style:none}
+.names-list li{font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:var(--white);opacity:.52;transition:opacity .2s,color .2s;cursor:default}
+.names-list li:hover{opacity:1;color:var(--gold2)}
+.slideshow-wrap{overflow:hidden;padding:4rem 0;background:var(--black);border-top:1px solid var(--border)}
+.ss-track{display:flex;gap:8px;width:max-content;flex-shrink:0}
+.ss-row{display:flex;flex-wrap:nowrap;gap:0}
+.ss-item{flex-shrink:0;width:240px;height:168px;overflow:hidden;position:relative}
+.ss-item img{width:100%;height:100%;object-fit:cover;filter:brightness(.72) saturate(.85);transition:.35s}
+.ss-item:hover img{filter:brightness(1) saturate(1)}
+.ss-item-cap{position:absolute;bottom:0;left:0;right:0;padding:.6rem .8rem;background:linear-gradient(transparent,rgba(7,7,7,.92));font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);opacity:0;transition:.25s}
+.ss-item:hover .ss-item-cap{opacity:1}
+/* Services page */
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border)}
+.svc{background:var(--black);padding:3.5rem;position:relative;overflow:hidden;transition:background .3s}
+.svc::after{content:'';position:absolute;left:0;top:0;width:3px;height:0;background:linear-gradient(to bottom,var(--gold),var(--crimson));transition:height .4s ease}
+.svc:hover{background:var(--card)}.svc:hover::after{height:100%}
+.svc-ic{font-size:1.9rem;margin-bottom:1.65rem;display:block}
+.svc-nm{font-family:'Playfair Display',serif;font-size:1.48rem;font-weight:400;margin-bottom:.8rem;transition:color .2s}
+.svc:hover .svc-nm{color:var(--gold2)}
+.svc-d{color:var(--muted);font-size:.9rem;line-height:1.8;margin-bottom:1.4rem}
+.svc-tags{display:flex;flex-wrap:wrap;gap:.32rem}
+.sv-t{font-size:.53rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);padding:.22rem .6rem;border:1px solid rgba(201,168,76,.2)}
+/* Gallery page */
+.masonry{columns:3;gap:5px;column-fill:balance}
+.mi{break-inside:avoid;margin-bottom:5px;position:relative;overflow:hidden;background:var(--card)}
+.mi img{width:100%;display:block;transition:transform .5s ease,filter .4s;filter:brightness(.8) saturate(.88)}
+.mi:hover img{transform:scale(1.06);filter:brightness(1) saturate(1.05)}
+.mi-cap{position:absolute;bottom:0;left:0;right:0;padding:.85rem 1.1rem .75rem;background:linear-gradient(transparent,rgba(7,7,7,.92));font-size:.56rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);opacity:0;transform:translateY(5px);transition:.32s}
+.mi:hover .mi-cap{opacity:1;transform:none}
+/* Media page */
+.media-g{display:grid;grid-template-columns:2fr 1fr;gap:1.5rem}
+.yt-wrap{position:relative;aspect-ratio:16/9;background:var(--card);overflow:hidden}
+.yt-wrap img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.82)}
+.yt-play-ring{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;background:rgba(7,7,7,.35);transition:background .3s}
+.yt-wrap:hover .yt-play-ring{background:rgba(7,7,7,.25)}
+.yt-btn{width:72px;height:72px;border-radius:50%;background:rgba(201,168,76,.9);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(201,168,76,.2);transition:transform .2s}
+.yt-wrap:hover .yt-btn{transform:scale(1.1);background:var(--gold)}
+.yt-label{font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;color:var(--white);text-shadow:0 2px 8px rgba(0,0,0,.8)}
+.yt-sub{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(248,246,240,.5);margin-top:.25rem}
+#ytFrame{position:absolute;inset:0;width:100%;height:100%;border:none;display:none}
+.mc{background:var(--card);border:1px solid var(--border);padding:1.4rem 1.6rem;text-decoration:none;display:block;transition:border-color .2s,background .2s;cursor:none;margin-bottom:.9rem}
+.mc:hover{border-color:var(--gold);background:var(--black)}
+.mc-p{font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem}
+.mc-t{font-family:'Playfair Display',serif;font-size:.98rem;font-style:italic;color:var(--white);line-height:1.3}
+.mc-s{font-size:.76rem;color:var(--muted);margin-top:.25rem}
+/* Social */
+.platforms{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.pl{background:var(--deep);padding:2.6rem 1.4rem;text-align:center;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:.7rem;transition:background .25s}
+.pl:hover{background:var(--card)}
+.pl-ic{font-size:1.55rem;line-height:1}
+.pl-nm{font-size:.57rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.pl-h{font-size:.78rem;color:var(--muted)}
+.pl-ct{font-size:.53rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:.2rem;transition:color .2s}
+.pl:hover .pl-ct{color:var(--white)}
+/* Testimonials */
+.tg{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+.tc{background:var(--card);border:1px solid var(--border);padding:2.6rem;position:relative;transition:border-color .3s}
+.tc:hover{border-color:rgba(201,168,76,.35)}
+.tc-q{font-family:'Playfair Display',serif;font-size:3.5rem;color:rgba(201,168,76,.11);line-height:1;position:absolute;top:.9rem;left:1.6rem;font-style:italic}
+.tc-t{font-family:'Playfair Display',serif;font-size:1.08rem;font-style:italic;line-height:1.65;color:var(--white);margin-bottom:1.4rem;position:relative;z-index:1}
+.tc-st{color:var(--gold);font-size:.76rem;margin-bottom:.45rem;letter-spacing:.08em}
+.tc-s{font-size:.57rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+/* Blog */
+.blog-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:1.5rem;align-items:start}
+.blog-card{background:var(--card);border:1px solid var(--border);overflow:hidden;transition:border-color .3s}
+.blog-card:hover{border-color:rgba(201,168,76,.35)}
+.blog-card.featured{grid-row:span 2}
+.blog-card-img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;filter:brightness(.8) saturate(.85);transition:transform .45s,filter .35s}
+.blog-card:hover .blog-card-img{transform:scale(1.04);filter:brightness(.95) saturate(1)}
+.blog-card-body{padding:1.75rem}
+.blog-card.featured .blog-card-body{padding:2rem}
+.blog-platform{font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;display:flex;align-items:center;gap:.45rem}
+.blog-platform::before{content:'in';font-weight:700;background:#0A66C2;color:#fff;padding:.1rem .38rem;font-size:.55rem;border-radius:2px}
+.blog-title{font-family:'Playfair Display',serif;font-size:1.18rem;font-style:italic;line-height:1.38;color:var(--white);margin-bottom:.75rem;transition:color .2s}
+.blog-card.featured .blog-title{font-size:1.55rem}
+.blog-card:hover .blog-title{color:var(--gold2)}
+.blog-excerpt{color:var(--muted);font-size:.84rem;line-height:1.75;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.blog-card.featured .blog-excerpt{-webkit-line-clamp:5}
+.blog-meta{display:flex;align-items:center;justify-content:space-between;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border)}
+.blog-date{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.blog-read{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);text-decoration:none;transition:opacity .2s}
+.blog-read:hover{opacity:.7}
+/* Booking */
+.bk-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1.35fr;gap:7rem;align-items:start}
+.bi-quote{font-family:'Playfair Display',serif;font-size:1.28rem;font-style:italic;color:var(--gold2);line-height:1.5;margin:1.65rem 0 1.85rem;border-left:2px solid var(--crimson);padding-left:1.2rem}
+.bi-row{padding:.9rem 0;border-bottom:1px solid var(--border);display:flex;flex-direction:column;gap:.22rem}
+.bi-l{font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.bi-v{font-size:.9rem;color:var(--white)}
+.bi-v a{color:var(--gold);text-decoration:none}
+form{display:flex;flex-direction:column;gap:1.05rem}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:1.05rem}
+.fg{display:flex;flex-direction:column;gap:.42rem}
+label{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+input,select,textarea{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--white);font-family:'Inter',sans-serif;font-size:.9rem;padding:.88rem 1rem;width:100%;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none;border-radius:0}
+input::placeholder,textarea::placeholder{color:rgba(248,246,240,.22)}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);background:rgba(201,168,76,.03)}
+select option{background:var(--card);color:var(--white)}
+textarea{resize:vertical;min-height:108px}
+.uz{border:1px dashed rgba(201,168,76,.28);padding:1.65rem;text-align:center;cursor:none;position:relative;transition:border-color .2s,background .2s}
+.uz:hover{border-color:var(--gold);background:rgba(201,168,76,.06)}
+.uz input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.uz-lbl{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);pointer-events:none}
+.uz-sub{font-size:.74rem;color:var(--muted);margin-top:.3rem;pointer-events:none}
+.fm{padding:.95rem 1.15rem;font-size:.84rem;display:none;margin-bottom:1.15rem}
+.fm.ok{background:rgba(201,168,76,.09);border:1px solid var(--gold);color:var(--gold2)}
+.fm.er{background:rgba(139,26,26,.14);border:1px solid var(--crimson2);color:#f99}
+.fm.show{display:block}
+.cta-banner{background:var(--crimson);padding:5rem 3rem;text-align:center;position:relative;overflow:hidden}
+.cta-banner::before{content:attr(data-txt);font-family:'Bebas Neue',sans-serif;font-size:22vw;color:rgba(255,255,255,.04);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;white-space:nowrap;line-height:1}
+.cta-banner h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.5rem);font-style:italic;font-weight:400;color:var(--white);margin-bottom:1rem;position:relative;z-index:1}
+.cta-banner p{color:rgba(255,255,255,.75);font-size:.95rem;max-width:480px;margin:0 auto 2.5rem;position:relative;z-index:1}
+.btn-white{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:var(--white);color:var(--crimson);padding:1.05rem 2.5rem;text-decoration:none;display:inline-block;transition:background .2s,transform .15s;cursor:none;position:relative;z-index:1}
+.btn-white:hover{background:var(--gold2);transform:translateY(-2px)}
+@media(max-width:1024px){
+  .two-col{grid-template-columns:1fr;gap:4rem}.a-photo{aspect-ratio:16/9}.a-border{display:none}.a-badge{bottom:-.5rem;right:1rem}
+  .svc-grid,.tg,.blog-grid{grid-template-columns:1fr}.blog-card.featured{grid-row:span 1}
+  .media-g{grid-template-columns:1fr}.platforms{grid-template-columns:repeat(3,1fr)}
+  .bk-in{grid-template-columns:1fr;gap:3.25rem}.fr{grid-template-columns:1fr}
+  .masonry{columns:2}
+}
+@media(max-width:768px){
+  .page-hero{padding:9rem 1.5rem 4rem}
+  .masonry{columns:1}.platforms{grid-template-columns:1fr 1fr}
+  .cta-banner{padding:4rem 1.5rem}
 }
 
 
+/* About page hero with photo */
+.about-page-hero{position:relative;padding:8rem 3rem 5rem;background:var(--deep);border-bottom:1px solid var(--border);overflow:hidden}
+.about-page-hero-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-page-hero-copy .stag{margin-bottom:1.2rem;display:block}
+.about-page-hero-copy h1{margin-bottom:1.25rem}
+.about-page-hero-copy .lead{margin-top:1rem}
+.about-page-hero-img{position:relative}
+.about-page-hero-img img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 25%;display:block;filter:brightness(.92) contrast(1.04)}
+.about-page-hero-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,var(--deep),transparent);pointer-events:none}
+.about-hero-accent{position:absolute;top:-1rem;right:-1rem;bottom:1rem;left:1rem;border:1px solid rgba(201,168,76,.3);z-index:0;pointer-events:none}
+.about-page-hero-img-wrap{position:relative;z-index:1}
+@media(max-width:1024px){
+  .about-page-hero-in{grid-template-columns:1fr;gap:3rem}
+  .about-page-hero-img{display:none}
+}
+@media(max-width:768px){.about-page-hero{padding:8rem 1.5rem 4rem}}
+
 /* ── OPTION C: Light content sections ── */
 .light-section{background:#FAFAF8 !important}
-.light-section h1,.light-section h2,.light-section h3,.light-section .sh{color:#0a0a0a !important}
+.light-section h1,.light-section h2,.light-section h3,.light-section .sh,
+.light-section .sh em{color:#0a0a0a !important}
 .light-section .sh em{color:#9a7a2e !important}
 .light-section .sh .cr{color:#8B1A1A !important}
-.light-section p,.light-section li,.light-section .stag{color:#444 !important}
-.light-section .stag{color:#9a7a2e !important;border-left-color:#9a7a2e !important}
-.light-section .muted{color:#666 !important}
-.light-section .btn-gold{background:var(--gold);color:#0a0a0a}
-.light-section .btn-ol{border-color:var(--gold);color:#0a0a0a}
-.light-section .btn-ol:hover{background:var(--gold);color:#0a0a0a}
-.light-section input,.light-section textarea,.light-section select{background:#fff !important;color:#0a0a0a !important;border-color:#ddd !important}
-.light-section label{color:#333 !important}
-.light-section .section-divider{background:#ddd !important}
-
+.light-section .lead,.light-section .a-p,.light-section p,
+.light-section li,.light-section .bi-v{color:#444 !important}
+.light-section .stag{color:#9a7a2e !important}
+.light-section .stag::before{background:#9a7a2e !important}
+.light-section .a-quote{color:#9a7a2e !important;border-left-color:#8B1A1A !important}
+.light-section .chip{border-color:rgba(0,0,0,.12) !important;color:#555 !important}
+.light-section .chip:hover{border-color:#9a7a2e !important;color:#9a7a2e !important}
+.light-section .btn-ol{color:#0a0a0a !important;border-color:rgba(0,0,0,.25) !important}
+.light-section .btn-ol:hover{border-color:#9a7a2e !important;color:#9a7a2e !important}
+.light-section .svc{background:#FAFAF8 !important}
+.light-section .svc:hover{background:#f0ede8 !important}
+.light-section .svc-grid{background:rgba(0,0,0,.08) !important}
+.light-section .svc-nm{color:#0a0a0a !important}
+.light-section .svc:hover .svc-nm{color:#9a7a2e !important}
+.light-section .svc-d{color:#555 !important}
+.light-section .blog-card{background:#fff !important;border-color:rgba(0,0,0,.1) !important}
+.light-section .blog-card:hover{border-color:rgba(154,122,46,.5) !important}
+.light-section .blog-title{color:#0a0a0a !important}
+.light-section .blog-card:hover .blog-title{color:#9a7a2e !important}
+.light-section .blog-excerpt{color:#555 !important}
+.light-section .blog-date{color:#999 !important}
+.light-section .blog-meta{border-top-color:rgba(0,0,0,.1) !important}
+.light-section .blog-note{background:#f0ede8 !important;border-color:rgba(0,0,0,.1) !important}
+.light-section .blog-note p{color:#444 !important}
+.light-section .blog-note strong{color:#0a0a0a !important}
+.light-section .tcard,.light-section .tc{background:#fff !important;border-color:rgba(0,0,0,.1) !important}
+.light-section .tcard:hover,.light-section .tc:hover{border-color:rgba(154,122,46,.4) !important}
+.light-section .tcard-text,.light-section .tc-t{color:#222 !important}
+.light-section .bi-row{border-bottom-color:rgba(0,0,0,.1) !important}
+.light-section .bi-l{color:#9a7a2e !important}
+.light-section input,.light-section select,.light-section textarea{background:rgba(0,0,0,.04) !important;border-color:rgba(0,0,0,.15) !important;color:#0a0a0a !important}
+.light-section input::placeholder,.light-section textarea::placeholder{color:rgba(0,0,0,.3) !important}
+.light-section input:focus,.light-section select:focus,.light-section textarea:focus{border-color:#9a7a2e !important;background:#fff !important}
+.light-section label{color:#666 !important}
+.light-section .uz{border-color:rgba(154,122,46,.4) !important}
+.light-section .uz:hover{background:rgba(154,122,46,.06) !important}
+.light-section .f-note{color:#888 !important}
+.light-section .names-list li{color:#0a0a0a !important}
+.light-section .masonry .mi-cap{color:#9a7a2e !important}
+.light-section .mc{background:#fff !important;border-color:rgba(0,0,0,.1) !important}
+.light-section .mc:hover{background:#f5f3ee !important;border-color:#9a7a2e !important}
+.light-section .mc-p{color:#9a7a2e !important}
+.light-section .mc-t{color:#0a0a0a !important}
+.light-section .mc-s{color:#666 !important}
+.light-section .stat{background:#FAFAF8}
+.light-section .stat:hover{background:#f0ede8 !important}
+.light-section .stat-l{color:#666 !important}
+.light-section .li-live-section{background:#f0ede8 !important}
+.light-section [style*="background:var(--card)"]{background:#fff !important}
+.light-section [style*="background:var(--deep)"]{background:#f5f3ee !important}
+.light-section [style*="color:var(--muted)"]{color:#555 !important}
+.light-section [style*="color:var(--white)"]{color:#0a0a0a !important}
+.light-section [style*="border:1px solid var(--border)"]{border-color:rgba(0,0,0,.1) !important}
+.light-section [style*="border-top:1px solid var(--border)"]{border-top-color:rgba(0,0,0,.1) !important}
+.light-section [style*="border-bottom:1px solid var(--border)"]{border-bottom-color:rgba(0,0,0,.1) !important}
+.light-section [style*="background:var(--black)"]{background:#FAFAF8 !important}
+/* Keep gold/crimson accents vibrant on light */
+.light-section .btn-gold{background:#C9A84C !important;color:#0a0a0a !important}
+.light-section .btn-gold:hover{background:#b8943e !important}
+.light-section .stag{color:#9a7a2e !important}
+/* Dividers on light */
+.light-section .gd{background:linear-gradient(to right,transparent,#9a7a2e,transparent) !important}
 </style>
 </head>
 <body>
@@ -170,107 +354,147 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
   <a href="index.html" onclick="cmo()">Home</a><a href="events.html" onclick="cmo()">Events</a><a href="about.html" onclick="cmo()">About</a><a href="services.html" onclick="cmo()">Services</a><a href="gallery.html" onclick="cmo()">Gallery</a><a href="media.html" onclick="cmo()">Media</a><a href="blog.html" onclick="cmo()">Blog</a><a href="booking.html" onclick="cmo()">Booking</a>
 </div>
 
-<div class="ab-hero">
-  <div class="ab-hero-left">
-    <div class="stag rv">The Artist</div>
-    <h1 class="sh rv" style="font-size:clamp(2.2rem,4vw,3.8rem);margin:1rem 0 1.5rem">Internationally Known.<br/><em>Locally Respected.</em></h1>
-    <p class="rv" style="color:var(--muted);font-size:.97rem;line-height:1.85;max-width:480px;margin-bottom:2rem">Tr&eacute;s Styles &mdash; Michigan-born MC, DJ, and music producer. Two decades in the game and still the most exciting presence in any room.</p>
-    <div style="display:flex;gap:1rem;flex-wrap:wrap" class="rv">
-      <a href="booking.html" class="btn-gold">Book Tr&eacute;s</a>
-      <a href="onesheet.html" class="btn-ol">Press Kit</a>
+<div class="about-page-hero">
+  <div class="about-page-hero-in">
+    <div class="about-page-hero-copy rv">
+      <div class="stag">The Artist</div>
+      <h1 class="sh">Internationally Known.<br/><em>Locally Respected.</em></h1>
+      <p class="lead" style="margin-top:1rem">Tr&eacute;s Styles &mdash; Michigan-born MC, DJ, and music producer. Two decades in the game and still the most exciting presence in any room.</p>
+      <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="booking.html" class="btn-gold">Book Tr&eacute;s</a>
+        <a href="https://www.3steez.com/_files/ugd/27707a_721caa73008c4117ae2fa9617cf812b6.pdf" target="_blank" rel="noopener" class="btn-ol">Press Kit</a>
+      </div>
     </div>
-  </div>
-  <div class="ab-hero-right">
-    <img src="necto_clean.jpg" alt="3Steez performing live at The Necto"/>
+    <div class="about-page-hero-img rvl">
+      <div class="about-hero-accent"></div>
+      <div class="about-page-hero-img-wrap">
+        <img src="necto_clean.jpg" alt="3Steez Tr&eacute;s Styles live performance"/>
+      </div>
+    </div>
   </div>
 </div>
 
-<section class="ab-bio">
-  <div class="ab-bio-in">
-    <div class="stag rv">Biography</div>
-    <h2 class="sh rv">The Story <em>Behind the Sound</em></h2>
-    <p class="rv" style="margin-top:1.5rem"><strong>3Steez (Tr&eacute;s Styles)</strong> is a Southeast Michigan DJ, MC, and event producer with a decade-plus track record of commanding rooms from 150 to 1,200 people. Michigan-born and Detroit-raised, Tr&eacute;s has spent over two decades mastering the craft of reading a room, building energy from zero, and keeping a crowd locked in from open to close.</p>
-    <p class="rv">He&rsquo;s not just a DJ who plays records or an MC who talks between songs. He&rsquo;s an event architect &mdash; someone who understands the arc of a night and executes it with precision. Whether he&rsquo;s spinning R&amp;B, Hip-Hop, and Soul at a nightclub residency or commanding a corporate stage in front of 500 executives, 3Steez brings the same concert-level energy and boardroom-level professionalism.</p>
-
-    <div class="ab-necto rv">
-      <div class="ab-necto-title">Frequency Saturdays @ The Necto &mdash; 4 Year Residency</div>
-      <p>For <strong>4 years</strong> as the resident MC/Host of <strong>Frequency Saturdays at The Necto</strong> alongside resident DJ Skoob E (the main resident DJ), Tr&eacute;s helped build and curate what became the <strong>largest weekly party in Southeast Michigan</strong>, drawing 750 to 1,200 people every Saturday.</p>
-      <p>During that run, The Necto was nominated for <strong>Best Nightclub three years in a row</strong>, DJ Skoob E won <strong>Best DJ three consecutive years</strong>, and Tr&eacute;s earned a <strong>Best MC nomination each year</strong> as the event&rsquo;s only resident MC.</p>
-    </div>
-
-    <p class="rv">Now active across multiple Detroit-area rooms, Tr&eacute;s currently holds residencies at <strong>Alley Bar (Wednesdays)</strong>, <strong>Rabbit Hole (Fridays)</strong>, and a monthly at <strong>Live Nightclub</strong>.</p>
-
-    <div class="ab-res rv">
-      <div class="ab-res-item"><div class="ab-res-name">Alley Bar</div><div class="ab-res-detail">Wednesday Residency</div><div class="ab-res-note">Ann Arbor &middot; 9PM&ndash;1AM</div></div>
-      <div class="ab-res-item"><div class="ab-res-name">Rabbit Hole</div><div class="ab-res-detail">Friday Residency</div><div class="ab-res-note">Ann Arbor &middot; 9PM</div></div>
-      <div class="ab-res-item"><div class="ab-res-name">Live Nightclub</div><div class="ab-res-detail">Monthly &middot; 2nd Saturdays</div><div class="ab-res-note">The Re:Up</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="ab-testimonials light-section">
-  <div class="ab-test-in">
-    <div class="stag rv">Social Proof</div>
-    <h2 class="sh rv">What They&rsquo;re <em>Saying</em></h2>
-    <div class="ab-test-grid">
-      <div class="ab-test-card rv">
-        <div class="ab-test-quote">&ldquo;Tr&eacute;s Styles brought a level of energy and professionalism to our corporate event that we hadn&rsquo;t experienced before. Every guest was engaged from start to finish.&rdquo;</div>
-        <div class="ab-test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="ab-test-attr">Corporate Event Client &mdash; Detroit, MI</div>
+<section class="light-section" style="background:#FAFAF8">
+  <div class="inner">
+    <div class="two-col">
+      <div class="a-photo-wrap rvl">
+        <img class="a-photo" src="https://static.wixstatic.com/media/27707a_de9ce9f6a4374b6399b93988df65fdda~mv2.jpg/v1/fill/w_800,h_1200,al_c,q_90,enc_avif,quality_auto/27707a_de9ce9f6a4374b6399b93988df65fdda~mv2.jpg" alt="Tr&eacute;s Styles 3Steez"/>
+        <div class="a-border"></div>
+        <div class="a-badge"><div class="a-badge-n">20+</div><div class="a-badge-l">Yrs Experience</div></div>
       </div>
-      <div class="ab-test-card rv">
-        <div class="ab-test-quote">&ldquo;Booking 3Steez for our festival was the easiest call we made all year. His stage presence is magnetic &mdash; he doesn&rsquo;t just fill space, he owns it.&rdquo;</div>
-        <div class="ab-test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="ab-test-attr">Festival Organizer &mdash; Michigan</div>
-      </div>
-      <div class="ab-test-card rv">
-        <div class="ab-test-quote">&ldquo;The crowd didn&rsquo;t want to leave. 3Steez kept the energy dialed in all night, seamlessly moving through genres without losing a single person on the floor.&rdquo;</div>
-        <div class="ab-test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="ab-test-attr">Nightclub Promoter &mdash; Greater Detroit</div>
-      </div>
-      <div class="ab-test-card rv">
-        <div class="ab-test-quote">&ldquo;We needed someone who could command the mic and the decks with equal confidence. 3Steez delivered on both &mdash; and carries himself with the professionalism that makes our brand look great.&rdquo;</div>
-        <div class="ab-test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="ab-test-attr">Event Production Company &mdash; Michigan</div>
+      <div class="rv">
+        <div class="stag">Biography</div>
+        <h2 class="sh">Tr&eacute;s Styles<br/><em>aka 3Steez</em></h2>
+        <blockquote class="a-quote">&ldquo;Tr&eacute;s Steez is the vibe your event is missing.&rdquo;</blockquote>
+        <p class="a-p">Tr&eacute;s Styles isn&rsquo;t a performer you hire &mdash; he&rsquo;s an experience you invest in. A Michigan-born MC, DJ, and music producer with over two decades in the game, he has built a reputation that speaks before he ever picks up a mic: commanding, versatile, and relentlessly professional.</p>
+        <p class="a-p">From running the room at Detroit&rsquo;s most electric club nights to sharing stages with hip-hop royalty &mdash; ?uestlove, Stretch Armstrong, Kool DJ Red Alert &mdash; to producing beats that have shaped countless artists&rsquo; careers, Tr&eacute;s brings a depth of craft and cultural fluency that no ordinary entertainment service can replicate.</p>
+        <p class="a-p">For corporate clients and festival buyers, 3Steez represents something rare: concert-level energy delivered with boardroom-level reliability. Every engagement is custom, every performance is intentional, and every crowd leaves satisfied.</p>
+        <p class="a-p">As founder of Forekast Music, LLC, Tr&eacute;s has built more than a performance career &mdash; he&rsquo;s built an entertainment infrastructure that supports artists, brands, and event producers looking for the highest level of creative and professional partnership.</p>
+        <div class="chips">
+          <span class="chip">Live MC</span><span class="chip">DJ Sets</span><span class="chip">Music Production</span><span class="chip">Crowd Control</span><span class="chip">Event Hosting</span><span class="chip">Brand Music</span><span class="chip">Festival Stages</span><span class="chip">Corporate Events</span>
+        </div>
+        <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="booking.html" class="btn-gold">Book Tr&eacute;s</a>
+          <a href="https://www.3steez.com/_files/ugd/27707a_721caa73008c4117ae2fa9617cf812b6.pdf" target="_blank" rel="noopener" class="btn-ol">Download Press Kit</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="ab-aml">
-  <div class="ab-aml-in">
-    <div class="stag rv">Creative Partners</div>
-    <h2 class="sh rv">YLC Creative &amp; <em>The Community</em></h2>
-    <p class="rv" style="color:var(--muted);font-size:.95rem;line-height:1.85;max-width:580px;margin:.75rem auto 0">3Steez is part of the YLC Creative family &mdash; a collective of artists, DJs, and creatives building culture in Southeast Michigan.</p>
-    <div class="ab-aml-vid rv" onclick="loadAML()">
-      <img src="https://img.youtube.com/vi/74osBV7tJi4/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/74osBV7tJi4/hqdefault.jpg'" alt="AML Music Retreat"/>
-      <div class="ab-aml-play"><div class="ab-aml-play-btn"><svg width="26" height="26" viewBox="0 0 24 24" fill="#070707"><polygon points="6,3 20,12 6,21"/></svg></div></div>
-      <iframe id="amlFrame" src="" title="AML Music Retreat" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="ylc-grid rv">
-      <div class="ylc-card"><div class="ylc-card-name">YLC Creative</div><div class="ylc-card-desc">Creative agency and artist collective based in Southeast Michigan. Events, branding, and music.</div><a href="https://www.ylccreative.com" target="_blank" rel="noopener">Visit YLC Creative &rarr;</a></div>
-      <div class="ylc-card"><div class="ylc-card-name">DJ Graffiti</div><div class="ylc-card-desc">Michigan&rsquo;s premier DJ &mdash; long-time collaborator and creative partner of 3Steez.</div><a href="https://www.djgraffiti.com" target="_blank" rel="noopener">Visit DJ Graffiti &rarr;</a></div>
-    </div>
-  </div>
-</section>
-
-<div style="background:var(--crimson);padding:5rem 3rem;text-align:center">
-  <h2 class="sh rv" style="color:var(--white)">Ready to Work<br/>with <em>3Steez?</em></h2>
-  <p class="rv" style="color:rgba(255,255,255,.75);font-size:.95rem;max-width:480px;margin:.75rem auto 2.5rem;line-height:1.85">Book Tr&eacute;s for your next club night, festival, corporate event, or private affair.</p>
-  <a href="booking.html" class="btn-white rv">Book Now</a>
+<div class="names">
+  <div class="names-lbl">Performed &amp; collaborated alongside</div>
+  <ul class="names-list">
+    <li>?uestlove</li><li>Stretch Armstrong</li><li>Kool DJ Red Alert</li><li>DJ Graffiti</li><li>Jake One</li><li>14KT</li><li>Mayer Hawthorne</li><li>DJ House Shoes</li><li>Souls of Mischief</li><li>Little Brother</li><li>Phat Kat</li><li>MC J.U.I.C.E.</li><li>Buff1</li>
+  </ul>
 </div>
-<script>
-function loadAML(){
-  var f=document.getElementById('amlFrame');
-  if(!f||f.src)return;
-  f.src='https://www.youtube.com/embed/74osBV7tJi4?autoplay=1&rel=0';
-  f.style.display='block';
-  var img=document.querySelector('.ab-aml-vid img');
-  var play=document.querySelector('.ab-aml-play');
-  if(img)img.style.display='none';
-  if(play)play.style.display='none';
-}
-</script>
+
+<section style="background:var(--black)">
+  <div class="inner">
+    <div class="stag" style="margin-bottom:1.2rem;display:block;text-align:center">Social Proof</div>
+    <h2 class="sh" style="text-align:center;margin-bottom:3rem">What They&rsquo;re <em>Saying</em></h2>
+    <div class="tg">
+      <div class="tc rv"><div class="tc-q">&ldquo;</div><p class="tc-t">Tr&eacute;s Styles brought a level of energy and professionalism to our corporate event that we hadn&rsquo;t experienced before. Every guest was engaged from start to finish.</p><div class="tc-st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tc-s">Corporate Event Client &mdash; Detroit, MI</div></div>
+      <div class="tc rv"><div class="tc-q">&ldquo;</div><p class="tc-t">Booking 3Steez for our festival was the easiest call we made all year. His stage presence is magnetic &mdash; he doesn&rsquo;t just fill space, he owns it.</p><div class="tc-st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tc-s">Festival Organizer &mdash; Michigan</div></div>
+      <div class="tc rv"><div class="tc-q">&ldquo;</div><p class="tc-t">The crowd didn&rsquo;t want to leave. 3Steez kept the energy dialed in all night, seamlessly moving through genres without losing a single person on the floor.</p><div class="tc-st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tc-s">Nightclub Promoter &mdash; Greater Detroit</div></div>
+      <div class="tc rv"><div class="tc-q">&ldquo;</div><p class="tc-t">We needed someone who could command the mic and the decks with equal confidence. 3Steez delivered on both &mdash; and carries himself with the professionalism that makes our brand look great.</p><div class="tc-st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tc-s">Event Production Company &mdash; Michigan</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- YLC CREATIVE PARTNERS -->
+<section style="background:#0a0a0a;padding:7rem 3rem;border-top:1px solid rgba(0,0,0,.15)">
+  <div style="max-width:1240px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center" class="rv">
+
+      <!-- Left: Copy -->
+      <div>
+        <div class="stag" style="margin-bottom:1.2rem;display:block">Beyond the Stage</div>
+        <h2 class="sh">The Corporate <em>Partnership</em><br/>Behind the Brand</h2>
+        <p style="color:var(--muted);font-size:.96rem;line-height:1.85;margin-top:1.5rem;margin-bottom:1.25rem">Tr&eacute;s Styles doesn&rsquo;t just perform at corporate events &mdash; he helps engineer them. Through <strong style="color:var(--white)">YLC Creative Partners</strong>, Tr&eacute;s teams up with world-renowned DJ and industry legend <strong style="color:var(--white)">DJ Graffiti</strong> to deliver premium entertainment experiences to Fortune 500 companies, major brands, and high-profile events nationwide.</p>
+        <p style="color:var(--muted);font-size:.96rem;line-height:1.85;margin-bottom:1.5rem">As DJ Graffiti&rsquo;s agent, manager, and sales partner, Tr&eacute;s bridges the gap between elite DJ talent and the corporate clients who need it most &mdash; handling bookings, event strategy, and performance logistics for one of the most respected names in the DJ world.</p>
+        <p style="color:var(--muted);font-size:.96rem;line-height:1.85;margin-bottom:2rem">Together, they&rsquo;ve built a turnkey corporate entertainment solution that delivers at the highest level, every time.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="https://www.ylccreative.com" target="_blank" rel="noopener" class="btn-gold">YLC Creative Partners &nearr;</a>
+          <a href="https://www.djgraffiti.com" target="_blank" rel="noopener" class="btn-ol">DJ Graffiti &nearr;</a>
+        </div>
+      </div>
+
+      <!-- Right: Partnership cards -->
+      <div style="display:flex;flex-direction:column;gap:1.25rem">
+
+        <!-- DJ Graffiti card -->
+        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;border-left:3px solid var(--gold);transition:border-color .3s" class="rv">
+          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+            <div style="width:48px;height:48px;border-radius:50%;background:var(--gold-dim);border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0">&#127911;</div>
+            <div>
+              <div style="font-family:'Playfair Display',serif;font-size:1.15rem;font-style:italic;color:var(--white)">DJ Graffiti</div>
+              <div style="font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-top:.15rem">World-Renowned DJ &middot; Corporate Entertainment Icon</div>
+            </div>
+          </div>
+          <p style="font-size:.86rem;color:var(--muted);line-height:1.75;margin-bottom:1rem">DJ Jazzy Jeff collaborator, internationally recognized DJ, and one of the most sought-after names in premium corporate entertainment. Tr&eacute;s serves as his agent and sales partner, placing him at the world&rsquo;s top events.</p>
+          <a href="https://www.djgraffiti.com" target="_blank" rel="noopener" style="font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:.2rem">djgraffiti.com &rarr;</a>
+        </div>
+
+        <!-- YLC Creative card -->
+        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;border-left:3px solid var(--crimson2);transition:border-color .3s" class="rv">
+          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+            <div style="width:48px;height:48px;border-radius:50%;background:var(--crimson-dim);border:1px solid rgba(178,34,34,.3);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0">&#127775;</div>
+            <div>
+              <div style="font-family:'Playfair Display',serif;font-size:1.15rem;font-style:italic;color:var(--white)">YLC Creative Partners</div>
+              <div style="font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--crimson2);margin-top:.15rem">Corporate Entertainment &middot; Brand Experiences</div>
+            </div>
+          </div>
+          <p style="font-size:.86rem;color:var(--muted);line-height:1.75;margin-bottom:1rem">The joint venture between Tr&eacute;s Styles and DJ Graffiti &mdash; a full-service corporate entertainment company specializing in DJ bookings, event production, and brand activation experiences for companies that demand the best.</p>
+          <a href="https://www.ylccreative.com" target="_blank" rel="noopener" style="font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:.2rem">ylccreative.com &rarr;</a>
+        </div>
+
+        <!-- AML Festival video -->
+        <div style="background:#0a0a0a;border:1px solid rgba(255,255,255,.08);padding:1.5rem;border-left:3px solid var(--gold)" class="rv">
+          <div style="font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem">&#127916; Live Performance Documentary</div>
+          <div style="font-family:'Playfair Display',serif;font-size:.98rem;font-style:italic;color:var(--white);margin-bottom:.75rem">Athletic Mic League &mdash; A2SF Top of the Park, 20th Anniversary</div>
+          <div id="amlVidWrap" onclick="loadAML()" style="position:relative;aspect-ratio:16/9;background:#111;overflow:hidden;cursor:none;border-radius:2px">
+            <img src="https://img.youtube.com/vi/74osBV7tJi4/hqdefault.jpg" style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.75)"/>
+            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3)">
+              <div style="width:48px;height:48px;border-radius:50%;background:rgba(201,168,76,.9);display:flex;align-items:center;justify-content:center">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#0a0a0a"><polygon points="6,3 20,12 6,21"/></svg>
+              </div>
+            </div>
+            <iframe id="amlFrame" src="" title="AML A2SF Performance" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;display:none"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner" data-txt="BOOK">
+  <h2>Ready to Work<br/>with Tr&eacute;s?</h2>
+  <p>Inquiries for corporate events, festivals, nightclub residencies, and brand partnerships are welcome.</p>
+  <a href="booking.html" class="btn-white">Book 3Steez</a>
+</div>
 
 
 <footer>
@@ -297,10 +521,14 @@ function loadAML(){
       <ul class="ft-lnks">
         <li><a href="https://www.instagram.com/3Steez" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="https://www.youtube.com/@3STEEZ" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.twitch.tv/3steez" target="_blank" rel="noopener">Twitch &mdash; Live Daily</a></li>
+        <li><a href="https://www.tiktok.com/@3steez" target="_blank" rel="noopener">TikTok</a></li>
         <li><a href="https://www.mixcloud.com/trestyles/" target="_blank" rel="noopener">Mixcloud</a></li>
         <li><a href="https://www.facebook.com/3Steez" target="_blank" rel="noopener">Facebook</a></li>
         <li><a href="https://www.linkedin.com/in/3steez/" target="_blank" rel="noopener">LinkedIn</a></li>
         <li><a href="https://www.3steez.com/_files/ugd/27707a_721caa73008c4117ae2fa9617cf812b6.pdf" target="_blank" rel="noopener">Download Press Kit</a></li>
+        <li><a href="https://www.ylccreative.com" target="_blank" rel="noopener">YLC Creative Partners</a></li>
+        <li><a href="https://www.djgraffiti.com" target="_blank" rel="noopener">DJ Graffiti</a></li>
       </ul>
     </div>
   </div>
@@ -315,27 +543,18 @@ function loadAML(){
   </div>
 </footer>
 <script>
-// Cursor
+
+// Show cursor on first mousemove
 var _C=document.getElementById('cur'),_R=document.getElementById('cur-r');
 if(_C){
   document.addEventListener('mousemove',function(e){
-    _C.style.left=e.clientX+'px';_C.style.top=e.clientY+'px';
-    _C.style.opacity='1';
+    _C.style.left=e.clientX+'px';_C.style.top=e.clientY+'px';_C.style.opacity='1';
     if(_R){_R.style.left=e.clientX+'px';_R.style.top=e.clientY+'px';_R.style.opacity='1';}
-  },{ once: false });
+  });
 }
-// Hover glow on interactive elements
-document.querySelectorAll('a,button,.ev-card,.tc,.mi,.stat,.pl,.mc,.chip,.svc,.blog-card').forEach(function(el){
-  el.addEventListener('mouseenter',function(){document.body.classList.add('cg');});
-  el.addEventListener('mouseleave',function(){document.body.classList.remove('cg');});
-});
-// Nav scroll
-var _nav=document.getElementById('nav');
-if(_nav){window.addEventListener('scroll',function(){_nav.classList.toggle('solid',window.scrollY>60);});}
-// Mobile menu
-function omo(){var m=document.getElementById('mo');if(m){m.classList.add('open');document.body.style.overflow='hidden';}}
-function cmo(){var m=document.getElementById('mo');if(m){m.classList.remove('open');document.body.style.overflow='';}}
-// Intersection observer — safe version
+
+
+// Safe IntersectionObserver
 (function(){
   var els=document.querySelectorAll('.rv,.rvl');
   if(!els.length||!('IntersectionObserver' in window))return;
@@ -345,6 +564,16 @@ function cmo(){var m=document.getElementById('mo');if(m){m.classList.remove('ope
   },{threshold:0.05,rootMargin:'0px 0px -20px 0px'});
   els.forEach(function(el){obs.observe(el);});
 })();
+
+
+function loadAML(){
+  var f=document.getElementById('amlFrame');
+  if(f.src)return;
+  f.src='https://www.youtube.com/embed/74osBV7tJi4?autoplay=1&rel=0';
+  f.style.display='block';
+  document.getElementById('amlVidWrap').querySelector('img').style.display='none';
+  document.getElementById('amlVidWrap').querySelector('div').style.display='none';
+}
 </script>
 </body>
 </html>
