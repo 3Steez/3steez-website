@@ -73,7 +73,7 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 .rvl.anim-ready{opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease}
 .rv.anim-ready.vis,.rvl.anim-ready.vis{opacity:1!important;transform:none!important}
 .mq{background:var(--crimson);padding:.72rem 0;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
-.mq-t{display:flex;flex-wrap:wrap;justify-content:center;width:100%;animation:none}
+.mq-t{display:flex;flex-wrap:wrap;justify-content:center;width:100%;animation:none!important}
 .mq-t span{font-family:var(--BN);font-size:.95rem;letter-spacing:.18em;text-transform:uppercase;color:var(--white);padding:0 2.25rem;white-space:nowrap;opacity:.92}
 .mq-t .dot{color:var(--gold);padding:0;font-size:.8rem}
 @keyframes mqa{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -214,6 +214,52 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 .light-section label{color:#333 !important}
 .light-section .section-divider{background:#ddd !important}
 
+
+@media(max-width:768px){
+  /* Ticker smaller on mobile */
+  #ev-ticker{margin-top:60px}
+  .tick-lbl{padding:0 1rem;font-size:.55rem}
+  .tick-wrap{padding:.65rem 0}
+  .tick-item{font-size:.65rem;padding:0 1.25rem}
+  .tick-item .td{font-size:.7rem}
+  
+  /* Hero tagline repositioned so it doesn't cover face */
+  .h-kick{margin-bottom:1rem}
+  .hero-cnt{padding:0 1.5rem;margin-top:0;padding-top:4rem}
+  .hero-h1{font-size:clamp(2.2rem,9vw,3.5rem)}
+  
+  /* Marquee section on mobile - clean grid */
+  .mq{background:var(--crimson);padding:2rem 1rem}
+  .mq-t{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem .25rem;width:100%;animation:none!important;flex-wrap:unset}
+  .mq-t span{font-size:.55rem;letter-spacing:.1em;text-align:center;white-space:nowrap}
+  .mq-t .dot{display:none}
+  
+  /* Social grid stacked - show 2 per row instead of 1 */
+  .social-grid{grid-template-columns:repeat(2,1fr)!important}
+  .soc-item{padding:1.25rem .75rem}
+  .soc-icon{font-size:1.3rem}
+  .soc-name{font-size:.55rem}
+  .soc-handle{font-size:.8rem}
+  
+  /* Mixcloud embeds - remove extra space */
+  .mix-embed{margin-bottom:0}
+  .mix-embed iframe{height:120px}
+  .mix-grid{gap:.75rem}
+  
+  /* Logo bigger in footer/header */
+  .nav-logo{font-size:1.4rem!important}
+  .footer-logo-text{font-size:2.2rem!important}
+  
+  /* Booking video on mobile */
+  .bk-hero video{object-position:center center}
+  
+  /* Reel modal on mobile - full screen */
+  .ev-modal{max-width:100%!important;margin:0!important;border-radius:0}
+  .ev-modal-inner{grid-template-columns:1fr!important}
+  .ev-modal-right{padding:1.5rem!important}
+  .ev-modal-left{min-height:300px!important}
+}
+
 </style>
 </head>
 <body>
@@ -269,9 +315,7 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
   <div class="h-scroll"><span>Scroll</span><div class="scroll-t"><div class="scroll-f"></div></div></div>
 </section>
 
-<div class="mq"><div class="mq-t">
-  <span>Corporate Events</span><span class="dot">&#x2736;</span><span>Festival Main Stage</span><span class="dot">&#x2736;</span><span>Nightclub Residencies</span><span class="dot">&#x2736;</span><span>Brand Activations</span><span class="dot">&#x2736;</span><span>Private Affairs</span><span class="dot">&#x2736;</span><span>Music Production</span><span class="dot">&#x2736;</span><span>Live MC Hosting</span><span class="dot">&#x2736;</span><span>Event Consulting</span><span class="dot">&#x2736;</span><span>Corporate Events</span><span class="dot">&#x2736;</span><span>Festival Main Stage</span><span class="dot">&#x2736;</span><span>Nightclub Residencies</span><span class="dot">&#x2736;</span><span>Brand Activations</span><span class="dot">&#x2736;</span><span>Private Affairs</span><span class="dot">&#x2736;</span><span>Music Production</span><span class="dot">&#x2736;</span><span>Live MC Hosting</span><span class="dot">&#x2736;</span><span>Event Consulting</span><span class="dot">&#x2736;</span>
-</div></div>
+<div class="mq"><div class="mq-t"><span>Corporate Events</span><span class="dot">&#x2736;</span><span>Festival Main Stage</span><span class="dot">&#x2736;</span><span>Nightclub Residencies</span><span class="dot">&#x2736;</span><span>Brand Activations</span><span class="dot">&#x2736;</span><span>Private Affairs</span><span class="dot">&#x2736;</span><span>Music Production</span><span class="dot">&#x2736;</span><span>Live MC Hosting</span><span class="dot">&#x2736;</span><span>Event Consulting</span><span class="dot">&#x2736;</span></div></div>
 
 <section class="about-strip" style="padding:6rem 3rem">
   <div class="about-strip-in">
