@@ -210,6 +210,8 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 
 .ft-brand img{width:180px!important;height:auto!important;margin-bottom:1rem;display:block}
 .ft-brand{text-align:center}
+.ev-flyer-wrap{height:400px;overflow:hidden;position:relative;flex-shrink:0}
+.ev-flyer-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top}
 </style>
 </head>
 <body>
@@ -311,10 +313,22 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
     </div>
     <div class="ev-scroll-wrap" id="evScroll">
       <div class="ev-grid">
-        <a href="events.html" class="ev-card"><img class="ev-flyer" src="flyer-wayback.jpg" alt="Wayback Wednesday 2026"/></div><div class="ev-ov"><div class="ev-status on">Every Wednesday</div><div class="ev-title">Wayback Wednesday</div><div class="ev-venue">Alley Bar &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div></a>
-        <a href="events.html" class="ev-card"><img class="ev-flyer" src="flyer-afterwork.jpg" alt="A2 After Work Party 2026"/></div><div class="ev-ov"><div class="ev-status on">Every Friday</div><div class="ev-title">A2 After Work Party</div><div class="ev-venue">The Rabbit Hole &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></a>
-        <a href="events.html" class="ev-card"><img class="ev-flyer" src="flyer-reup.jpg" alt="The Re:Up Throwback RnB"/></div><div class="ev-ov"><div class="ev-status on">2nd Saturdays</div><div class="ev-title">The Re:Up</div><div class="ev-venue">LIVE Nightclub &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div></a>
-        <a href="events.html" class="ev-card"><div style="height:400px;overflow:hidden;position:relative"><img class="ev-flyer" src="https://www.a2sf.org/wp-content/uploads/2026/04/3STEEZ-Desktop-1200x630.png" alt="A2SF Top of the Park 2026"/></div><div class="ev-ov"><div class="ev-status up">June 27, 2026</div><div class="ev-title">A2SF Top of the Park</div><div class="ev-venue">O&amp;W Grove Stage &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div></a>
+        <a href="events.html" class="ev-card">
+          <div class="ev-flyer-wrap"><img class="ev-flyer" src="flyer-wayback.jpg" alt="Wayback Wednesday"/></div>
+          <div class="ev-ov"><div class="ev-status on">Every Wednesday</div><div class="ev-title">Wayback Wednesday</div><div class="ev-venue">Alley Bar &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div>
+        </a>
+        <a href="events.html" class="ev-card">
+          <div class="ev-flyer-wrap"><img class="ev-flyer" src="flyer-afterwork.jpg" alt="A2 After Work Party"/></div>
+          <div class="ev-ov"><div class="ev-status on">Every Friday</div><div class="ev-title">A2 After Work Party</div><div class="ev-venue">The Rabbit Hole &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div>
+        </a>
+        <a href="events.html" class="ev-card">
+          <div class="ev-flyer-wrap"><img class="ev-flyer" src="flyer-reup.jpg" alt="The Re:Up"/></div>
+          <div class="ev-ov"><div class="ev-status on">2nd Saturdays</div><div class="ev-title">The Re:Up</div><div class="ev-venue">LIVE Nightclub &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div>
+        </a>
+        <a href="events.html" class="ev-card">
+          <div class="ev-flyer-wrap"><img class="ev-flyer" src="flyer-a2sf.jpg" alt="A2SF Top of the Park"/></div>
+          <div class="ev-ov"><div class="ev-status up">&#9679; June 27, 2026</div><div class="ev-title">A2SF Top of the Park</div><div class="ev-venue">O&W Grove Stage &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div>
+        </a>
       </div>
     </div>
   </div>
