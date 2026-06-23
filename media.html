@@ -439,7 +439,7 @@ textarea{resize:vertical;min-height:108px}
 <script>
 function loadYT(){
   var frame=document.getElementById('ytFrame');
-  if(frame.src)return;
+  if(frame.getAttribute('src'))return;
   frame.src='https://www.youtube.com/embed/185vr7cVdKY?autoplay=1&rel=0&modestbranding=1';
   frame.style.display='block';
   document.getElementById('ytThumb').style.display='none';
