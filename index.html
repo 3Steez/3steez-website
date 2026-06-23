@@ -159,10 +159,10 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 .ev-scroll-wrap:active{cursor:grabbing}
 .ev-scroll-wrap::-webkit-scrollbar{height:2px}
 .ev-scroll-wrap::-webkit-scrollbar-thumb{background:var(--gold)}
-.ev-grid{display:flex;gap:1rem;width:max-content;align-items:flex-start}
-.ev-card{position:relative;overflow:hidden;background:var(--card);border:1px solid rgba(255,255,255,.06);cursor:none;transition:border-color .4s,transform .35s,box-shadow .4s;flex-shrink:0;width:300px;border-radius:2px;text-decoration:none;display:block;contain:layout paint;isolation:isolate}
+.ev-grid{display:flex;gap:1.25rem;width:max-content;align-items:stretch}
+.ev-card{position:relative;overflow:hidden;background:var(--card);border:1px solid rgba(255,255,255,.06);cursor:pointer;pointer-events:auto;transition:border-color .4s,transform .35s,box-shadow .4s;flex-shrink:0;width:300px;border-radius:2px;text-decoration:none;display:block}
 .ev-card:hover{border-color:rgba(201,168,76,.55);transform:translateY(-6px) scale(1.012);box-shadow:0 24px 60px rgba(0,0,0,.7)}
-.ev-flyer{width:100%;height:400px;max-height:400px;object-fit:cover;object-position:center top;filter:brightness(.68) saturate(.85);transition:transform .65s,filter .5s;display:block;overflow:hidden}
+.ev-flyer{width:100%;height:400px;object-fit:cover;object-position:center top;filter:brightness(.68) saturate(.85);transition:transform .65s,filter .5s;display:block;overflow:hidden}
 .ev-card:hover .ev-flyer{transform:scale(1.06);filter:brightness(.88) saturate(1.1)}
 .ev-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,7,7,.98) 0%,rgba(7,7,7,.5) 40%,transparent 70%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
 .ev-status{font-size:.53rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem}
@@ -208,7 +208,8 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 }
 
 
-.ft-brand img{width:140px!important;height:auto!important;margin-bottom:1rem}
+.ft-brand img{width:180px!important;height:auto!important;margin-bottom:1rem;display:block}
+.ft-brand{text-align:center}
 </style>
 </head>
 <body>
@@ -310,10 +311,10 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
     </div>
     <div class="ev-scroll-wrap" id="evScroll">
       <div class="ev-grid">
-        <a href="events.html" class="ev-card"><div style="height:400px;overflow:hidden;position:relative;flex-shrink:0"><img class="ev-flyer" src="flyer-wayback.jpg" alt="Wayback Wednesday 2026"/></div><div class="ev-ov"><div class="ev-status on">Every Wednesday</div><div class="ev-title">Wayback Wednesday</div><div class="ev-venue">Alley Bar &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div></a>
-        <a href="events.html" class="ev-card"><div style="height:400px;overflow:hidden;position:relative;flex-shrink:0"><img class="ev-flyer" src="flyer-afterwork.jpg" alt="A2 After Work Party 2026"/></div><div class="ev-ov"><div class="ev-status on">Every Friday</div><div class="ev-title">A2 After Work Party</div><div class="ev-venue">The Rabbit Hole &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></a>
-        <a href="events.html" class="ev-card"><div style="height:400px;overflow:hidden;position:relative;flex-shrink:0"><img class="ev-flyer" src="flyer-reup.jpg" alt="The Re:Up Throwback RnB"/></div><div class="ev-ov"><div class="ev-status on">2nd Saturdays</div><div class="ev-title">The Re:Up</div><div class="ev-venue">LIVE Nightclub &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div></a>
-        <a href="events.html" class="ev-card"><div style="height:400px;overflow:hidden;position:relative;flex-shrink:0"><img class="ev-flyer" src="https://www.a2sf.org/wp-content/uploads/2026/04/3STEEZ-Desktop-1200x630.png" alt="A2SF Top of the Park 2026"/></div><div class="ev-ov"><div class="ev-status up">June 27, 2026</div><div class="ev-title">A2SF Top of the Park</div><div class="ev-venue">O&amp;W Grove Stage &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div></a>
+        <a href="events.html" class="ev-card"><img class="ev-flyer" src="flyer-wayback.jpg" alt="Wayback Wednesday 2026"/></div><div class="ev-ov"><div class="ev-status on">Every Wednesday</div><div class="ev-title">Wayback Wednesday</div><div class="ev-venue">Alley Bar &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div></a>
+        <a href="events.html" class="ev-card"><img class="ev-flyer" src="flyer-afterwork.jpg" alt="A2 After Work Party 2026"/></div><div class="ev-ov"><div class="ev-status on">Every Friday</div><div class="ev-title">A2 After Work Party</div><div class="ev-venue">The Rabbit Hole &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></a>
+        <a href="events.html" class="ev-card"><img class="ev-flyer" src="flyer-reup.jpg" alt="The Re:Up Throwback RnB"/></div><div class="ev-ov"><div class="ev-status on">2nd Saturdays</div><div class="ev-title">The Re:Up</div><div class="ev-venue">LIVE Nightclub &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div></a>
+        <a href="events.html" class="ev-card"><div style="height:400px;overflow:hidden;position:relative"><img class="ev-flyer" src="https://www.a2sf.org/wp-content/uploads/2026/04/3STEEZ-Desktop-1200x630.png" alt="A2SF Top of the Park 2026"/></div><div class="ev-ov"><div class="ev-status up">June 27, 2026</div><div class="ev-title">A2SF Top of the Park</div><div class="ev-venue">O&amp;W Grove Stage &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div></a>
       </div>
     </div>
   </div>
