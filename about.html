@@ -532,5 +532,16 @@ var _C=document.getElementById('cur'),_R=document.getElementById('cur-r');
 if(_C){document.addEventListener('mousemove',function(e){_C.style.left=e.clientX+'px';_C.style.top=e.clientY+'px';_C.style.opacity='1';if(_R){_R.style.left=e.clientX+'px';_R.style.top=e.clientY+'px';_R.style.opacity='1';}});}
 (function(){var els=document.querySelectorAll('.rv,.rvl');if(!els.length||!('IntersectionObserver' in window))return;els.forEach(function(el,i){el.classList.add('anim-ready');el.style.transitionDelay=(i%5)*.07+'s';});var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:0.05,rootMargin:'0px 0px -20px 0px'});els.forEach(function(el){obs.observe(el);});})();
 </script>
+<script>
+// Mobile menu
+function omo(){
+  var m=document.getElementById('mo');
+  if(m){m.classList.add('open');document.body.style.overflow='hidden';}
+}
+function cmo(){
+  var m=document.getElementById('mo');
+  if(m){m.classList.remove('open');document.body.style.overflow='';}
+}
+</script>
 </body>
 </html>

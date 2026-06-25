@@ -212,6 +212,23 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 .ft-brand{text-align:center}
 .ev-flyer-wrap{height:400px;overflow:hidden;position:relative;flex-shrink:0}
 .ev-flyer-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top}
+
+@media(max-width:768px){
+  /* Ticker bar — smaller so event text is visible */
+  .tick-lbl{padding:0 .75rem;font-size:.5rem;gap:.35rem}
+  .tick-wrap{padding:.55rem 0}
+  .tick-item{font-size:.62rem;padding:0 1rem}
+  .tick-item .td{font-size:.65rem}
+  #ev-ticker{margin-top:60px}
+
+  /* Hero tagline — move it lower so it clears your face */
+  .h-kick{position:absolute;bottom:8rem;left:1.5rem;margin:0}
+  .hero-cnt{padding:0;position:relative;height:100%}
+  .hero-h1{position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;font-size:clamp(2rem,8vw,3rem);margin:0}
+  .hero-sub{display:none}
+  .hero-act{position:absolute;bottom:-4rem;left:1.5rem;right:1.5rem}
+}
+
 </style>
 </head>
 <body>
@@ -462,6 +479,17 @@ if(_C){
   els.forEach(function(el){obs.observe(el);});
 })();
 
+</script>
+<script>
+// Mobile menu
+function omo(){
+  var m=document.getElementById('mo');
+  if(m){m.classList.add('open');document.body.style.overflow='hidden';}
+}
+function cmo(){
+  var m=document.getElementById('mo');
+  if(m){m.classList.remove('open');document.body.style.overflow='';}
+}
 </script>
 </body>
 </html>
