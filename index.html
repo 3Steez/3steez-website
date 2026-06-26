@@ -515,6 +515,31 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 /* ft-tag: paragraph sits flush under logo */
 .ft-tag{font-size:.86rem;color:var(--muted);line-height:1.8;max-width:200px;text-align:left!important;padding:0!important;margin:0!important;text-indent:0!important}
 </style>
+
+<style id="mobile-hero-fix">
+@media screen and (max-width:768px){
+  section#hero{
+    height:100svh!important;
+    min-height:600px!important;
+    max-height:900px!important;
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:flex-end!important;
+  }
+  section#hero .hero-cnt{
+    position:relative!important;
+    z-index:3!important;
+    padding:0 1.5rem 3.5rem!important;
+    margin-top:0!important;
+    margin-bottom:0!important;
+    display:block!important;
+    flex-shrink:0!important;
+  }
+  section#hero .hero-bg img{
+    object-position:center 10%!important;
+  }
+}
+</style>
 </head>
 <body>
 <div id="mo-backdrop" onclick="cmo()"></div>
