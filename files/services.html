@@ -589,7 +589,7 @@ textarea{resize:vertical;min-height:108px}
 
   /* Hero mobile fix */
   #hero{height:100svh;min-height:580px;max-height:820px}
-  .hero-cnt{padding:0 1.5rem;margin-top:0;display:flex;flex-direction:column;justify-content:center}
+  .hero-cnt{padding:0 1.5rem;margin-top:0;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:3rem}
   .hero-bg img{object-position:center 15%}
 }
 
@@ -597,8 +597,11 @@ textarea{resize:vertical;min-height:108px}
 /* ── Footer brand: logo + paragraph flush left ── */
 .ft-brand{text-align:left!important;padding:0!important;margin:0!important}
 .ft-brand img{display:block!important;width:160px!important;height:auto!important;margin:0 0 1rem 0!important;object-fit:contain!important;padding:0!important}
-.ft-tag{text-align:left!important;padding:0!important;margin:0!important}
+
 @media(max-width:768px){.ft-brand img{width:130px!important}}
+
+/* ft-tag: paragraph sits flush under logo */
+.ft-tag{font-size:.86rem;color:var(--muted);line-height:1.8;max-width:200px;text-align:left!important;padding:0!important;margin:0!important;text-indent:0!important}
 </style>
 </head>
 <body>

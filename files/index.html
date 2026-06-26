@@ -220,10 +220,11 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 
   .hero-cnt{
     padding:0 1.5rem;
-    margin-top:4rem;
-    display:block;
+    margin-top:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
     padding-bottom:3rem;
-    height:100%;
   }
   .h-kick{margin-bottom:.75rem;opacity:1}
   .hero-h1{font-size:clamp(2rem,8vw,3rem);margin-bottom:1.25rem}
@@ -500,7 +501,7 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 
   /* Hero mobile fix */
   #hero{height:100svh;min-height:580px;max-height:820px}
-  .hero-cnt{padding:0 1.5rem;margin-top:0;display:flex;flex-direction:column;justify-content:center}
+  .hero-cnt{padding:0 1.5rem;margin-top:0;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:3rem}
   .hero-bg img{object-position:center 15%}
 }
 
@@ -508,8 +509,11 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 /* ── Footer brand: logo + paragraph flush left ── */
 .ft-brand{text-align:left!important;padding:0!important;margin:0!important}
 .ft-brand img{display:block!important;width:160px!important;height:auto!important;margin:0 0 1rem 0!important;object-fit:contain!important;padding:0!important}
-.ft-tag{text-align:left!important;padding:0!important;margin:0!important}
+
 @media(max-width:768px){.ft-brand img{width:130px!important}}
+
+/* ft-tag: paragraph sits flush under logo */
+.ft-tag{font-size:.86rem;color:var(--muted);line-height:1.8;max-width:200px;text-align:left!important;padding:0!important;margin:0!important;text-indent:0!important}
 </style>
 </head>
 <body>
