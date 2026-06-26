@@ -458,6 +458,51 @@ textarea{resize:vertical;min-height:108px}
   .med-hero + section,.med-mix{padding-top:2.5rem!important}
 }
 
+
+@media(max-width:768px){
+  .ft-brand{padding:0!important;margin-left:0!important}
+  .ft-brand img{margin:0 0 1rem 0!important;display:block;width:160px!important}
+  .ft-cols{padding:2rem 1.25rem!important}
+  .ft-col{padding:0!important}
+}
+
+
+@media(max-width:768px){
+  /* Stack live section columns */
+  .live-layout, div[style*="grid-template-columns:1fr 1fr;gap:5rem"]{
+    grid-template-columns:1fr!important;
+    gap:2rem!important;
+  }
+  /* Social grid - 2 cols with colored backgrounds */
+  .social-grid{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:2px!important;
+    background:var(--border)!important;
+  }
+  .soc-item{
+    padding:1.25rem .5rem!important;
+    text-align:center!important;
+    border:none!important;
+  }
+  /* Platform colors */
+  .soc-item:nth-child(1){background:#1a1a2e!important;border-left:3px solid #E1306C!important}
+  .soc-item:nth-child(2){background:#1a0a0a!important;border-left:3px solid #FF0000!important}
+  .soc-item:nth-child(3){background:#0e0a1a!important;border-left:3px solid #9146FF!important}
+  .soc-item:nth-child(4){background:#0a0a0a!important;border-left:3px solid #fff!important}
+  .soc-item:nth-child(5){background:#0a1a0a!important;border-left:3px solid #00f2ea!important}
+  .soc-item:nth-child(6){background:#0a0e1a!important;border-left:3px solid #1877F2!important}
+  .soc-item:nth-child(7){background:#0a0d1a!important;border-left:3px solid #0A66C2!important}
+  .soc-item:nth-child(8){background:#1a1500!important;border-left:3px solid var(--gold)!important}
+  .soc-icon{font-size:1.5rem!important;margin-bottom:.3rem}
+  .soc-name{font-size:.5rem!important;letter-spacing:.12em!important;color:rgba(255,255,255,.7)!important}
+  .soc-handle{font-size:.75rem!important;color:var(--white)!important}
+  /* Remove blank space above mixcloud */
+  .med-mix{padding-top:2rem!important}
+  section[style*="padding:5rem 3rem"]{padding:2.5rem 1.25rem!important}
+  section[style*="padding:6rem 3rem"]{padding:3rem 1.25rem!important}
+}
+
 </style>
 </head>
 <body>
