@@ -256,7 +256,8 @@ textarea{resize:vertical;min-height:108px}
 .about-page-hero-img-wrap{position:relative;z-index:1}
 @media(max-width:1024px){
   .about-page-hero-in{grid-template-columns:1fr;gap:3rem}
-  .about-page-hero-img{display:none}
+  .about-page-hero-img{display:block!important}
+  .about-page-hero-img{display:block}
 }
 @media(max-width:768px){.about-page-hero{padding:8rem 1.5rem 4rem}}
 
@@ -328,6 +329,54 @@ textarea{resize:vertical;min-height:108px}
 .light-section .stag{color:#9a7a2e !important}
 /* Dividers on light */
 .light-section .gd{background:linear-gradient(to right,transparent,#9a7a2e,transparent) !important}
+
+@media(max-width:768px){
+  #mo{
+    position:fixed;
+    top:0;right:-100%;
+    width:80%;max-width:320px;
+    height:100vh;
+    background:var(--black);
+    border-left:1px solid var(--border);
+    z-index:9999;
+    transition:right .3s ease;
+    padding:5rem 2rem 2rem;
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
+    overflow-y:auto;
+  }
+  #mo.open{right:0}
+  #mo .nav-links-mo a{
+    display:block;
+    font-size:1.1rem;
+    color:var(--white);
+    text-decoration:none;
+    padding:.75rem 0;
+    border-bottom:1px solid var(--border);
+    font-family:var(--PD);
+    font-style:italic;
+  }
+  .mo-close{
+    position:absolute;
+    top:1.25rem;right:1.25rem;
+    background:none;
+    border:none;
+    color:var(--white);
+    font-size:1.5rem;
+    cursor:pointer;
+    padding:.5rem;
+  }
+  .mo-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    z-index:9998;
+  }
+  .mo-overlay.open{display:block}
+}
+
 </style>
 </head>
 <body>
