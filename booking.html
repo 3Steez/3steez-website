@@ -600,16 +600,22 @@ textarea{resize:vertical;min-height:108px}
   display:block!important;
   width:180px!important;
   height:auto!important;
-  margin:0 0 1rem 0!important;
+  margin:0 auto 1rem auto!important;
   object-fit:contain!important;
 }
 .ft-brand{
-  text-align:left!important;
+  text-align:center!important;
   padding:0!important;
   margin:0!important;
 }
 @media(max-width:768px){
-  .ft-brand img{width:150px!important;}
+  .ft-brand img{width:150px!important;margin:0 auto 1rem auto!important;display:block!important;}
+  .ft-brand{text-align:center!important;}
+
+  /* Hero mobile fix */
+  #hero{height:100svh;min-height:580px;max-height:820px}
+  .hero-cnt{padding:0 1.5rem;margin-top:0;display:flex;flex-direction:column;justify-content:center}
+  .hero-bg img{object-position:center 15%}
 }
 
 </style>
