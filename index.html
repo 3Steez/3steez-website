@@ -386,6 +386,80 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
   .nav-book{display:none!important}
 }
 
+
+@media(max-width:768px){
+
+  /* ── 1. Footer logo + text — both flush left ── */
+  .ft-brand{text-align:left!important;padding-left:0!important;margin-left:0!important}
+  .ft-brand img{margin-left:0!important;margin-bottom:1rem}
+  .ft-p{text-align:left!important;padding-left:0!important;margin-left:0!important}
+  .ft-cols{padding:2.5rem 1.5rem!important}
+
+  /* ── 2. Hero portrait photo — show full face, not cut off ── */
+  .about-strip-img img{
+    aspect-ratio:4/5!important;
+    object-position:center 10%!important;
+  }
+  .about-page-hero-img img{
+    aspect-ratio:4/5!important;
+    object-position:center 10%!important;
+  }
+
+  /* ── 3. Section scroll nudge ── */
+  .scroll-nudge{
+    display:flex;
+    justify-content:center;
+    padding:1.25rem 0 .5rem;
+    opacity:.45;
+    animation:nudgePulse 2s ease-in-out infinite;
+  }
+  .scroll-nudge span{
+    display:block;
+    width:28px;height:28px;
+    border-right:2px solid var(--gold);
+    border-bottom:2px solid var(--gold);
+    transform:rotate(45deg);
+    margin-top:-14px;
+  }
+  @keyframes nudgePulse{
+    0%,100%{opacity:.3;transform:translateY(0)}
+    50%{opacity:.7;transform:translateY(6px)}
+  }
+
+  /* ── 4. Media social grid — 2 cols, colored backgrounds ── */
+  .social-grid{
+    grid-template-columns:repeat(2,1fr)!important;
+    gap:2px!important;
+  }
+  .soc-item{
+    padding:1.5rem .75rem!important;
+    text-align:center;
+    background:var(--card)!important;
+    border:1px solid var(--border)!important;
+  }
+  .soc-item:nth-child(1){background:rgba(201,168,76,.12)!important;border-color:rgba(201,168,76,.3)!important}
+  .soc-item:nth-child(2){background:rgba(139,26,26,.15)!important;border-color:rgba(139,26,26,.35)!important}
+  .soc-item:nth-child(3){background:rgba(145,70,255,.12)!important;border-color:rgba(145,70,255,.3)!important}
+  .soc-item:nth-child(4){background:rgba(255,255,255,.06)!important}
+  .soc-item:nth-child(5){background:rgba(82,132,255,.1)!important;border-color:rgba(82,132,255,.3)!important}
+  .soc-item:nth-child(6){background:rgba(24,119,242,.1)!important;border-color:rgba(24,119,242,.3)!important}
+  .soc-item:nth-child(7){background:rgba(10,102,194,.1)!important;border-color:rgba(10,102,194,.3)!important}
+  .soc-item:nth-child(8){background:rgba(201,168,76,.1)!important;border-color:rgba(201,168,76,.3)!important}
+  .soc-icon{font-size:1.6rem!important;margin-bottom:.4rem}
+  .soc-name{font-size:.55rem!important;color:var(--gold)!important}
+  .soc-handle{font-size:.8rem!important}
+
+  /* ── 5. About YLC corporate section — stack vertically ── */
+  .ylc-cols,.abt-corp-grid{
+    grid-template-columns:1fr!important;
+    gap:1.5rem!important;
+  }
+
+  /* ── 6. Media — remove blank space before YouTube section ── */
+  .med-hero{padding:3rem 1.5rem 2rem!important}
+  .med-hero + section,.med-mix{padding-top:2.5rem!important}
+}
+
 </style>
 </head>
 <body>
@@ -470,7 +544,7 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
     </div>
   </div>
 </section>
-
+<div class="scroll-nudge"><span></span></div>
 <div class="stats">
   <div class="stat rv"><div class="stat-n">20+</div><div class="stat-l">Years in the Industry</div></div>
   <div class="stat rv"><div class="stat-n">4</div><div class="stat-l">Disciplines Mastered</div></div>
@@ -509,7 +583,7 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
     </div>
   </div>
 </section>
-
+<div class="scroll-nudge"><span></span></div>
 <section class="home-video">
   <div class="home-video-in">
     <div class="yt-wrap rv" id="ytWrap" onclick="loadYT()">
