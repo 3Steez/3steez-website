@@ -597,10 +597,10 @@ img.a-photo{object-position:center 5%!important}
 
 /* ── Footer logo — new image, left-aligned ── */
 .ft-brand img{
-  display:block!important;
+  display:inline-block!important;
   width:180px!important;
   height:auto!important;
-  margin:0 auto 1rem auto!important;
+  margin-bottom:1rem!important;
   object-fit:contain!important;
 }
 .ft-brand{
@@ -616,6 +616,30 @@ img.a-photo{object-position:center 5%!important}
   #hero{height:100svh;min-height:580px;max-height:820px}
   .hero-cnt{padding:0 1.5rem;margin-top:0;display:flex;flex-direction:column;justify-content:center}
   .hero-bg img{object-position:center 15%}
+}
+
+
+/* About hero image size fix */
+.about-page-hero-img-wrap img{
+  width:100%;
+  max-height:520px;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+.about-page-hero-img-wrap{
+  overflow:hidden;
+  border-radius:2px;
+}
+@media(max-width:1024px){
+  .about-page-hero-img-wrap img{
+    max-height:400px;
+  }
+}
+@media(max-width:768px){
+  .about-page-hero-img-wrap img{
+    max-height:320px;
+  }
 }
 
 </style>
@@ -658,7 +682,7 @@ img.a-photo{object-position:center 5%!important}
     <div class="about-page-hero-img rvl">
       <div class="about-hero-accent"></div>
       <div class="about-page-hero-img-wrap">
-        <img src="necto_clean.jpg" alt="3Steez Tr&eacute;s Styles live performance" style="object-position:center top!important"/>
+        <img src="necto_clean.jpg" alt="3Steez Tr&eacute;s Styles live performance"/>
       </div>
     </div>
   </div>
