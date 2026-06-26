@@ -70,7 +70,7 @@ h1.sh .cr,h2.sh .cr{color:var(--crimson2)}
 .gd{height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);max-width:180px;margin:1.75rem auto}
 footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3rem 2.5rem}
 .ft-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:5rem;padding-bottom:3.25rem;border-bottom:1px solid var(--border);margin-bottom:1.85rem}
-.ft-brand img{height:36px;margin-bottom:1.2rem;object-fit:contain}
+.ft-brand img{height:auto;width:160px;margin-bottom:1.2rem;object-fit:contain;display:block}
 .ft-tag{font-size:.86rem;color:var(--muted);line-height:1.8;max-width:275px}
 .ft-ch{font-size:.57rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
 .ft-lnks{list-style:none;display:flex;flex-direction:column;gap:.6rem}
@@ -230,7 +230,7 @@ textarea{resize:vertical;min-height:108px}
 .btn-white{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:var(--white);color:var(--crimson);padding:1.05rem 2.5rem;text-decoration:none;display:inline-block;transition:background .2s,transform .15s;cursor:none;position:relative;z-index:1}
 .btn-white:hover{background:var(--gold2);transform:translateY(-2px)}
 @media(max-width:1024px){
-  .two-col{grid-template-columns:1fr;gap:4rem}.a-photo{aspect-ratio:16/9}.a-border{display:none}.a-badge{bottom:-.5rem;right:1rem}
+  .two-col{grid-template-columns:1fr;gap:4rem}.a-photo{aspect-ratio:2/3}.a-border{display:none}.a-badge{bottom:-.5rem;right:1rem}
   .svc-grid,.tg,.blog-grid{grid-template-columns:1fr}.blog-card.featured{grid-row:span 1}
   .media-g{grid-template-columns:1fr}.platforms{grid-template-columns:repeat(3,1fr)}
   .bk-in{grid-template-columns:1fr;gap:3.25rem}.fr{grid-template-columns:1fr}
@@ -613,6 +613,14 @@ img.a-photo{object-position:center 5%!important}
   .ft-brand img{height:auto!important;width:150px!important;display:block!important;margin:0 0 1rem 0!important}
 }
 
+
+/* FINAL: Footer logo size and alignment */
+.ft-brand img{height:auto!important;width:160px!important;display:block!important}
+@media(max-width:768px){
+  .ft-brand{margin:0!important;padding:0!important;text-align:left!important}
+  .ft-brand img{margin:0 0 1rem 0!important}
+}
+
 </style>
 </head>
 <body>
@@ -663,7 +671,7 @@ img.a-photo{object-position:center 5%!important}
   <div class="inner">
     <div class="two-col">
       <div class="a-photo-wrap rvl">
-        <img class="a-photo" src="https://static.wixstatic.com/media/27707a_de9ce9f6a4374b6399b93988df65fdda~mv2.jpg/v1/fill/w_800,h_1200,al_c,q_90,enc_avif,quality_auto/27707a_de9ce9f6a4374b6399b93988df65fdda~mv2.jpg" alt="Tr&eacute;s Styles 3Steez"/>
+        <img class="a-photo" style="object-position:center 5%!important" src="https://static.wixstatic.com/media/27707a_de9ce9f6a4374b6399b93988df65fdda~mv2.jpg/v1/fill/w_800,h_1200,al_c,q_90,enc_avif,quality_auto/27707a_de9ce9f6a4374b6399b93988df65fdda~mv2.jpg" alt="Tr&eacute;s Styles 3Steez"/>
         <div class="a-border"></div>
         <div class="a-badge"><div class="a-badge-n">20+</div><div class="a-badge-l">Yrs Experience</div></div>
       </div>
