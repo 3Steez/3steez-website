@@ -50,13 +50,13 @@ body{background:var(--black);color:var(--white);font-family:var(--IN);font-weigh
 .nav-links a:hover{color:var(--black);background:var(--gold)}
 .nav-book{font-size:.63rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;background:transparent;color:var(--gold);border:1px solid var(--gold);padding:.55rem 1.35rem;text-decoration:none;transition:background .2s,color .2s;cursor:none;white-space:nowrap}
 .nav-book:hover{background:var(--gold);color:var(--black)}
-.nav-burger{display:none;background:none;border:none;cursor:none;flex-direction:column;gap:5px;padding:4px}
-.nav-burger span{display:block;width:24px;height:1.5px;background:var(--white);transition:.3s}
-.mob-ov{display:none;position:fixed;inset:0;background:rgba(7,7,7,.97);z-index:600;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem}
+
+
+
 .mob-ov.open{display:flex}
 .mob-ov a{font-family:var(--PD);font-size:2.2rem;font-style:italic;color:var(--white);text-decoration:none;opacity:.8;transition:opacity .2s,color .2s}
 .mob-ov a:hover{opacity:1;color:var(--gold2)}
-.mob-x{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:none;opacity:.6}
+
 section{padding:7rem 3rem}
 .stag{display:inline-flex;align-items:center;gap:.7rem;font-size:.6rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
 .stag::before{content:'';width:30px;height:1px;background:var(--gold)}
@@ -92,7 +92,7 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 @keyframes mqa{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:1024px){.ft-in{grid-template-columns:1fr;gap:2.25rem}}
 @media(max-width:768px){
-  #nav{padding:1rem 1.5rem}.nav-links,.nav-book{display:none}.nav-burger{display:flex}
+  #nav{padding:1rem 1.5rem}.nav-links,.nav-book{display:none}
   section{padding:5rem 1.5rem}.ft-bot{flex-direction:column;gap:1rem;text-align:center}
 }
 @media(max-width:480px){#nav{padding:1rem}}
@@ -250,22 +250,8 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 
 
 @media(max-width:768px){
-  #mo{
-    position:fixed;
-    top:0;right:-100%;
-    width:80%;max-width:320px;
-    height:100vh;
-    background:var(--black);
-    border-left:1px solid var(--border);
-    z-index:9999;
-    transition:right .3s ease;
-    padding:5rem 2rem 2rem;
-    display:flex;
-    flex-direction:column;
-    gap:1.5rem;
-    overflow-y:auto;
-  }
-  #mo.open{right:0}
+  
+  
   #mo .nav-links-mo a{
     display:block;
     font-size:1.1rem;
@@ -296,9 +282,118 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
   .mo-overlay.open{display:block}
 }
 
+
+/* ── Mobile Menu ── */
+
+
+#mo a{
+  font-family:var(--PD);
+  font-style:italic;
+  font-size:1.2rem;
+  color:var(--white);
+  text-decoration:none;
+  padding:.75rem 0;
+  border-bottom:1px solid var(--border);
+  display:block;
+}
+#mo a:hover{color:var(--gold)}
+
+.mob-ov{display:none!important}
+/* Backdrop */
+.mo-backdrop{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  z-index:9998;
+}
+.mo-backdrop.open{display:block}
+@media(min-width:769px){
+  
+  
+  
+}
+
+
+/* ── Mobile menu ── */
+#mo{
+  position:fixed;
+  top:0;right:-100%;
+  width:80%;max-width:320px;
+  height:100vh;
+  background:var(--black);
+  border-left:1px solid var(--border);
+  z-index:9999;
+  transition:right .3s ease;
+  padding:5rem 2rem 2rem;
+  display:flex!important;
+  flex-direction:column;
+  gap:1.5rem;
+  overflow-y:auto;
+}
+#mo.open{right:0!important}
+#mo-backdrop{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  z-index:9998;
+  cursor:pointer;
+}
+#mo-backdrop.open{display:block!important}
+#mo a{
+  display:block;
+  font-family:var(--PD);
+  font-style:italic;
+  font-size:1.2rem;
+  color:var(--white);
+  text-decoration:none;
+  padding:.75rem 0;
+  border-bottom:1px solid var(--border);
+}
+.mob-x{
+  position:absolute;
+  top:1.25rem;right:1.25rem;
+  background:none;
+  border:1px solid var(--border);
+  color:var(--white);
+  font-size:1.2rem;
+  cursor:pointer!important;
+  padding:.4rem .7rem;
+  border-radius:2px;
+  display:block!important;
+  pointer-events:auto!important;
+  z-index:10000;
+}
+.nav-burger{
+  display:none;
+  background:none;
+  border:none;
+  cursor:pointer!important;
+  padding:.5rem;
+  flex-direction:column;
+  gap:5px;
+  pointer-events:auto!important;
+}
+.nav-burger span{
+  display:block;
+  width:24px;height:2px;
+  background:var(--white);
+}
+@media(max-width:768px){
+  .nav-burger{display:flex!important}
+  .nav-links{display:none!important}
+  .nav-book{display:none!important}
+}
+
 </style>
 </head>
 <body>
+<div id="mo-backdrop" onclick="cmo()"></div>
+<div id="mo">
+  <button class="mob-x" onclick="cmo()">&#x2715;</button>
+  <a href="index.html" onclick="cmo()">Home</a><a href="events.html" onclick="cmo()">Events</a><a href="about.html" onclick="cmo()">About</a><a href="services.html" onclick="cmo()">Services</a><a href="gallery.html" onclick="cmo()">Gallery</a><a href="media.html" onclick="cmo()">Media</a><a href="blog.html" onclick="cmo()">Blog</a><a href="booking.html" onclick="cmo()">Booking</a>
+</div>
 <div id="cur"></div><div id="cur-r"></div>
 
 <nav id="nav">
@@ -315,10 +410,7 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
   <a href="booking.html" class="nav-book">Book Now</a>
   <button class="nav-burger" onclick="omo()"><span></span><span></span><span></span></button>
 </nav>
-<div class="mob-ov" id="mo">
-  <button class="mob-x" onclick="cmo()">&#x2715;</button>
-  <a href="index.html" onclick="cmo()">Home</a><a href="events.html" onclick="cmo()">Events</a><a href="about.html" onclick="cmo()">About</a><a href="services.html" onclick="cmo()">Services</a><a href="gallery.html" onclick="cmo()">Gallery</a><a href="media.html" onclick="cmo()">Media</a><a href="blog.html" onclick="cmo()">Blog</a><a href="booking.html" onclick="cmo()">Booking</a>
-</div>
+
 
 <div id="ev-ticker">
   <div class="tick-in">
@@ -549,14 +641,32 @@ if(_C){
 </script>
 <script>
 // Mobile menu
+</script>
+<script>
+// Mobile menu
+if(b){b.classList.remove('open');}
+  document.body.style.overflow='';
+</script>
+<script>
+
+// Mobile menu
 function omo(){
   var m=document.getElementById('mo');
-  if(m){m.classList.add('open');document.body.style.overflow='hidden';}
+  var b=document.getElementById('mo-backdrop');
+  if(m){m.classList.add('open');}
+  if(b){b.style.display='block';}
+  document.body.style.overflow='hidden';
 }
 function cmo(){
   var m=document.getElementById('mo');
-  if(m){m.classList.remove('open');document.body.style.overflow='';}
+  var b=document.getElementById('mo-backdrop');
+  if(m){m.classList.remove('open');}
+  if(b){b.style.display='none';}
+  document.body.style.overflow='';
 }
+var _bd=document.getElementById('mo-backdrop');
+if(_bd){_bd.addEventListener('click',cmo);}
+
 </script>
 </body>
 </html>
