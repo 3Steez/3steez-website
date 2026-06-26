@@ -250,7 +250,7 @@ textarea{resize:vertical;min-height:108px}
 .about-page-hero-copy h1{margin-bottom:1.25rem}
 .about-page-hero-copy .lead{margin-top:1rem}
 .about-page-hero-img{position:relative}
-.about-page-hero-img img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 25%;display:block;filter:brightness(.92) contrast(1.04)}
+
 .about-page-hero-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,var(--deep),transparent);pointer-events:none}
 .about-hero-accent{position:absolute;top:-1rem;right:-1rem;bottom:1rem;left:1rem;border:1px solid rgba(201,168,76,.3);z-index:0;pointer-events:none}
 .about-page-hero-img-wrap{position:relative;z-index:1}
@@ -481,10 +481,7 @@ textarea{resize:vertical;min-height:108px}
     aspect-ratio:4/5!important;
     object-position:center 10%!important;
   }
-  .about-page-hero-img img{
-    aspect-ratio:4/5!important;
-    object-position:center 10%!important;
-  }
+  
 
   /* ── 3. Section scroll nudge ── */
   .scroll-nudge{
@@ -547,6 +544,63 @@ textarea{resize:vertical;min-height:108px}
   .ft-brand img{margin:0 0 1rem 0!important;display:block;width:160px!important}
   .ft-cols{padding:2rem 1.25rem!important}
   .ft-col{padding:0!important}
+}
+
+
+/* Hero photo - back to original, don't touch */
+.about-page-hero-img img{object-position:center top}
+/* Second photo (stat section) - show more face */  
+.about-strip .about-img img,
+.ab-photo img,
+.stat-img img,
+.home-about-img img,
+img[src*="27707a_552057f"][class*="img"],
+.about-strip-photo img{object-position:center 5%!important}
+
+
+@media(max-width:768px){
+  .ft-brand{
+    padding:0!important;
+    margin:0!important;
+    text-align:left!important;
+  }
+  .ft-brand img{
+    display:block!important;
+    margin:0 0 1rem -4px!important;
+    width:140px!important;
+    max-width:140px!important;
+  }
+  .ft-p{
+    text-align:left!important;
+    margin-left:0!important;
+    padding-left:0!important;
+  }
+  footer .ft-col:first-child,
+  .ft-cols > div:first-child{
+    padding-left:0!important;
+  }
+}
+
+@media(max-width:1024px){
+  /* Force ALL 2-col grids in YLC section to single column */
+  .ylc-section .grid-2col,
+  section[class*="ylc"] > div > div,
+  div[style*="grid-template-columns:1fr 1fr"],
+  div[style*="grid-template-columns: 1fr 1fr"]{
+    grid-template-columns:1fr!important;
+    gap:2rem!important;
+  }
+}
+@media(max-width:768px){
+  /* Nuclear option - ALL 2-col grids go single column */
+  div[style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr!important;
+    gap:1.5rem!important;
+    overflow:visible!important;
+  }
+  div[style*="gap:6rem"]{gap:2rem!important}
+  div[style*="gap:5rem"]{gap:2rem!important}
+  div[style*="gap:4rem"]{gap:1.5rem!important}
 }
 
 </style>
