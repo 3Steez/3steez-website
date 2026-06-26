@@ -214,19 +214,86 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 .ev-flyer-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top}
 
 @media(max-width:768px){
-  /* Ticker bar — smaller so event text is visible */
-  .tick-lbl{padding:0 .75rem;font-size:.5rem;gap:.35rem}
+  }
+
+
+@media(max-width:768px){
+  /* Ticker — compact */
+  #ev-ticker{margin-top:60px}
+  .tick-lbl{padding:0 .75rem;font-size:.5rem}
   .tick-wrap{padding:.55rem 0}
   .tick-item{font-size:.62rem;padding:0 1rem}
-  .tick-item .td{font-size:.65rem}
-  #ev-ticker{margin-top:60px}
 
-  /* Hero tagline — move it lower so it clears your face */
-  .h-kick{position:absolute;bottom:8rem;left:1.5rem;margin:0}
-  .hero-cnt{padding:0;position:relative;height:100%}
-  .hero-h1{position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;font-size:clamp(2rem,8vw,3rem);margin:0}
+  /* Hero — keep tagline BELOW the face by pushing hero content down */
+  .hero-cnt{
+    padding:0 1.5rem;
+    margin-top:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding-bottom:3rem;
+    height:100%;
+  }
+  .h-kick{margin-bottom:.75rem;opacity:1}
+  .hero-h1{font-size:clamp(2rem,8vw,3rem);margin-bottom:1.25rem}
   .hero-sub{display:none}
-  .hero-act{position:absolute;bottom:-4rem;left:1.5rem;right:1.5rem}
+  .hero-act{display:flex;gap:.75rem;flex-wrap:wrap}
+  .hero-act .btn-gold,.hero-act .btn-ol{
+    padding:.65rem 1.25rem;
+    font-size:.6rem;
+    flex:1;
+    text-align:center;
+    min-width:0;
+  }
+  .h-scroll,.h-num{display:none}
+}
+
+
+@media(max-width:768px){
+  #mo{
+    position:fixed;
+    top:0;right:-100%;
+    width:80%;max-width:320px;
+    height:100vh;
+    background:var(--black);
+    border-left:1px solid var(--border);
+    z-index:9999;
+    transition:right .3s ease;
+    padding:5rem 2rem 2rem;
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
+    overflow-y:auto;
+  }
+  #mo.open{right:0}
+  #mo .nav-links-mo a{
+    display:block;
+    font-size:1.1rem;
+    color:var(--white);
+    text-decoration:none;
+    padding:.75rem 0;
+    border-bottom:1px solid var(--border);
+    font-family:var(--PD);
+    font-style:italic;
+  }
+  .mo-close{
+    position:absolute;
+    top:1.25rem;right:1.25rem;
+    background:none;
+    border:none;
+    color:var(--white);
+    font-size:1.5rem;
+    cursor:pointer;
+    padding:.5rem;
+  }
+  .mo-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    z-index:9998;
+  }
+  .mo-overlay.open{display:block}
 }
 
 </style>
