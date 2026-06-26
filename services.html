@@ -66,7 +66,6 @@ h1.sh .cr,h2.sh .cr{color:var(--crimson2)}
 .gd{height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);max-width:180px;margin:1.75rem auto}
 footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3rem 2.5rem}
 .ft-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:5rem;padding-bottom:3.25rem;border-bottom:1px solid var(--border);margin-bottom:1.85rem}
-.ft-tag{font-size:.86rem;color:var(--muted);line-height:1.8;max-width:275px}
 .ft-ch{font-size:.57rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
 .ft-lnks{list-style:none;display:flex;flex-direction:column;gap:.6rem}
 .ft-lnks a{font-size:.84rem;color:var(--muted);text-decoration:none;transition:color .2s}
@@ -586,28 +585,23 @@ textarea{resize:vertical;min-height:108px}
 
 
 /* ── Footer logo — new image, left-aligned ── */
-.ft-brand img{
-  display:inline-block!important;
-  width:180px!important;
-  height:auto!important;
-  margin-bottom:1rem!important;
-  object-fit:contain!important;
-}
-.ft-brand{
-  text-align:center!important;
-  padding:0!important;
-  margin:0!important;
-}
 @media(max-width:768px){
-  .ft-brand img{width:150px!important;margin:0 auto 1rem auto!important;display:block!important;}
-  .ft-brand{text-align:center!important;}
 
   /* Hero mobile fix */
   #hero{height:100svh;min-height:580px;max-height:820px}
-  .hero-cnt{padding:0 1.5rem;margin-top:0;display:flex;flex-direction:column;justify-content:center}
+  .hero-cnt{padding:0 1.5rem;margin-top:0;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:3rem}
   .hero-bg img{object-position:center 15%}
 }
 
+
+/* ── Footer brand: logo + paragraph flush left ── */
+.ft-brand{text-align:left!important;padding:0!important;margin:0!important}
+.ft-brand img{display:block!important;width:160px!important;height:auto!important;margin:0 0 1rem 0!important;object-fit:contain!important;padding:0!important}
+
+@media(max-width:768px){.ft-brand img{width:130px!important}}
+
+/* ft-tag: paragraph sits flush under logo */
+.ft-tag{font-size:.86rem;color:var(--muted);line-height:1.8;max-width:200px;text-align:left!important;padding:0!important;margin:0!important;text-indent:0!important}
 </style>
 </head>
 <body>
