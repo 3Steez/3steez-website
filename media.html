@@ -164,7 +164,7 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 .mc-s{font-size:.76rem;color:var(--muted);margin-top:.25rem}
 /* Social */
 .platforms{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
-.pl{background:var(--deep);padding:2.6rem 1.4rem;text-align:center;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:.7rem;transition:background .25s}
+
 .pl:hover{background:var(--card)}
 .pl-ic{font-size:1.55rem;line-height:1}
 .pl-nm{font-size:.57rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
@@ -503,6 +503,115 @@ textarea{resize:vertical;min-height:108px}
   section[style*="padding:6rem 3rem"]{padding:3rem 1.25rem!important}
 }
 
+
+@media(max-width:768px){
+  .ft-brand{
+    padding:0!important;
+    margin:0!important;
+    text-align:left!important;
+  }
+  .ft-brand img{
+    display:block!important;
+    margin:0 0 1rem -4px!important;
+    width:140px!important;
+    max-width:140px!important;
+  }
+  .ft-p{
+    text-align:left!important;
+    margin-left:0!important;
+    padding-left:0!important;
+  }
+  footer .ft-col:first-child,
+  .ft-cols > div:first-child{
+    padding-left:0!important;
+  }
+}
+
+@media(max-width:1024px){
+  /* Force ALL 2-col grids in YLC section to single column */
+  .ylc-section .grid-2col,
+  section[class*="ylc"] > div > div,
+  div[style*="grid-template-columns:1fr 1fr"],
+  div[style*="grid-template-columns: 1fr 1fr"]{
+    grid-template-columns:1fr!important;
+    gap:2rem!important;
+  }
+}
+@media(max-width:768px){
+  /* Nuclear option - ALL 2-col grids go single column */
+  div[style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr!important;
+    gap:1.5rem!important;
+    overflow:visible!important;
+  }
+  div[style*="gap:6rem"]{gap:2rem!important}
+  div[style*="gap:5rem"]{gap:2rem!important}
+  div[style*="gap:4rem"]{gap:1.5rem!important}
+}
+
+@media(max-width:768px){
+  /* Follow the Energy social grid */
+  .pl-grid,
+  div[style*="grid-template-columns:repeat(4"],
+  div[style*="grid-template-columns: repeat(4"]{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:2px!important;
+    width:100%!important;
+    overflow:visible!important;
+  }
+  .pl,.platform-card,.soc-card{
+    min-width:0!important;
+    width:100%!important;
+  }
+  /* Color the social boxes */
+  .pl:nth-child(1),.platform-card:nth-child(1){background:rgba(225,48,108,.15)!important;border-left:3px solid #E1306C!important}
+  .pl:nth-child(2),.platform-card:nth-child(2){background:rgba(255,0,0,.12)!important;border-left:3px solid #FF0000!important}
+  .pl:nth-child(3),.platform-card:nth-child(3){background:rgba(145,70,255,.12)!important;border-left:3px solid #9146FF!important}
+  .pl:nth-child(4),.platform-card:nth-child(4){background:rgba(0,242,234,.08)!important;border-left:3px solid #00f2ea!important}
+  .pl:nth-child(5),.platform-card:nth-child(5){background:rgba(24,119,242,.1)!important;border-left:3px solid #1877F2!important}
+  .pl:nth-child(6),.platform-card:nth-child(6){background:rgba(10,102,194,.1)!important;border-left:3px solid #0A66C2!important}
+  .pl:nth-child(7),.platform-card:nth-child(7){background:rgba(201,168,76,.1)!important;border-left:3px solid var(--gold)!important}
+  .pl:nth-child(8),.platform-card:nth-child(8){background:rgba(139,26,26,.15)!important;border-left:3px solid var(--crimson)!important}
+}
+
+
+/* Social platforms grid */
+.platforms{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.pl{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1rem;text-align:center;text-decoration:none;background:var(--deep);transition:background .25s;gap:.4rem}
+.pl:hover{background:var(--card)}
+.pl-ic{font-size:1.6rem}
+.pl-nm{font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.pl-h{font-family:var(--PD);font-style:italic;font-size:.9rem;color:var(--white)}
+.pl-ct{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+@media(max-width:768px){
+  .platforms{
+    grid-template-columns:1fr 1fr!important;
+    gap:2px!important;
+  }
+  .pl{padding:1.25rem .75rem!important}
+  .pl:nth-child(1){background:rgba(225,48,108,.18)!important}
+  .pl:nth-child(2){background:rgba(255,0,0,.15)!important}
+  .pl:nth-child(3){background:rgba(145,70,255,.15)!important}
+  .pl:nth-child(4){background:rgba(255,255,255,.06)!important}
+  .pl:nth-child(5){background:rgba(82,132,255,.12)!important}
+  .pl:nth-child(6){background:rgba(24,119,242,.12)!important}
+  .pl:nth-child(7){background:rgba(10,102,194,.12)!important}
+  .pl:nth-child(8){background:rgba(201,168,76,.1)!important}
+}
+
+
+@media(max-width:768px){
+  .ft-brand{padding:0!important;margin:0!important;text-align:left!important}
+  .ft-brand img{
+    height:auto!important;
+    width:150px!important;
+    display:block!important;
+    margin:0 0 1rem 0!important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -675,7 +784,7 @@ textarea{resize:vertical;min-height:108px}
   <div class="inner">
     <div class="stag" style="margin-bottom:1.5rem">Stay Connected</div>
     <h2 class="sh" style="margin-bottom:3rem">Follow the <em>Energy</em></h2>
-    <div class="platforms" style="grid-template-columns:repeat(7,1fr)">
+    <div class="platforms">
       <a href="https://www.instagram.com/3Steez" target="_blank" rel="noopener" class="pl"><div class="pl-ic">&#128248;</div><div class="pl-nm">Instagram</div><div class="pl-h">@3Steez</div><div class="pl-ct">Follow &rarr;</div></a>
       <a href="https://www.youtube.com/@3STEEZ" target="_blank" rel="noopener" class="pl"><div class="pl-ic">&#9654;&#65039;</div><div class="pl-nm">YouTube</div><div class="pl-h">@3STEEZ</div><div class="pl-ct">Subscribe &rarr;</div></a>
       <a href="https://www.twitch.tv/3steez" target="_blank" rel="noopener" class="pl"><div class="pl-ic">&#127917;</div><div class="pl-nm" style="color:#9146FF">Twitch</div><div class="pl-h">3steez</div><div class="pl-ct">Watch Live &rarr;</div></a>

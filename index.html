@@ -468,6 +468,63 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
   .ft-col{padding:0!important}
 }
 
+
+@media(max-width:768px){
+  .ft-brand{
+    padding:0!important;
+    margin:0!important;
+    text-align:left!important;
+  }
+  .ft-brand img{
+    display:block!important;
+    margin:0 0 1rem -4px!important;
+    width:140px!important;
+    max-width:140px!important;
+  }
+  .ft-p{
+    text-align:left!important;
+    margin-left:0!important;
+    padding-left:0!important;
+  }
+  footer .ft-col:first-child,
+  .ft-cols > div:first-child{
+    padding-left:0!important;
+  }
+}
+
+@media(max-width:1024px){
+  /* Force ALL 2-col grids in YLC section to single column */
+  .ylc-section .grid-2col,
+  section[class*="ylc"] > div > div,
+  div[style*="grid-template-columns:1fr 1fr"],
+  div[style*="grid-template-columns: 1fr 1fr"]{
+    grid-template-columns:1fr!important;
+    gap:2rem!important;
+  }
+}
+@media(max-width:768px){
+  /* Nuclear option - ALL 2-col grids go single column */
+  div[style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr!important;
+    gap:1.5rem!important;
+    overflow:visible!important;
+  }
+  div[style*="gap:6rem"]{gap:2rem!important}
+  div[style*="gap:5rem"]{gap:2rem!important}
+  div[style*="gap:4rem"]{gap:1.5rem!important}
+}
+
+
+@media(max-width:768px){
+  .ft-brand{padding:0!important;margin:0!important;text-align:left!important}
+  .ft-brand img{
+    height:auto!important;
+    width:150px!important;
+    display:block!important;
+    margin:0 0 1rem 0!important;
+  }
+}
+
 </style>
 </head>
 <body>
