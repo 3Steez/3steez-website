@@ -2,17 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>3Steez | Elite MC, DJ & Music Producer — Detroit, Michigan</title>
-<meta name="description" content="Trés Styles aka 3Steez is Michigan’s premier MC, DJ, and music producer. Delivering elite entertainment for corporate events, festivals, nightclubs, and private affairs. Book now."/>
-<meta name="keywords" content="3Steez, Tres Styles, Detroit DJ, Michigan MC, corporate event DJ, festival DJ, Ann Arbor DJ, book a DJ Michigan"/>
-<meta property="og:title" content="3Steez | Elite MC, DJ & Music Producer — Detroit, Michigan"/>
-<meta property="og:description" content="Trés Styles aka 3Steez is Michigan’s premier MC, DJ, and music producer. Delivering elite entertainment for corporate events, festivals, nightclubs, and private affairs. Book now."/>
-<meta property="og:image" content="https://static.wixstatic.com/media/27707a_552057f016644179b62d92a87774eb6b~mv2.jpg"/>
-<meta property="og:type" content="website"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Merch | 3Steez</title>
+<meta name="description" content="Official 3Steez merch — stickers, tees, hats and more. Rep the brand."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 /* Fix clicks on all browsers */
 a,button,[onclick],label,select,input,textarea{pointer-events:auto!important}
@@ -515,29 +509,150 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 /* ft-tag: paragraph sits flush under logo */
 .ft-tag{font-size:.86rem;color:var(--muted);line-height:1.8;max-width:200px;text-align:left!important;padding:0!important;margin:0!important;text-indent:0!important}
 </style>
-
-<style id="mobile-hero-fix">
-@media screen and (max-width:768px){
-  section#hero{
-    height:100svh!important;
-    min-height:600px!important;
-    max-height:900px!important;
-    display:flex!important;
-    flex-direction:column!important;
-    justify-content:flex-end!important;
-  }
-  section#hero .hero-cnt{
-    position:relative!important;
-    z-index:3!important;
-    padding:0 1.5rem 3.5rem!important;
-    margin-top:0!important;
-    margin-bottom:0!important;
-    display:block!important;
-    flex-shrink:0!important;
-  }
-  section#hero .hero-bg img{
-    object-position:center 10%!important;
-  }
+<style>
+/* ── Merch page specific ── */
+.merch-hero{
+  background:var(--deep);
+  padding:10rem 3rem 5rem;
+  text-align:center;
+  border-bottom:1px solid var(--border);
+}
+.merch-hero .stag{margin:0 auto 1rem}
+.merch-hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.8rem,6vw,5rem);
+  font-weight:700;
+  color:var(--white);
+  line-height:1.1;
+  margin-bottom:1.5rem;
+}
+.merch-hero h1 em{color:var(--gold);font-style:italic}
+.merch-hero p{
+  color:var(--muted);
+  font-size:1.1rem;
+  max-width:500px;
+  margin:0 auto 2.5rem;
+  line-height:1.7;
+}
+.coming-soon-badge{
+  display:inline-block;
+  background:var(--red);
+  color:#fff;
+  font-size:.75rem;
+  font-weight:600;
+  letter-spacing:.15em;
+  padding:.45rem 1.2rem;
+  border-radius:2px;
+  margin-bottom:3rem;
+  text-transform:uppercase;
+}
+/* Preview cards */
+.merch-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+  max-width:1100px;
+  margin:4rem auto;
+  padding:0 3rem;
+}
+.merch-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:2rem;
+  text-align:center;
+  position:relative;
+  transition:border-color .3s;
+}
+.merch-card:hover{border-color:rgba(201,168,76,.35)}
+.merch-card-icon{
+  font-size:3.5rem;
+  margin-bottom:1.2rem;
+  display:block;
+}
+.merch-card h3{
+  font-family:'Playfair Display',serif;
+  font-size:1.2rem;
+  color:var(--white);
+  margin-bottom:.5rem;
+}
+.merch-card p{
+  color:var(--muted);
+  font-size:.85rem;
+  line-height:1.6;
+  margin-bottom:1.2rem;
+}
+.merch-card .cs-tag{
+  display:inline-block;
+  border:1px solid var(--border);
+  color:var(--muted);
+  font-size:.72rem;
+  letter-spacing:.12em;
+  padding:.3rem .9rem;
+  text-transform:uppercase;
+}
+/* Notify form */
+.merch-notify{
+  background:var(--card);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:5rem 3rem;
+  text-align:center;
+  margin-top:2rem;
+}
+.merch-notify h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,3vw,2.6rem);
+  color:var(--white);
+  margin-bottom:.75rem;
+}
+.merch-notify h2 em{color:var(--gold);font-style:italic}
+.merch-notify p{color:var(--muted);margin-bottom:2rem;font-size:.95rem}
+.notify-form{
+  display:flex;
+  gap:.75rem;
+  max-width:440px;
+  margin:0 auto;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.notify-form input{
+  flex:1;
+  min-width:220px;
+  background:var(--deep);
+  border:1px solid var(--border);
+  color:var(--white);
+  padding:.85rem 1.2rem;
+  font-size:.9rem;
+  outline:none;
+}
+.notify-form input:focus{border-color:var(--gold)}
+.notify-form button{
+  background:var(--gold);
+  color:var(--black);
+  border:none;
+  padding:.85rem 1.8rem;
+  font-size:.8rem;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.notify-form button:hover{opacity:.88}
+/* TODO: Shopify embed zone */
+.shopify-zone{
+  max-width:1100px;
+  margin:0 auto;
+  padding:4rem 3rem;
+  /* Shopify Buy Button will be dropped here */
+  display:none; /* hidden until store is live */
+}
+@media(max-width:768px){
+  .merch-grid{grid-template-columns:1fr;padding:0 1.5rem}
+  .merch-hero{padding:8rem 1.5rem 4rem}
+  .merch-notify{padding:4rem 1.5rem}
+  .notify-form{flex-direction:column;align-items:stretch}
+  .notify-form input,.notify-form button{width:100%}
 }
 </style>
 </head>
@@ -545,10 +660,8 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 <div id="mo-backdrop" onclick="cmo()"></div>
 <div id="mo">
   <button class="mob-x" onclick="cmo()">&#x2715;</button>
-  <a href="index.html" onclick="cmo()">Home</a><a href="events.html" onclick="cmo()">Events</a><a href="about.html" onclick="cmo()">About</a><a href="services.html" onclick="cmo()">Services</a><a href="gallery.html" onclick="cmo()">Gallery</a><a href="media.html" onclick="cmo()">Media</a><a href="blog.html" onclick="cmo()">Blog</a><a href="booking.html" onclick="cmo()">Booking</a><a href="merch.html" onclick="cmo()">Merch</a>
+  <a href="index.html" onclick="cmo()">Home</a><a href="events.html" onclick="cmo()">Events</a><a href="about.html" onclick="cmo()">About</a><a href="services.html" onclick="cmo()">Services</a><a href="gallery.html" onclick="cmo()">Gallery</a><a href="media.html" onclick="cmo()">Media</a><a href="blog.html" onclick="cmo()">Blog</a><a href="booking.html" onclick="cmo()">Booking</a><a href="merch.html" onclick="cmo()" style="color:var(--black);background:var(--gold)">Merch</a>
 </div>
-<div id="cur"></div><div id="cur-r"></div>
-
 <nav id="nav">
   <div class="nav-logo"><a href="index.html"><img src="https://static.wixstatic.com/media/27707a_07541b50ed20405086f5149a1448237e~mv2.png" alt="3Steez"/></a></div>
   <ul class="nav-links"><li><a href="index.html" style="color:var(--black);background:var(--gold)">Home</a></li>
@@ -559,171 +672,50 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
     <li><a href="media.html">Media</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="booking.html">Booking</a></li>
-        <li><a href="merch.html">Merch</a></li>
-    <li><a href="merch.html">Merch</a></li>
+    <li><a href="merch.html" style="color:var(--black);background:var(--gold)">Merch</a></li>
     </ul>
   <a href="booking.html" class="nav-book">Book Now</a>
   <button class="nav-burger" onclick="omo()"><span></span><span></span><span></span></button>
 </nav>
 
+<!-- MERCH HERO -->
+<section class="merch-hero">
+  <div class="stag">The Brand</div>
+  <h1>Rep <em>3Steez.</em></h1>
+  <p>Official merch dropping soon. Stickers, tees, hats &mdash; built for the culture.</p>
+  <div class="coming-soon-badge">Coming Soon</div>
+</section>
 
-<div id="ev-ticker">
-  <div class="tick-in">
-    <div class="tick-lbl">&#128197; Upcoming Events</div>
-    <div class="tick-wrap">
-      <div class="tick-track">
-        <a href="events.html" class="tick-item"><span class="td">Every Wed</span><span class="tdot">&#9679;</span>Wayback Wednesday @ Alley Bar &mdash; Ann Arbor<span class="tdot">&#9679;</span>9PM&ndash;1AM &middot; No Cover</a>
-        <a href="events.html" class="tick-item"><span class="td">Every Fri</span><span class="tdot">&#9679;</span>A2 After Work Party @ The Rabbit Hole<span class="tdot">&#9679;</span>9PM &middot; $5 Cover</a>
-        <a href="events.html" class="tick-item"><span class="td">2nd Saturdays</span><span class="tdot">&#9679;</span>The Re:Up &mdash; Throwback R&amp;B @ LIVE Nightclub<span class="tdot">&#9679;</span>7&ndash;10PM &middot; Free w/ RSVP</a>
-        <a href="events.html" class="tick-item"><span class="td">June 27, 2026</span><span class="tdot">&#9679;</span>A2SF Top of the Park &mdash; O&amp;W Grove Stage<span class="tdot">&#9679;</span>10PM &middot; Free</a>
-        <a href="events.html" class="tick-item"><span class="td">Every Wed</span><span class="tdot">&#9679;</span>Wayback Wednesday @ Alley Bar &mdash; Ann Arbor<span class="tdot">&#9679;</span>9PM&ndash;1AM &middot; No Cover</a>
-        <a href="events.html" class="tick-item"><span class="td">Every Fri</span><span class="tdot">&#9679;</span>A2 After Work Party @ The Rabbit Hole<span class="tdot">&#9679;</span>9PM &middot; $5 Cover</a>
-        <a href="events.html" class="tick-item"><span class="td">2nd Saturdays</span><span class="tdot">&#9679;</span>The Re:Up &mdash; Throwback R&amp;B @ LIVE Nightclub<span class="tdot">&#9679;</span>7&ndash;10PM &middot; Free w/ RSVP</a>
-        <a href="events.html" class="tick-item"><span class="td">June 27, 2026</span><span class="tdot">&#9679;</span>A2SF Top of the Park &mdash; O&amp;W Grove Stage<span class="tdot">&#9679;</span>10PM &middot; Free</a>
-      </div>
-    </div>
+<!-- SHOPIFY EMBED ZONE (hidden until live) -->
+<div class="shopify-zone" id="shopify-store">
+  <!-- PASTE SHOPIFY BUY BUTTON EMBED CODE HERE WHEN READY -->
+</div>
+
+<!-- PREVIEW CARDS -->
+<div class="merch-grid" style="grid-template-columns:repeat(2,1fr);max-width:740px">
+  <div class="merch-card rv">
+    <span class="merch-card-icon">👕</span>
+    <h3>Logo Tee</h3>
+    <p>Classic 3Steez logo on premium heavyweight cotton. Available in black.</p>
+    <span class="cs-tag">Coming Soon</span>
+  </div>
+  <div class="merch-card rv">
+    <span class="merch-card-icon">🪧</span>
+    <h3>Stickers</h3>
+    <p>Die-cut 3Steez stickers. Weatherproof, vibrant, and ready to go anywhere.</p>
+    <span class="cs-tag">Coming Soon</span>
   </div>
 </div>
 
-<section id="hero">
-  <div class="hero-bg"><img src="https://static.wixstatic.com/media/27707a_552057f016644179b62d92a87774eb6b~mv2.jpg/v1/fill/w_2500,h_1666,al_c/27707a_552057f016644179b62d92a87774eb6b~mv2.jpg" alt="3Steez live performance" fetchpriority="high"/></div>
-  <div class="hero-ov"></div><div class="hero-ov2"></div>
-  <div class="hero-cnt">
-    <div class="h-kick"><div class="h-kick-ln"></div><span>MC &middot; DJ &middot; Producer &middot; Event Professional</span></div>
-    <h1 class="hero-h1">The <span class="it">Energy</span><br/>Your Event<br/><span class="cr">Commands.</span></h1>
-    <p class="hero-sub">Tr&eacute;s Styles doesn&rsquo;t just perform &mdash; he transforms. From corporate boardrooms to festival main stages, 3Steez delivers concert-grade entertainment with the precision elite events demand.</p>
-    <div class="hero-act">
-      <a href="booking.html" class="btn-gold">Book an Event</a>
-      <a href="about.html" class="btn-ol">Meet Tr&eacute;s</a>
-    </div>
-  </div>
-  <div class="h-scroll"><span>Scroll</span><div class="scroll-t"><div class="scroll-f"></div></div></div>
-  <div class="h-num"><div class="h-num-n">20+</div><div class="h-num-l">Years in the game</div></div>
-</section>
-
-<div class="mq"><div class="mq-t">
-  <span>Corporate Events</span><span class="dot">&#x2736;</span><span>Festival Main Stage</span><span class="dot">&#x2736;</span><span>Nightclub Residencies</span><span class="dot">&#x2736;</span><span>Brand Activations</span><span class="dot">&#x2736;</span><span>Private Affairs</span><span class="dot">&#x2736;</span><span>Music Production</span><span class="dot">&#x2736;</span><span>Live MC Hosting</span><span class="dot">&#x2736;</span><span>Event Consulting</span><span class="dot">&#x2736;</span><span>Corporate Events</span><span class="dot">&#x2736;</span><span>Festival Main Stage</span><span class="dot">&#x2736;</span><span>Nightclub Residencies</span><span class="dot">&#x2736;</span><span>Brand Activations</span><span class="dot">&#x2736;</span><span>Private Affairs</span><span class="dot">&#x2736;</span><span>Music Production</span><span class="dot">&#x2736;</span><span>Live MC Hosting</span><span class="dot">&#x2736;</span><span>Event Consulting</span><span class="dot">&#x2736;</span>
-</div></div>
-
-<section class="about-strip">
-  <div class="about-strip-in">
-    <div class="about-strip-img rvl">
-      <img src="https://static.wixstatic.com/media/27707a_de9ce9f6a4374b6399b93988df65fdda~mv2.jpg/v1/fill/w_800,h_1200,al_c,q_90,enc_avif,quality_auto/27707a_de9ce9f6a4374b6399b93988df65fdda~mv2.jpg" alt="Tr&eacute;s Styles 3Steez"/>
-      <div class="about-strip-badge"><div class="asb-n">20+</div><div class="asb-l">Yrs Experience</div></div>
-    </div>
-    <div class="about-strip-text rv">
-      <div class="stag">The Artist</div>
-      <h2 class="sh">Internationally Known.<br/><em>Locally Respected.</em></h2>
-      <blockquote class="a-quote">&ldquo;Tr&eacute;s Steez is the vibe your event is missing.&rdquo;</blockquote>
-      <p>Michigan-born MC, DJ, and music producer Tr&eacute;s Styles has spent over two decades mastering the art of commanding a room. From Detroit&rsquo;s most electric club nights to festival main stages alongside ?uestlove, Kool DJ Red Alert, and Stretch Armstrong &mdash; 3Steez brings a depth of craft no ordinary entertainer can match.</p>
-      <p>Concert-level energy. Boardroom-level professionalism. The rare combination that makes every event an experience people talk about long after it&rsquo;s over.</p>
-      <div class="chips"><span class="chip">Live MC</span><span class="chip">DJ Sets</span><span class="chip">Music Production</span><span class="chip">Corporate Events</span><span class="chip">Festivals</span><span class="chip">Event Hosting</span></div>
-      <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
-        <a href="about.html" class="btn-gold">Full Bio</a>
-        <a href="services.html" class="btn-ol">View Services</a>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="scroll-nudge"><span></span></div>
-<div class="stats">
-  <div class="stat rv"><div class="stat-n">20+</div><div class="stat-l">Years in the Industry</div></div>
-  <div class="stat rv"><div class="stat-n">4</div><div class="stat-l">Disciplines Mastered</div></div>
-  <div class="stat rv"><div class="stat-n">100s</div><div class="stat-l">Events Delivered</div></div>
-  <div class="stat rv"><div class="stat-n">#1</div><div class="stat-l">Michigan&rsquo;s Elite MC/DJ</div></div>
+<!-- NOTIFY SECTION -->
+<div class="merch-notify">
+  <h2>Be First to <em>Know.</em></h2>
+  <p>Drop your email and we&rsquo;ll hit you when the store goes live.</p>
+  <form class="notify-form" onsubmit="handleNotify(event)">
+    <input type="email" placeholder="your@email.com" required/>
+    <button type="submit">Notify Me</button>
+  </form>
 </div>
-
-<section class="ev-preview" style="overflow:hidden;position:relative;z-index:1">
-  <div class="ev-preview-in">
-    <div class="ev-preview-hdr rv">
-      <div>
-        <div class="stag">On the Calendar</div>
-        <h2 class="sh" style="font-size:clamp(1.8rem,3vw,2.8rem)">Where You&rsquo;ll Find <em>3Steez</em> Next</h2>
-      </div>
-      <a href="events.html" class="btn-ol" style="padding:.7rem 1.5rem;font-size:.6rem">All Events &rarr;</a>
-    </div>
-    <div class="ev-scroll-wrap" id="evScroll">
-      <div class="ev-grid">
-        <a href="events.html" class="ev-card">
-          <div class="ev-flyer-wrap"><img class="ev-flyer" src="flyer-wayback.jpg" alt="Wayback Wednesday"/></div>
-          <div class="ev-ov"><div class="ev-status on">Every Wednesday</div><div class="ev-title">Wayback Wednesday</div><div class="ev-venue">Alley Bar &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div>
-        </a>
-        <a href="events.html" class="ev-card">
-          <div class="ev-flyer-wrap"><img class="ev-flyer" src="flyer-afterwork.jpg" alt="A2 After Work Party"/></div>
-          <div class="ev-ov"><div class="ev-status on">Every Friday</div><div class="ev-title">A2 After Work Party</div><div class="ev-venue">The Rabbit Hole &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div>
-        </a>
-        <a href="events.html" class="ev-card">
-          <div class="ev-flyer-wrap"><img class="ev-flyer" src="flyer-reup.jpg" alt="The Re:Up"/></div>
-          <div class="ev-ov"><div class="ev-status on">2nd Saturdays</div><div class="ev-title">The Re:Up</div><div class="ev-venue">LIVE Nightclub &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div>
-        </a>
-        <a href="events.html" class="ev-card">
-          <div class="ev-flyer-wrap"><img class="ev-flyer" src="flyer-a2sf.jpg" alt="A2SF Top of the Park"/></div>
-          <div class="ev-ov"><div class="ev-status up">&#9679; June 27, 2026</div><div class="ev-title">A2SF Top of the Park</div><div class="ev-venue">O&W Grove Stage &mdash; Ann Arbor</div><div class="ev-cta-sm">Details &rarr;</div></div>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="scroll-nudge"><span></span></div>
-<section class="home-video">
-  <div class="home-video-in">
-    <div class="yt-wrap rv" id="ytWrap" onclick="loadYT()">
-      <img src="https://img.youtube.com/vi/185vr7cVdKY/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/185vr7cVdKY/hqdefault.jpg'" alt="3Steez Channel Trailer" id="ytThumb"/>
-      <div class="yt-play-ring" id="ytPlayRing">
-        <div class="yt-btn"><svg width="26" height="26" viewBox="0 0 24 24" fill="#070707"><polygon points="6,3 20,12 6,21"/></svg></div>
-        <div style="text-align:center"><div class="yt-label">3Steez &mdash; Channel Trailer</div><div class="yt-sub">Click to Play</div></div>
-      </div>
-      <iframe id="ytFrame" src="" title="3Steez Channel Trailer" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="video-copy rv">
-      <div class="stag">Watch &amp; Listen</div>
-      <h2 class="sh">See What <em>3Steez</em><br/>Brings to Every Stage</h2>
-      <p>This is the energy your event is missing. Hit play, feel the difference &mdash; then book the experience for yourself.</p>
-      <div style="display:flex;flex-direction:column;gap:.85rem">
-        <a href="https://www.youtube.com/@3STEEZ" target="_blank" rel="noopener" class="btn-gold">Subscribe on YouTube</a>
-        <a href="media.html" class="btn-ol">Full Media Page</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="names">
-  <div class="names-lbl">Performed &amp; collaborated alongside</div>
-  <ul class="names-list">
-    <li>?uestlove</li><li>Stretch Armstrong</li><li>Kool DJ Red Alert</li><li>DJ Graffiti</li><li>Jake One</li><li>14KT</li><li>Mayer Hawthorne</li><li>DJ House Shoes</li><li>Souls of Mischief</li><li>Little Brother</li><li>Phat Kat</li><li>MC J.U.I.C.E.</li>
-  </ul>
-</div>
-
-<div class="cta-banner">
-  <h2>Ready to Elevate<br/>Your Next Event?</h2>
-  <p>Corporate galas, festival stages, nightclub residencies &mdash; 3Steez delivers at the highest level. Let&rsquo;s make it unforgettable.</p>
-  <a href="booking.html" class="btn-white">Book 3Steez Now</a>
-</div>
-
-<script>
-function loadYT(){
-  var frame=document.getElementById('ytFrame');
-  if(frame.getAttribute('src'))return;
-  frame.src='https://www.youtube.com/embed/185vr7cVdKY?autoplay=1&rel=0&modestbranding=1';
-  frame.style.display='block';
-  document.getElementById('ytThumb').style.display='none';
-  document.getElementById('ytPlayRing').style.display='none';
-}
-(function(){
-  var el=document.getElementById('evScroll');
-  if(!el)return;
-  var d=false,sx=0,sl=0;
-  el.addEventListener('mousedown',function(e){d=true;sx=e.pageX-el.offsetLeft;sl=el.scrollLeft;});
-  el.addEventListener('mouseleave',function(){d=false;});
-  el.addEventListener('mouseup',function(){d=false;});
-  el.addEventListener('mousemove',function(e){if(!d)return;e.preventDefault();el.scrollLeft=sl-(e.pageX-el.offsetLeft-sx)*1.2;});
-})();
-window.addEventListener('scroll',function(){
-  var bg=document.querySelector('.hero-bg img');
-  if(bg)bg.style.transform='scale(1) translateY('+(window.scrollY*.18)+'px)';
-});
-</script>
-
 
 <footer>
   <div class="ft-in">
@@ -770,41 +762,16 @@ window.addEventListener('scroll',function(){
     </div>
   </div>
 </footer>
-<script>
 
-// Show cursor on first mousemove
-var _C=document.getElementById('cur'),_R=document.getElementById('cur-r');
-if(_C){
-  document.addEventListener('mousemove',function(e){
-    _C.style.left=e.clientX+'px';_C.style.top=e.clientY+'px';_C.style.opacity='1';
-    if(_R){_R.style.left=e.clientX+'px';_R.style.top=e.clientY+'px';_R.style.opacity='1';}
-  });
+<script>
+function handleNotify(e){
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  btn.textContent = 'You\'re on the list!';
+  btn.style.background = '#2a7a2a';
+  btn.style.color = '#fff';
+  e.target.querySelector('input').value = '';
 }
-
-
-// Safe IntersectionObserver
-(function(){
-  var els=document.querySelectorAll('.rv,.rvl');
-  if(!els.length||!('IntersectionObserver' in window))return;
-  els.forEach(function(el,i){el.classList.add('anim-ready');el.style.transitionDelay=(i%5)*.07+'s';});
-  var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});
-  },{threshold:0.05,rootMargin:'0px 0px -20px 0px'});
-  els.forEach(function(el){obs.observe(el);});
-})();
-
-</script>
-<script>
-// Mobile menu
-</script>
-<script>
-// Mobile menu
-if(b){b.classList.remove('open');}
-  document.body.style.overflow='';
-</script>
-<script>
-
-// Mobile menu
 function omo(){
   var m=document.getElementById('mo');
   var b=document.getElementById('mo-backdrop');
@@ -819,9 +786,6 @@ function cmo(){
   if(b){b.style.display='none';}
   document.body.style.overflow='';
 }
-var _bd=document.getElementById('mo-backdrop');
-if(_bd){_bd.addEventListener('click',cmo);}
-
 </script>
 </body>
 </html>
