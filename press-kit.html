@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>3Steez — Electronic Press Kit | Trés Styles</title>
+<meta name="description" content="Official EPK for Trés Styles aka 3Steez — Recording artist, MC, DJ, and producer. Athletic Mic League. The Lover & The Fighter trilogy. Forekast Music LLC."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0A0A0A;
+  --deep:#111111;
+  --card:#1A1A1A;
+  --border:rgba(255,255,255,0.08);
+  --white:#F5F5F0;
+  --muted:#888;
+  --gold:#C9A84C;
+  --gold-lt:#D4B96A;
+  --red:#8B1A1A;
+}
+body{background:var(--black);color:var(--white);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.1em;color:var(--white)}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;list-style:none;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+.nav-links a{color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--white);text-decoration:none}
+.nav-cta{background:var(--gold);color:var(--black)!important;padding:.45rem 1.1rem;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-cta{display:none}
+}
+
+/* ── HERO ── */
+.epk-hero{
+  padding:9rem 3rem 5rem;
+  background:linear-gradient(160deg,#0A0A0A 0%,#1a0a0a 50%,#0A0A0A 100%);
+  border-bottom:1px solid var(--border);
+  text-align:center;
+}
+.epk-hero .stag{
+  display:inline-block;
+  font-size:.72rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid rgba(201,168,76,.3);
+  padding:.35rem 1rem;
+  margin-bottom:1.5rem;
+}
+.epk-hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.5rem,6vw,4.5rem);
+  font-weight:700;
+  line-height:1.1;
+  margin-bottom:.75rem;
+}
+.epk-hero h1 em{color:var(--gold);font-style:italic}
+.epk-hero .sub{
+  color:var(--muted);
+  font-size:1rem;
+  letter-spacing:.05em;
+  margin-bottom:2.5rem;
+}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:.85rem 2rem;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:opacity .2s}
+.btn-gold{background:var(--gold);color:var(--black)}
+.btn-outline{border:1px solid rgba(255,255,255,.25);color:var(--white)}
+.btn:hover{opacity:.85;text-decoration:none}
+
+/* ── LAYOUT ── */
+.section{padding:5rem 3rem;border-bottom:1px solid var(--border)}
+.section-inner{max-width:1000px;margin:0 auto}
+.stag-sm{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;line-height:1.2;margin-bottom:2rem}
+.section-title em{color:var(--gold);font-style:italic}
+
+/* ── STATS ── */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-bottom:3rem}
+.stat-card{background:var(--card);border:1px solid var(--border);padding:2rem 1.5rem;text-align:center}
+.stat-card .num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--gold);line-height:1;display:block}
+.stat-card .lbl{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.4rem}
+@media(max-width:768px){.stats-row{grid-template-columns:repeat(2,1fr)}}
+
+/* ── BIO ── */
+.bio-text p{color:rgba(245,245,240,.8);line-height:1.85;font-size:1rem;margin-bottom:1.25rem}
+.bio-text p:last-child{margin-bottom:0}
+
+/* ── CREDENTIALS GRID ── */
+.cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+@media(max-width:768px){.cred-grid{grid-template-columns:1fr}}
+.cred-card{background:var(--card);border:1px solid var(--border);padding:2rem}
+.cred-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--white);margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+.cred-list{list-style:none}
+.cred-list li{padding:.45rem 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.88rem;color:rgba(245,245,240,.75);display:flex;align-items:baseline;gap:.6rem}
+.cred-list li:last-child{border-bottom:none}
+.cred-list li::before{content:"✶";color:var(--gold);font-size:.65rem;flex-shrink:0}
+
+/* ── PRODUCTION CREDITS ── */
+.credits-list{display:flex;flex-direction:column;gap:1rem}
+.credit-item{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);padding:1.25rem 1.5rem}
+.credit-role{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem}
+.credit-detail{font-size:.92rem;color:var(--white);line-height:1.5}
+.credit-detail span{color:var(--muted);font-size:.82rem}
+
+/* ── DISCOGRAPHY ── */
+.disco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:768px){.disco-grid{grid-template-columns:1fr}}
+.disco-card{background:var(--card);border:1px solid var(--border);padding:1.75rem}
+.disco-card .vol{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.disco-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--white);margin-bottom:.4rem}
+.disco-card h3 em{color:var(--gold);font-style:italic}
+.disco-card .meta{font-size:.8rem;color:var(--muted);margin-bottom:.75rem}
+.disco-card p{font-size:.85rem;color:rgba(245,245,240,.7);line-height:1.6}
+.status-badge{display:inline-block;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .7rem;margin-top:.85rem}
+.badge-out{background:rgba(201,168,76,.15);color:var(--gold);border:1px solid rgba(201,168,76,.3)}
+.badge-wip{background:rgba(139,26,26,.15);color:#c97070;border:1px solid rgba(139,26,26,.3)}
+
+/* ── COLLAB WALL ── */
+.collab-grid{display:flex;flex-wrap:wrap;gap:.75rem}
+.collab-tag{background:var(--card);border:1px solid var(--border);padding:.5rem 1rem;font-size:.8rem;color:rgba(245,245,240,.7);letter-spacing:.05em}
+
+/* ── LINKS / CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
+.contact-block h3{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.contact-row{display:flex;flex-direction:column;gap:.6rem}
+.contact-item{display:flex;gap:.75rem;align-items:baseline}
+.contact-item .lbl{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);min-width:80px;flex-shrink:0}
+.contact-item .val{font-size:.9rem;color:var(--white)}
+.contact-item a{color:var(--gold-lt)}
+
+/* ── CTA BAND ── */
+.cta-band{background:var(--red);padding:4rem 3rem;text-align:center;border-top:1px solid rgba(255,255,255,.1)}
+.cta-band h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:.75rem}
+.cta-band p{color:rgba(255,255,255,.7);margin-bottom:2rem;font-size:.95rem}
+
+/* ── FOOTER ── */
+footer{background:var(--deep);border-top:1px solid var(--border);padding:3rem;text-align:center}
+footer .ft-brand-epk{margin-bottom:1.5rem}
+footer .ft-brand-epk img{height:40px;width:auto;display:block;margin:0 auto}
+footer p{color:var(--muted);font-size:.82rem;line-height:1.7}
+footer a{color:var(--muted)}
+footer a:hover{color:var(--gold)}
+.ft-divider{margin:0 .5rem;color:rgba(255,255,255,.2)}
+
+@media(max-width:768px){
+  .section{padding:4rem 1.5rem}
+  .epk-hero{padding:8rem 1.5rem 4rem}
+  .cta-band{padding:3rem 1.5rem}
+  footer{padding:2rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">3<span>STEEZ</span></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="onesheet.html">DJ/MC One-Sheet</a></li>
+    <li><a href="press-kit.html" class="active">Artist EPK</a></li>
+    <li><a href="booking.html">Booking</a></li>
+  </ul>
+  <a href="booking.html" class="btn btn-gold nav-cta">Book Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="epk-hero">
+  <div class="stag">Electronic Press Kit — Artist & Producer</div>
+  <h1>Trés Styles<br/><em>aka 3Steez</em></h1>
+  <p class="sub">Recording Artist · MC · DJ · Producer · Forekast Music LLC</p>
+  <div class="hero-btns">
+    <a href="https://www.dropbox.com/scl/fi/eadhskjirbnfwzeaqz18b/3Steez-Sizzle-Reel.mp4?rlkey=4xakndjkuiw8abkwn2qi2wo4o&st=2pw5jklh&dl=0" class="btn btn-gold" target="_blank">▶ Watch Sizzle Reel</a>
+    <a href="onesheet.html" class="btn btn-outline">DJ/MC One-Sheet</a>
+    <a href="booking.html" class="btn btn-outline">Book Trés</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="stats-row">
+      <div class="stat-card">
+        <span class="num">20+</span>
+        <div class="lbl">Years in the Game</div>
+      </div>
+      <div class="stat-card">
+        <span class="num">4</span>
+        <div class="lbl">Disciplines Mastered</div>
+      </div>
+      <div class="stat-card">
+        <span class="num">3x</span>
+        <div class="lbl">Best MC Nominee<br/>Washtenaw County</div>
+      </div>
+      <div class="stat-card">
+        <span class="num">100s</span>
+        <div class="lbl">Events Delivered</div>
+      </div>
+    </div>
+
+    <!-- BIO -->
+    <div class="stag-sm">Biography</div>
+    <h2 class="section-title">Trés Styles — <em>The Artist</em></h2>
+    <div class="bio-text">
+      <p>Trés Styles isn't a performer you hire — he's an experience you invest in. A Michigan-born MC, DJ, and music producer with over two decades in the game, he has built a reputation that speaks before he ever picks up a mic: commanding, versatile, and relentlessly professional.</p>
+      <p>As a founding member of <strong>Athletic Mic League (AML)</strong> — alongside Grammy-nominated multi-instrumentalist <strong>Mayer Hawthorne</strong> and acclaimed producer <strong>14KT</strong> — Trés helped shape the sound of Ann Arbor and Detroit hip-hop in the late '90s and early 2000s. AML earned a legendary moment when a freestyle battle segment aired on <strong>Stretch &amp; Bobbito's influential WKCR radio show</strong> in New York, a session that also featured a then-unknown Eminem — a story that quietly shaped the trajectory of everyone in that room.</p>
+      <p>As a solo artist recording as <strong>3Steez</strong>, Trés is currently releasing <em>The Lover &amp; The Fighter</em> — a three-volume solo trilogy produced primarily by 14KT. Volume 1, <em>Ninja</em>, is available now on all streaming platforms. Volume 2, <em>Ronin</em>, is in final stages. Volume 3, <em>Samurai</em>, is planned. The trilogy explores themes of identity, resilience, and artistry through the lens of the warrior-artist archetype.</p>
+      <p>From Detroit's most electric club nights to festival main stages alongside <strong>?uestlove, Kool DJ Red Alert, and Stretch Armstrong</strong> — and from Forekast production credits spanning two decades of independent Michigan hip-hop — Trés brings a depth of craft and cultural fluency that no ordinary entertainment service can replicate.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DISCOGRAPHY -->
+<section class="section">
+  <div class="section-inner">
+    <div class="stag-sm">Discography</div>
+    <h2 class="section-title">The Lover &amp; <em>The Fighter</em> Trilogy</h2>
+    <div class="disco-grid">
+      <div class="disco-card">
+        <div class="vol">Volume 1</div>
+        <h3><em>Ninja</em></h3>
+        <div class="meta">3Steez · Forekast Music LLC · 2025</div>
+        <p>The opening chapter. Identity, discipline, and the quiet confidence of someone who's been training in the shadows. Produced by 14KT.</p>
+        <div><span class="status-badge badge-out">Out Now — All Platforms</span></div>
+      </div>
+      <div class="disco-card">
+        <div class="vol">Volume 2</div>
+        <h3><em>Ronin</em></h3>
+        <div class="meta">3Steez · Forekast Music LLC · 2026</div>
+        <p>The wanderer without a master. Navigating the tension between loyalty and independence, craft and commerce. Produced by 14KT.</p>
+        <div><span class="status-badge badge-wip">Finishing Now</span></div>
+      </div>
+      <div class="disco-card">
+        <div class="vol">Volume 3</div>
+        <h3><em>Samurai</em></h3>
+        <div class="meta">3Steez · Forekast Music LLC · 2026</div>
+        <p>The final form. Honor, mastery, and legacy. The warrior-artist at full power. Produced by 14KT.</p>
+        <div><span class="status-badge badge-wip">In Planning</span></div>
+      </div>
+    </div>
+
+    <!-- AML -->
+    <div style="margin-top:3rem">
+      <div class="stag-sm">Group Project</div>
+      <h2 class="section-title">Athletic Mic <em>League</em></h2>
+      <div class="credits-list">
+        <div class="credit-item">
+          <div class="credit-role">Producer · Writer · Vocalist · MC</div>
+          <div class="credit-detail">Athletic Mic League — <em>Playground Legends Vol. 1</em> <span>· Forekast Music</span></div>
+        </div>
+        <div class="credit-item">
+          <div class="credit-role">Producer · Writer · Vocalist · MC</div>
+          <div class="credit-detail">Athletic Mic League — <em>Playground Legends Vol. 2</em> <span>· Forekast Music</span></div>
+        </div>
+        <div class="credit-item">
+          <div class="credit-role">Producer · Writer · Vocalist · MC</div>
+          <div class="credit-detail">Athletic Mic League — <em>Playground Legends Vol. 3</em> <span>· In Progress</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTION CREDITS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="stag-sm">Studio Work</div>
+    <h2 class="section-title">Production <em>Credits</em></h2>
+    <div class="credits-list">
+      <div class="credit-item">
+        <div class="credit-role">Producer (as Forekast)</div>
+        <div class="credit-detail"><strong>MC Juice</strong> — "All Bets Off" <span>· 2005 · Molemen/C.A.L.I./All Natural circles</span></div>
+      </div>
+      <div class="credit-item">
+        <div class="credit-role">Featured Artist</div>
+        <div class="credit-detail"><strong>Crown Royale</strong> — "The Chosen Show" <span>· 2010</span></div>
+      </div>
+      <div class="credit-item">
+        <div class="credit-role">Producer (as Forekast)</div>
+        <div class="credit-detail"><strong>Magestik Legend</strong> — "Fish Tank Syndrome" on <em>Legend Has It</em> <span>· 2015</span></div>
+      </div>
+      <div class="credit-item">
+        <div class="credit-role">Featured Credit</div>
+        <div class="credit-detail"><strong>Jamall Bufford</strong> — <em>Love &amp; War</em> <span>· 2013 · Mello Music Group</span></div>
+      </div>
+      <div class="credit-item">
+        <div class="credit-role">Producer · Writer · Vocals</div>
+        <div class="credit-detail"><strong>Miz Korona</strong> — "Have Mercy" on <em>The Healer and The Heartbreaker</em></div>
+      </div>
+      <div class="credit-item">
+        <div class="credit-role">Producer (as Zach Allen)</div>
+        <div class="credit-detail"><strong>Time And Time Again (The Black Opera)</strong> — "Mercy" feat. Calmese <span>· 2020</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="stag-sm">Credentials</div>
+    <h2 class="section-title">Stage History &amp; <em>Accolades</em></h2>
+    <div class="cred-grid">
+      <div class="cred-card">
+        <h3>Shared Stages &amp; Collaborators</h3>
+        <ul class="cred-list">
+          <li>?uestlove (Roots Crew Afterparty)</li>
+          <li>Stretch Armstrong (NYC)</li>
+          <li>Kool DJ Red Alert (Soul in the Horn, NY)</li>
+          <li>Mayer Hawthorne (AML)</li>
+          <li>14KT (AML / Trilogy Producer)</li>
+          <li>DJ House Shoes</li>
+          <li>Souls of Mischief</li>
+          <li>Little Brother</li>
+          <li>Phat Kat</li>
+          <li>MC J.U.I.C.E.</li>
+          <li>Buff1</li>
+          <li>Jake One</li>
+          <li>DJ Graffiti</li>
+        </ul>
+      </div>
+      <div class="cred-card">
+        <h3>Residencies &amp; Accolades</h3>
+        <ul class="cred-list">
+          <li>3x Nominated Best MC — Washtenaw County</li>
+          <li>Current Residency — Alley Bar, Ann Arbor (Wed)</li>
+          <li>Current Residency — Rabbit Hole After Work Party (Fri)</li>
+          <li>Former Resident MC — Frequency Saturdays @ The Necto (4 yrs · 750–1,200/night)</li>
+          <li>A2SF Top of the Park — O&W Grove Stage</li>
+          <li>Detroit Pistons Sports Summit</li>
+          <li>DEMF / Movement Festival</li>
+          <li>Stretch &amp; Bobbito WKCR Radio (NYC)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLABORATORS WALL -->
+<section class="section">
+  <div class="section-inner">
+    <div class="stag-sm">Network</div>
+    <h2 class="section-title">Performed &amp; Collaborated <em>Alongside</em></h2>
+    <div class="collab-grid">
+      <div class="collab-tag">?uestlove</div>
+      <div class="collab-tag">Stretch Armstrong</div>
+      <div class="collab-tag">Kool DJ Red Alert</div>
+      <div class="collab-tag">Mayer Hawthorne</div>
+      <div class="collab-tag">14KT</div>
+      <div class="collab-tag">DJ House Shoes</div>
+      <div class="collab-tag">Souls of Mischief</div>
+      <div class="collab-tag">Little Brother</div>
+      <div class="collab-tag">Phat Kat</div>
+      <div class="collab-tag">MC J.U.I.C.E.</div>
+      <div class="collab-tag">Buff1</div>
+      <div class="collab-tag">Jake One</div>
+      <div class="collab-tag">DJ Graffiti</div>
+      <div class="collab-tag">Magestik Legend</div>
+      <div class="collab-tag">Miz Korona</div>
+      <div class="collab-tag">Jamall Bufford</div>
+      <div class="collab-tag">Crown Royale</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section">
+  <div class="section-inner">
+    <div class="stag-sm">Get In Touch</div>
+    <h2 class="section-title">Press &amp; <em>Booking</em></h2>
+    <div class="contact-grid">
+      <div class="contact-block">
+        <h3>Contact</h3>
+        <div class="contact-row">
+          <div class="contact-item">
+            <span class="lbl">Email</span>
+            <span class="val"><a href="mailto:tres@ylccreative.com">tres@ylccreative.com</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="lbl">Phone</span>
+            <span class="val">734-262-0755</span>
+          </div>
+          <div class="contact-item">
+            <span class="lbl">Website</span>
+            <span class="val"><a href="https://www.3steez.com">www.3steez.com</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="lbl">Based</span>
+            <span class="val">Ann Arbor / Detroit, MI — Available Nationwide</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-block">
+        <h3>Press Assets</h3>
+        <div class="contact-row">
+          <div class="contact-item">
+            <span class="lbl">Sizzle Reel</span>
+            <span class="val"><a href="https://www.dropbox.com/scl/fi/eadhskjirbnfwzeaqz18b/3Steez-Sizzle-Reel.mp4?rlkey=4xakndjkuiw8abkwn2qi2wo4o&st=2pw5jklh&dl=0" target="_blank">▶ Watch Now</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="lbl">Full Press Kit</span>
+            <span class="val"><a href="https://www.dropbox.com/scl/fo/z0hic5lvgf6txc6iqv3mp/AJ5bIgt4a8tB9_kNb82SgOM?rlkey=rsac0mml1rttpr0vslqlry48x&st=30gs24sp&dl=0" target="_blank">Dropbox →</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="lbl">DJ/MC Sheet</span>
+            <span class="val"><a href="onesheet.html">View One-Sheet →</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="lbl">Instagram</span>
+            <span class="val"><a href="https://www.instagram.com/3Steez" target="_blank">@3Steez</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="lbl">YouTube</span>
+            <span class="val"><a href="https://www.youtube.com/@3STEEZ" target="_blank">@3STEEZ</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="lbl">Mixcloud</span>
+            <span class="val"><a href="https://www.mixcloud.com/trestyles/" target="_blank">trestyles</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <h2>Ready to Work with Trés?</h2>
+  <p>Label conversations, press inquiries, booking, and brand partnerships welcome.</p>
+  <div class="hero-btns">
+    <a href="booking.html" class="btn btn-gold">Book 3Steez</a>
+    <a href="mailto:tres@ylccreative.com" class="btn btn-outline">Email Directly</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-brand-epk">
+    <img src="3steez-logo-footer.png" alt="3Steez"/>
+  </div>
+  <p>
+    <a href="index.html">Home</a><span class="ft-divider">·</span>
+    <a href="about.html">About</a><span class="ft-divider">·</span>
+    <a href="onesheet.html">One-Sheet</a><span class="ft-divider">·</span>
+    <a href="services.html">Services</a><span class="ft-divider">·</span>
+    <a href="booking.html">Booking</a>
+  </p>
+  <p style="margin-top:1rem">© 2026 3Steez / Forekast Music, LLC — All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
