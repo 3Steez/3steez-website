@@ -514,6 +514,14 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 
 /* ft-tag: paragraph sits flush under logo */
 .ft-tag{font-size:.86rem;color:var(--muted);line-height:1.8;max-width:200px;text-align:left!important;padding:0!important;margin:0!important;text-indent:0!important}
+
+/* ── Corporate Events & Festivals section (added 2026-07-28) ── */
+.cef-section{background:var(--deep);text-align:center}
+.cef-inner{max-width:900px;margin:0 auto}
+.cef-inner .lead{max-width:620px;margin:0 auto 2.5rem}
+.cef-media{position:relative;width:100%;aspect-ratio:21/9;border-radius:2px;overflow:hidden;border:1px solid rgba(201,168,76,.35);margin-bottom:2.5rem;background:var(--card)}
+.cef-media-fallback,.cef-media-video{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:768px){.cef-media{aspect-ratio:4/5}}
 </style>
 
 <style id="mobile-hero-fix">
@@ -683,6 +691,49 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
         <a href="media.html" class="btn-ol">Full Media Page</a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  CORPORATE EVENTS & FESTIVALS SECTION (added 2026-07-28)
+
+  HOW TO ACTIVATE THE VIDEO LATER (once the banner video is ready):
+  1. Upload the finished video file into a new folder in the repo:
+     /assets/video/corporate-festivals-banner.mp4
+  2. Below, find the <div class="cef-media"> block.
+  3. Delete the <img> line.
+  4. Uncomment the <video> block right after it (remove <!-- and -->).
+  No other changes needed — just commit + push.
+============================================================ -->
+<section class="cef-section">
+  <div class="cef-inner">
+    <div class="stag rv">Corporate Events &amp; Festivals</div>
+    <h2 class="sh rv">Boardroom to <em>Main Stage</em>.</h2>
+    <p class="lead rv">From corporate galas to festival crowds of thousands &mdash; 3Steez brings the same precision and energy to every room.</p>
+
+    <div class="cef-media rv">
+      <!-- PLACEHOLDER: current hero image, swap for video when ready -->
+      <img
+        src="https://static.wixstatic.com/media/27707a_552057f016644179b62d92a87774eb6b~mv2.jpg"
+        alt="3Steez performing at corporate and festival events"
+        class="cef-media-fallback"
+      />
+
+      <!--
+      <video
+        class="cef-media-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="https://static.wixstatic.com/media/27707a_552057f016644179b62d92a87774eb6b~mv2.jpg"
+      >
+        <source src="/assets/video/corporate-festivals-banner.mp4" type="video/mp4" />
+      </video>
+      -->
+    </div>
+
+    <a href="booking.html" class="btn-gold rv">Book a Corporate Event or Festival Set</a>
   </div>
 </section>
 
