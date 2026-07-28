@@ -1,0 +1,126 @@
+<!-- ============================================================
+  CORPORATE EVENTS & FESTIVALS SECTION
+  Drop this in index.html right AFTER the "Watch & Listen" section
+  and BEFORE the "Performed & collaborated alongside" logo strip.
+
+  HOW TO ACTIVATE THE VIDEO LATER (once the banner video is ready):
+  1. Upload the finished video file into a new folder in your GitHub
+     repo: /assets/video/corporate-festivals-banner.mp4
+  2. In the HTML below, find the <div class="cef-media"> block.
+  3. Delete the <img> line.
+  4. Uncomment the <video> block right below it (remove the <!-- and -->).
+  That's it — no other changes needed, no rebuild, just commit + push.
+============================================================ -->
+
+<section class="cef-section">
+  <div class="cef-inner">
+    <p class="cef-eyebrow">Corporate Events &amp; Festivals</p>
+    <h2 class="cef-heading">Boardroom to Main Stage.</h2>
+    <p class="cef-sub">
+      From corporate galas to festival crowds of thousands — 3Steez brings
+      the same precision and energy to every room.
+    </p>
+
+    <div class="cef-media">
+      <!-- PLACEHOLDER: current hero image, swap for video when ready -->
+      <img
+        src="https://static.wixstatic.com/media/27707a_552057f016644179b62d92a87774eb6b~mv2.jpg"
+        alt="3Steez performing at corporate and festival events"
+        class="cef-media-fallback"
+      />
+
+      <!--
+      <video
+        class="cef-media-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="https://static.wixstatic.com/media/27707a_552057f016644179b62d92a87774eb6b~mv2.jpg"
+      >
+        <source src="/assets/video/corporate-festivals-banner.mp4" type="video/mp4" />
+      </video>
+      -->
+    </div>
+
+    <a href="booking.html" class="cef-cta">Book a Corporate Event or Festival Set</a>
+  </div>
+</section>
+
+<style>
+  .cef-section {
+    background: #070707;
+    color: #f8f6f0;
+    padding: 80px 24px;
+    text-align: center;
+  }
+
+  .cef-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .cef-eyebrow {
+    color: #c9a84c;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .cef-heading {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    margin: 0 0 16px;
+    color: #f8f6f0;
+  }
+
+  .cef-sub {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #d8d4cc;
+    max-width: 620px;
+    margin: 0 auto 40px;
+  }
+
+  .cef-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #c9a84c;
+    margin-bottom: 40px;
+    background: #111;
+  }
+
+  .cef-media-fallback,
+  .cef-media-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .cef-cta {
+    display: inline-block;
+    background: #8b1a1a;
+    color: #f8f6f0;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 16px 36px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+  }
+
+  .cef-cta:hover {
+    background: #a32222;
+  }
+
+  @media (max-width: 640px) {
+    .cef-media {
+      aspect-ratio: 4 / 5;
+    }
+  }
+</style>
