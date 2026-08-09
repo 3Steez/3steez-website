@@ -126,6 +126,8 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 .tick-lbl{background:var(--crimson);padding:0 2rem;display:flex;align-items:center;white-space:nowrap;font-size:.6rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--white);flex-shrink:0;gap:.6rem}
 .tick-lbl::after{content:'';width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:6px solid var(--white)}
 .tick-wrap{overflow:hidden;flex:1;padding:1rem 0}
+.tick-follow{background:var(--gold);color:var(--black);padding:0 1.75rem;display:flex;align-items:center;white-space:nowrap;font-size:.6rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;flex-shrink:0;text-decoration:none;transition:background .2s,transform .15s}
+.tick-follow:hover{background:var(--gold2);transform:translateY(-1px)}
 .tick-track{display:flex;width:max-content;animation:tickA 28s linear infinite}
 .tick-track:hover{animation-play-state:paused}
 .tick-item{display:inline-flex;align-items:center;gap:.5rem;padding:0 2.25rem;border-right:1px solid var(--border);white-space:nowrap;font-size:.72rem;color:var(--muted);cursor:pointer;transition:color .2s;text-decoration:none}
@@ -216,6 +218,7 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
   #ev-ticker{margin-top:60px}
   .tick-lbl{padding:0 .75rem;font-size:.5rem}
   .tick-wrap{padding:.55rem 0}
+  .tick-follow{padding:0 .9rem;font-size:.5rem}
   .tick-item{font-size:.62rem;padding:0 1rem}
 
   .hero-cnt{
@@ -589,6 +592,7 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
         <a href="events.html" class="tick-item"><span class="td">June 27, 2026</span><span class="tdot">&#9679;</span>A2SF Top of the Park &mdash; O&amp;W Grove Stage<span class="tdot">&#9679;</span>10PM &middot; Free</a>
       </div>
     </div>
+    <a href="https://lu.ma/PropsOverHere" target="_blank" rel="noopener" class="tick-follow">Follow for Weekly Dates &rarr;</a>
   </div>
 </div>
 
