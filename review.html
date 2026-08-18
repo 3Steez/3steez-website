@@ -613,6 +613,23 @@ textarea{resize:vertical;min-height:108px}
 /* ft-tag: paragraph sits flush under logo */
 .ft-tag{font-size:.86rem;color:var(--muted);line-height:1.8;max-width:200px;text-align:left!important;padding:0!important;margin:0!important;text-indent:0!important}
 
+/* The global `input,select,textarea{appearance:none}` rule strips a checkbox of
+   its native box and tick, so the consent control rendered as a blank rectangle
+   that looked identical whether checked or not. Restore the native widget.
+   The off-screen honeypot keeps its inline width:0/height:0, which wins here. */
+input[type="checkbox"]{
+  -webkit-appearance:checkbox;
+  appearance:checkbox;
+  width:1.15rem;
+  height:1.15rem;
+  padding:0;
+  background:transparent !important;
+  border:0 !important;
+  accent-color:#9a7a2e;
+  flex-shrink:0;
+  cursor:pointer;
+}
+
 /* --- Review page overrides: this page is opened from a text or an email, not browsed.
    Keep the hero short so the two options are visible almost immediately. --- */
 .bk-hero{min-height:42vh}
