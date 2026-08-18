@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Book 3Steez | MC, DJ & Event Entertainment Inquiries</title>
-<meta name="description" content="Book Trés Styles aka 3Steez for your corporate event, festival, nightclub, or private affair. Fill out the inquiry form and receive a personal response within 24 hours."/>
-<meta name="keywords" content="book DJ Michigan, hire MC corporate event, festival DJ booking, Ann Arbor event entertainment, 3Steez booking, Tres Styles hire"/>
-<meta property="og:title" content="Book 3Steez | MC, DJ & Event Entertainment Inquiries"/>
-<meta property="og:description" content="Book Trés Styles aka 3Steez for your corporate event, festival, nightclub, or private affair. Fill out the inquiry form and receive a personal response within 24 hours."/>
+<title>Share a Few Words | 3Steez</title>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="description" content="Worked with 3Steez? Leave a LinkedIn recommendation or send a short testimonial for the site."/>
+<meta property="og:title" content="Share a few words about working with 3Steez"/>
+<meta property="og:description" content="If the night landed the way you hoped, a couple of minutes from you goes a long way. Two quick ways to help."/>
 <meta property="og:image" content="https://static.wixstatic.com/media/27707a_552057f016644179b62d92a87774eb6b~mv2.jpg"/>
 <meta property="og:type" content="website"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -612,6 +612,16 @@ textarea{resize:vertical;min-height:108px}
 
 /* ft-tag: paragraph sits flush under logo */
 .ft-tag{font-size:.86rem;color:var(--muted);line-height:1.8;max-width:200px;text-align:left!important;padding:0!important;margin:0!important;text-indent:0!important}
+
+/* --- Review page overrides: this page is opened from a text or an email, not browsed.
+   Keep the hero short so the two options are visible almost immediately. --- */
+.bk-hero{min-height:42vh}
+.bk-hero-content{padding:7rem 3rem 3.5rem}
+.bk-in{align-items:start;gap:5.5rem}
+@media(max-width:768px){
+  .bk-hero{min-height:34vh}
+  .bk-hero-content{padding:6.5rem 1.5rem 2.75rem}
+}
 </style>
 </head>
 <body>
@@ -631,7 +641,7 @@ textarea{resize:vertical;min-height:108px}
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="media.html">Media</a></li>
     <li><a href="blog.html">Blog</a></li>
-    <li><a href="booking.html" style="color:var(--black);background:var(--gold)">Booking</a></li>
+    <li><a href="booking.html">Booking</a></li>
     </ul>
   <a href="booking.html" class="nav-book">Book Now</a>
   <button class="nav-burger" onclick="omo()"><span></span><span></span><span></span></button>
@@ -639,69 +649,77 @@ textarea{resize:vertical;min-height:108px}
 
 
 <div class="bk-hero">
-  <!-- DJ reel plays silently in background — muted, no controls -->
-  <div class="bk-hero-vid">
-    <video autoplay muted loop playsinline preload="metadata"
-      poster="https://static.wixstatic.com/media/27707a_e5c6b34ff601405db3b2a4208df88d70~mv2.jpg/v1/fill/w_1200,h_800,q_85,enc_avif,quality_auto/27707a_e5c6b34ff601405db3b2a4208df88d70~mv2.jpg">
-      <source src="https://www.dropbox.com/scl/fi/52na3uagss930qafr3037/VID_20250310_152636_00_144.MP4?rlkey=gmiaz2a9if1dow18a4h8fdkt8&st=9hthfe3q&dl=1" type="video/mp4"/>
-    </video>
-  </div>
+  <div class="bk-hero-vid" style="background:url('https://static.wixstatic.com/media/27707a_e5c6b34ff601405db3b2a4208df88d70~mv2.jpg/v1/fill/w_1200,h_800,q_85,enc_avif,quality_auto/27707a_e5c6b34ff601405db3b2a4208df88d70~mv2.jpg') center/cover no-repeat"></div>
   <div class="bk-hero-ov"></div>
   <div class="bk-hero-ov2"></div>
   <div class="bk-hero-content rv">
-    <div class="stag">Let&rsquo;s Work</div>
-    <h1 class="sh">Book 3Steez for<br/>Your Next <em>Experience</em></h1>
-    <p class="lead" style="margin-top:1.25rem">Every great event starts with one great decision. Fill out the form and Tr&eacute;s personally responds within 24 hours.</p>
+    <div class="stag">Thank You</div>
+    <h1 class="sh">It Was a Pleasure<br/>Working <em>With You</em></h1>
+    <p class="lead" style="margin-top:1.25rem">If the night landed the way you hoped, a few words from you carry further than anything I could say about myself. Two quick ways to help &mdash; take whichever is easier.</p>
   </div>
 </div>
 
-
-
-
-<section id="booking-form" class="light-section" style="background:#FAFAF8">
+<section class="light-section" style="background:#FAFAF8">
   <div class="bk-in">
+
+    <!-- Option one: LinkedIn recommendation -->
     <div class="rvl">
-      <div class="stag">Contact Info</div>
-      <h2 class="sh" style="font-size:clamp(2rem,3.5vw,3rem)">Ready to<br/><em>Elevate</em><br/>Your Event?</h2>
-      <blockquote class="bi-quote">&ldquo;Every great event starts with one great decision.&rdquo;</blockquote>
-      <p style="color:var(--muted);font-size:.95rem;line-height:1.85;margin-bottom:2rem">Corporate bookings, festival inquiries, nightclub residencies, and brand partnerships welcome. All inquiries are personally reviewed.</p>
-      <div class="bi-row"><div class="bi-l">Based In</div><div class="bi-v">Detroit, Michigan &mdash; Available Nationwide</div></div>
-      <div class="bi-row"><div class="bi-l">Response Time</div><div class="bi-v">Within 24 hours</div></div>
-      <div class="bi-row"><div class="bi-l">Services</div><div class="bi-v">MC / Hosting &middot; DJ Sets &middot; Music Production &middot; Event Consulting</div></div>
-      <div class="bi-row"><div class="bi-l">Press Kit</div><div class="bi-v"><a href="onesheet.html" target="_blank" rel="noopener">Download One-Sheet &nearr;</a></div></div>
+      <div class="stag">Option One</div>
+      <h2 class="sh" style="font-size:clamp(1.75rem,3vw,2.5rem)">Recommend Me<br/>on <em>LinkedIn</em></h2>
+      <p style="font-size:.95rem;line-height:1.85;margin-top:1.25rem;margin-bottom:1.5rem">About two minutes, and it lands on the profile event planners and bookers actually check before they hire. LinkedIn has no direct link for this, so here is the path:</p>
+      <ol style="font-size:.9rem;line-height:1.9;padding-left:1.15rem;margin-bottom:1.75rem">
+        <li>Open my profile with the button below</li>
+        <li>Tap <strong>More</strong> (next to Message)</li>
+        <li>Choose <strong>Recommend</strong></li>
+        <li>Write a sentence or two and post</li>
+      </ol>
+      <a href="https://www.linkedin.com/in/3steez/" target="_blank" rel="noopener" class="btn-gold">Open My LinkedIn Profile &nearr;</a>
+      <p style="font-size:.78rem;line-height:1.7;margin-top:1.5rem">Prefer I send the request through LinkedIn instead? Just say the word and it will show up in your LinkedIn messages.</p>
     </div>
+
+    <!-- Option two: testimonial for the site -->
     <div class="rv">
+      <div class="stag">Option Two</div>
+      <h2 class="sh" style="font-size:clamp(1.75rem,3vw,2.5rem)">Send a Few Words<br/>for <em>the Site</em></h2>
+      <p style="font-size:.95rem;line-height:1.85;margin-top:1.25rem;margin-bottom:1.75rem">A sentence or two is plenty. Nothing gets published anywhere without your say-so.</p>
+
       <div id="fm" class="fm"></div>
-      <form id="bf" novalidate>
-        <div class="fr"><div class="fg"><label for="fn">First Name *</label><input type="text" id="fn" required placeholder="First name"/></div><div class="fg"><label for="ln">Last Name *</label><input type="text" id="ln" required placeholder="Last name"/></div></div>
-        <div class="fr"><div class="fg"><label for="em">Email *</label><input type="email" id="em" required placeholder="your@email.com"/></div><div class="fg"><label for="ph">Phone</label><input type="tel" id="ph" placeholder="+1 (000) 000-0000"/></div></div>
-        <div class="fg"><label for="co">Company / Organization</label><input type="text" id="co" placeholder="Company or event name"/></div>
+      <form id="tf" novalidate>
         <div class="fr">
-          <div class="fg"><label for="et">Event Type *</label><select id="et" required><option value="" disabled selected>Select event type</option><option>Corporate Event / Gala</option><option>Festival</option><option>Nightclub / Bar</option><option>Private Party</option><option>Wedding</option><option>Concert / Show</option><option>Brand Activation</option><option>Music Production</option><option>Other</option></select></div>
-          <div class="fg"><label for="ed">Event Date</label><input type="date" id="ed"/></div>
+          <div class="fg"><label for="rn">Your Name *</label><input type="text" id="rn" required placeholder="First and last name"/></div>
+          <div class="fg"><label for="rc">Role / Company</label><input type="text" id="rc" placeholder="e.g. Events Manager, Acme Co."/></div>
         </div>
-        <div class="fg"><label for="dt">Tell Me About Your Event *</label><textarea id="dt" required placeholder="Location, expected attendance, event vision, and anything else I should know..."></textarea></div>
-        <div class="fg"><label for="rf">How Did You Find 3Steez?</label><input type="text" id="rf" placeholder="Referral, social media, Google..."/></div>
-        <div class="fg">
-          <label>Event Brief &amp; Media</label>
-          <p style="font-size:.8rem;line-height:1.7;margin:0">Have an event brief, logo, or reference photos? Email them to <a href="mailto:tres@ylccreative.com" style="color:#9a7a2e;text-decoration:none;border-bottom:1px solid rgba(154,122,46,.4)">tres@ylccreative.com</a> and I&rsquo;ll match them to your inquiry.</p>
+        <div class="fr">
+          <div class="fg"><label for="rev">Which Event?</label><input type="text" id="rev" placeholder="Event name, venue, or date"/></div>
+          <div class="fg"><label for="rem">Your Email</label><input type="email" id="rem" placeholder="your@email.com"/></div>
+        </div>
+        <div class="fg"><label for="rq">In Your Words *</label><textarea id="rq" required placeholder="How did the night go? What stood out? Anything you would tell someone considering booking me."></textarea></div>
+        <div class="fg" style="flex-direction:row;align-items:flex-start;gap:.65rem;margin-top:.3rem">
+          <input type="checkbox" id="rp" style="width:auto;margin-top:.2rem;flex-shrink:0"/>
+          <label for="rp" style="font-size:.78rem;letter-spacing:0;text-transform:none;line-height:1.65">Yes &mdash; 3Steez may publish these words, my name, and my company on 3steez.com and in promotional material.</label>
         </div>
         <input type="checkbox" id="botcheck" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:0;height:0;opacity:0"/>
-        <button type="submit" class="btn-gold" style="width:100%;padding:1.12rem;font-size:.7rem;cursor:none">Send Inquiry &rarr;</button>
-        <p style="font-size:.74rem;color:var(--muted);margin-top:.45rem">All inquiries are personally reviewed by Tr&eacute;s Styles. Expect a response within 24 hours.</p>
+        <button type="submit" class="btn-gold" style="width:100%;padding:1.12rem;font-size:.7rem;cursor:none;margin-top:1.25rem">Send It &rarr;</button>
+        <p style="font-size:.74rem;margin-top:.45rem">Leave the box unchecked and it comes straight to me as private feedback instead &mdash; just as useful, and nothing goes public.</p>
       </form>
     </div>
+
+  </div>
+</section>
+
+<section style="background:var(--black);padding:4.5rem 3rem">
+  <div style="max-width:760px;margin:0 auto;text-align:center" class="rv">
+    <p style="color:var(--muted);font-size:.92rem;line-height:1.85">If something about the night <em style="color:var(--white);font-style:italic">didn&rsquo;t</em> land right, I would genuinely rather hear it from you than not hear it at all. Reach me directly at <a href="mailto:tres@ylccreative.com" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,.35)">tres@ylccreative.com</a>.</p>
   </div>
 </section>
 
 <script>
-// Web3Forms access key. Get yours free at https://web3forms.com (no account needed
-// beyond confirming your email). Paste it below \u2014 the form stays inert until you do.
+// Web3Forms access key \u2014 same key as booking.html. Get yours free at https://web3forms.com
 var W3F_KEY = 'YOUR-WEB3FORMS-ACCESS-KEY';
 var CONTACT_EMAIL = 'tres@ylccreative.com';
 
 (function(){
-  var form = document.getElementById('bf');
+  var form = document.getElementById('tf');
   var msg  = document.getElementById('fm');
   var btn  = form.querySelector('button[type="submit"]');
 
@@ -718,52 +736,50 @@ var CONTACT_EMAIL = 'tres@ylccreative.com';
   form.addEventListener('submit', function(e){
     e.preventDefault();
 
-    if(!val('fn') || !val('em') || !val('dt') || !val('et')){
-      show('er', 'Please complete all required fields before submitting.');
+    if(!val('rn') || !val('rq')){
+      show('er', 'Please add your name and a few words before sending.');
       return;
     }
 
-    // Honeypot: bots fill hidden fields, humans never see this one.
     var hp = document.getElementById('botcheck');
     if(hp && hp.checked){ return; }
 
-    // Never claim success while the form has nowhere to send.
     if(W3F_KEY.indexOf('YOUR-') === 0){
-      show('er', 'This form isn&rsquo;t connected yet \u2014 please email ' + mailLink() + ' directly and I&rsquo;ll get right back to you.');
+      show('er', 'This form isn&rsquo;t connected yet \u2014 please email ' + mailLink() + ' directly. Sorry for the detour.');
       return;
     }
 
+    var mayPublish = document.getElementById('rp').checked;
     var label = btn.textContent;
     btn.disabled = true;
     btn.textContent = 'Sending\u2026';
-
     function restore(){ btn.disabled = false; btn.textContent = label; }
 
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {'Content-Type':'application/json', 'Accept':'application/json'},
       body: JSON.stringify({
-        access_key:  W3F_KEY,
-        subject:     'Booking inquiry \u2014 ' + val('fn') + ' ' + val('ln') + (val('co') ? ' (' + val('co') + ')' : ''),
-        from_name:   '3Steez Booking Form',
-        name:        val('fn') + ' ' + val('ln'),
-        email:       val('em'),
-        phone:       val('ph') || '\u2014',
-        company:     val('co') || '\u2014',
-        event_type:  val('et'),
-        event_date:  val('ed') || '\u2014',
-        message:     val('dt'),
-        found_via:   val('rf') || '\u2014'
+        access_key:       W3F_KEY,
+        subject:          (mayPublish ? 'Testimonial (OK to publish) \u2014 ' : 'Private feedback \u2014 ') + val('rn'),
+        from_name:        '3Steez Testimonial Page',
+        name:             val('rn'),
+        email:            val('rem') || 'no-reply@3steez.com',
+        role_company:     val('rc') || '\u2014',
+        event:            val('rev') || '\u2014',
+        message:          val('rq'),
+        permission_to_publish: mayPublish ? 'YES \u2014 cleared to publish with name and company' : 'NO \u2014 private feedback only, do not publish'
       })
     })
     .then(function(r){ return r.json(); })
     .then(function(data){
       restore();
       if(data && data.success){
-        show('ok', '&#x2713; <strong>Message received.</strong> Tr&eacute;s will personally respond within 24 hours.');
+        show('ok', mayPublish
+          ? '&#x2713; <strong>Got it \u2014 thank you.</strong> That means a lot, and I&rsquo;ll let you know where it ends up.'
+          : '&#x2713; <strong>Received \u2014 thank you.</strong> This stays between us, and I appreciate you taking the time.');
         form.reset();
       } else {
-        show('er', 'Your inquiry didn&rsquo;t go through. Please email ' + mailLink() + ' directly \u2014 sorry for the trouble.');
+        show('er', 'That didn&rsquo;t go through. Please email ' + mailLink() + ' directly \u2014 sorry for the trouble.');
       }
     })
     .catch(function(){
