@@ -156,6 +156,30 @@ footer a:hover{color:var(--gold)}
   .cta-band{padding:3rem 1.5rem}
   footer{padding:2rem 1.5rem}
 }
+
+/* ── PRINT / PDF ──
+   Drives the downloadable EPK at assets/3steez-epk.pdf, generated with
+   headless Chrome. Keeps the dark brand look, drops the site furniture. */
+@media print{
+  @page{size:Letter;margin:0}
+  html,body{background:var(--black)!important}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  /* a fixed backdrop repeats on every printed sheet, so the short last page
+     stays black instead of tailing off into white paper */
+  body::before{content:"";position:fixed;inset:0;background:var(--black);z-index:-1}
+  nav,.nav-cta,.cta-band,.no-print{display:none!important}
+  .epk-hero{padding:3.5rem 3rem 2.5rem}
+  .epk-hero h1{font-size:3.2rem}
+  .section{padding:2.5rem 3rem;break-inside:auto}
+  .section-title{margin-bottom:1.25rem}
+  footer{padding:2rem 3rem}
+  a{text-decoration:none!important}
+  a:not(.btn){color:var(--gold)!important}
+  .btn-gold{background:var(--gold)!important;color:var(--black)!important}
+  /* keep a heading with the block it introduces, and never split a card */
+  h1,h2,h3{break-after:avoid-page}
+  .stat-card,.disco-card,.cred-card,.credit-item,.contact-item,.contact-block,.contact-row,.collab-tag{break-inside:avoid-page}
+}
 </style>
 </head>
 <body>
@@ -182,6 +206,7 @@ footer a:hover{color:var(--gold)}
     <a href="https://www.dropbox.com/scl/fi/eadhskjirbnfwzeaqz18b/3Steez-Sizzle-Reel.mp4?rlkey=4xakndjkuiw8abkwn2qi2wo4o&st=2pw5jklh&dl=0" class="btn btn-gold" target="_blank">▶ Watch Sizzle Reel</a>
     <a href="onesheet.html" class="btn btn-outline">DJ/MC One-Sheet</a>
     <a href="booking.html" class="btn btn-outline">Book Trés</a>
+    <a href="assets/3steez-epk.pdf" class="btn btn-outline no-print" download>&#8595; Download EPK (PDF)</a>
   </div>
 </section>
 
