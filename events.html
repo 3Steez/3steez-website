@@ -509,17 +509,19 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 <script>
 var EVENTS=[
   {img:'flyer-wayback-2026-09.jpg',status:'Every Wednesday',title:'Wayback Wednesday',
+    video:'reel-wayback-2026-10.mp4',poster:'reel-wayback-2026-10-poster.jpg',
     venue:'Alley Bar &mdash; Ann Arbor',statusClass:'on',
     details:[{l:'Venue',v:'Alley Bar, 112 W. Michigan Ave &mdash; Ann Arbor, MI'},{l:'Hosted By',v:'3Steez'},{l:'Special Guest',v:'Buff1 of AML joins the 3rd Wednesday of every month'},{l:'Schedule',v:'Every Wednesday'},{l:'Hours',v:'9PM &ndash; 1AM'},{l:'Cover',v:'No Cover'},{l:'Vibe',v:'Throwback 80s-2000s'},{l:'Follow',v:'@getpropsoverhere'}],
-    reel:'https://www.instagram.com/reel/DRw_ut_Dlw9/'},
+    reel:null},
   {img:'flyer-afterwork-2026-09.jpg',status:'First Friday of the Month',title:'A2 After Work Party',
     venue:'The Rabbit Hole &mdash; Ann Arbor',statusClass:'on',
     details:[{l:'Venue',v:'The Rabbit Hole, 210 S. 1st St &mdash; Ann Arbor, MI'},{l:'Hosted By',v:'3Steez &mdash; Resident Host/DJ'},{l:'Schedule',v:'First Friday of Every Month'},{l:'Doors',v:'9PM'},{l:'Genre',v:'Hip-Hop &middot; R&B &middot; House &middot; Afrobeats & Remixes'},{l:'Cover',v:'$5'},{l:'Admission',v:'21+'},{l:'Follow',v:'@getpropsoverhere'}],
     reel:'https://www.instagram.com/reel/DVZjmvtkhGb/'},
   {img:'flyer-reup-2026-09.jpg',status:'2nd Saturdays',title:'The Re:Up &mdash; Throwback R&B',
+    video:'reel-reup-2026-10.mp4',poster:'reel-reup-2026-10-poster.jpg',
     venue:'LIVE Nightclub &mdash; Ann Arbor',statusClass:'on',
     details:[{l:'Venue',v:'LIVE Nightclub, 102 S. First St &mdash; Ann Arbor, MI'},{l:'Hosted &amp; Curated By',v:'3Steez'},{l:'Schedule',v:'2nd Saturday of Every Month'},{l:'Hours',v:'7PM &ndash; 10PM'},{l:'Admission',v:'Free with RSVP &middot; 21+ Only'},{l:'Food & Drink',v:'Specials available &middot; limited capacity, come early'},{l:'Vibe',v:'Throwback R&B Only'}],
-    reel:'https://www.instagram.com/reel/DQ66yCYjrgF/'}
+    reel:null}
 ];
 var curIdx=0;
 
@@ -537,14 +539,28 @@ function openEvent(i){
   ev.details.forEach(function(d){
     det.innerHTML+='<div class="ev-detail-row"><span class="ev-detail-label">'+d.l+'</span><span class="ev-detail-val">'+d.v+'</span></div>';
   });
+  // A self-hosted clip plays straight away instead of sitting behind the flyer;
+  // the Instagram embeds still need a click, so they keep the button.
   var vb=document.getElementById('vibeBtn');
-  vb.style.display=ev.reel?'block':'none';
+  vb.style.display=(ev.reel&&!ev.video)?'block':'none';
   document.getElementById('evModalBg').classList.add('open');
   document.body.style.overflow='hidden';
   // Reset reel
-  document.getElementById('evReelWrap').style.display='none';
-  document.getElementById('evReelWrap').innerHTML='';
+  var wrap=document.getElementById('evReelWrap');
+  wrap.style.display='none';
+  wrap.innerHTML='';
   document.getElementById('evMFlyer').style.display='block';
+  if(ev.video)playVideo(ev);
+}
+
+function playVideo(ev){
+  var wrap=document.getElementById('evReelWrap');
+  // muted is what lets it start on its own — every browser blocks autoplay
+  // with sound. controls are there so the music can be turned back on.
+  wrap.innerHTML='<video src="'+ev.video+'" poster="'+(ev.poster||'')+'" autoplay muted loop playsinline controls '+
+                 'style="width:100%;height:100%;object-fit:cover;background:#070707"></video>';
+  wrap.style.display='block';
+  document.getElementById('evMFlyer').style.display='none';
 }
 
 function closeEvent(){
@@ -634,11 +650,12 @@ if(_C){
 // Hover glow on interactive elements
 document.querySelectorAll('a,button,.ev-card,.tc,.mi,.stat,.pl,.mc,.chip,.svc,.blog-card').forEach(function(el){
   el.addEventListener('mouseenter',function(){document.body.classList.add('cg');});
-  el.addEventListener('mouseleave',function(){document.body.classList.remove('cg');}););
+  el.addEventListener('mouseleave',function(){document.body.classList.remove('cg');});
+});
 // Nav scroll
 var _nav=document.getElementById('nav');
 if(_nav){window.addEventListener('scroll',function(){_nav.classList.toggle('solid',window.scrollY>60);});}
-// Mobile menu}}
+// Mobile menu
 // Intersection observer — safe version
 (function(){
   var els=document.querySelectorAll('.rv,.rvl');
@@ -647,7 +664,8 @@ if(_nav){window.addEventListener('scroll',function(){_nav.classList.toggle('soli
   var obs=new IntersectionObserver(function(entries){
     entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});
   },{threshold:0.05,rootMargin:'0px 0px -20px 0px'});
-  els.forEach(function(el){obs.observe(el);});)();
+  els.forEach(function(el){obs.observe(el);});
+})();
 </script>
 <script>
 // Mobile menu
