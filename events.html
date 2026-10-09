@@ -514,9 +514,10 @@ var EVENTS=[
     details:[{l:'Venue',v:'Alley Bar, 112 W. Michigan Ave &mdash; Ann Arbor, MI'},{l:'Hosted By',v:'3Steez'},{l:'Special Guest',v:'Buff1 of AML joins the 3rd Wednesday of every month'},{l:'Schedule',v:'Every Wednesday'},{l:'Hours',v:'9PM &ndash; 1AM'},{l:'Cover',v:'No Cover'},{l:'Vibe',v:'Throwback 80s-2000s'},{l:'Follow',v:'@getpropsoverhere'}],
     reel:null},
   {img:'flyer-afterwork-2026-09.jpg',status:'First Friday of the Month',title:'A2 After Work Party',
+    video:'reel-afterwork-2026-10.mp4',poster:'reel-afterwork-2026-10-poster.jpg',
     venue:'The Rabbit Hole &mdash; Ann Arbor',statusClass:'on',
     details:[{l:'Venue',v:'The Rabbit Hole, 210 S. 1st St &mdash; Ann Arbor, MI'},{l:'Hosted By',v:'3Steez &mdash; Resident Host/DJ'},{l:'Schedule',v:'First Friday of Every Month'},{l:'Doors',v:'9PM'},{l:'Genre',v:'Hip-Hop &middot; R&B &middot; House &middot; Afrobeats & Remixes'},{l:'Cover',v:'$5'},{l:'Admission',v:'21+'},{l:'Follow',v:'@getpropsoverhere'}],
-    reel:'https://www.instagram.com/reel/DVZjmvtkhGb/'},
+    reel:null},
   {img:'flyer-reup-2026-09.jpg',status:'2nd Saturdays',title:'The Re:Up &mdash; Throwback R&B',
     video:'reel-reup-2026-10.mp4',poster:'reel-reup-2026-10-poster.jpg',
     venue:'LIVE Nightclub &mdash; Ann Arbor',statusClass:'on',
@@ -559,6 +560,12 @@ function playVideo(ev){
   // with sound. controls are there so the music can be turned back on.
   wrap.innerHTML='<video src="'+ev.video+'" poster="'+(ev.poster||'')+'" autoplay muted loop playsinline controls '+
                  'style="width:100%;height:100%;object-fit:cover;background:#070707"></video>';
+  // The panel is portrait, so cover suits a vertical reel but would crop a
+  // landscape clip down to a centre sliver. Fit those inside instead.
+  var v=wrap.querySelector('video');
+  v.addEventListener('loadedmetadata',function(){
+    if(v.videoWidth>v.videoHeight)v.style.objectFit='contain';
+  });
   wrap.style.display='block';
   document.getElementById('evMFlyer').style.display='none';
 }
