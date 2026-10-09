@@ -224,6 +224,14 @@ textarea{resize:vertical;min-height:108px}
 .fm.ok{background:rgba(201,168,76,.09);border:1px solid var(--gold);color:var(--gold2)}
 .fm.er{background:rgba(139,26,26,.14);border:1px solid var(--crimson2);color:#f99}
 .fm.show{display:block}
+/* The form sits on the light section, where the dark-theme message colours
+   above are unreadable — restate them against #FAFAF8. */
+.light-section .fm.er{background:rgba(139,26,26,.07);border-color:#8B1A1A;color:#8B1A1A}
+/* Shown in place of the form once an inquiry has actually been sent. */
+.bk-thx{background:#fff;border:1px solid rgba(0,0,0,.1);border-left:2px solid #9a7a2e;padding:2.6rem 2.3rem}
+.bk-thx p{font-size:.97rem;line-height:1.85;margin:0}
+.bk-thx a{color:#9a7a2e;text-decoration:none;border-bottom:1px solid rgba(154,122,46,.4)}
+.bk-thx .sig{font-family:var(--PD);font-size:1.4rem;color:#0a0a0a !important;margin-top:1.6rem !important}
 .cta-banner{background:var(--crimson);padding:5rem 3rem;text-align:center;position:relative;overflow:hidden}
 .cta-banner::before{content:attr(data-txt);font-family:'Bebas Neue',sans-serif;font-size:22vw;color:rgba(255,255,255,.04);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;white-space:nowrap;line-height:1}
 .cta-banner h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.5rem);font-style:italic;font-weight:400;color:var(--white);margin-bottom:1rem;position:relative;z-index:1}
@@ -692,6 +700,11 @@ textarea{resize:vertical;min-height:108px}
         <button type="submit" class="btn-gold" style="width:100%;padding:1.12rem;font-size:.7rem;cursor:none">Send Inquiry &rarr;</button>
         <p style="font-size:.74rem;color:var(--muted);margin-top:.45rem">All inquiries are personally reviewed by Tr&eacute;s Styles. Expect a response within 24 hours.</p>
       </form>
+      <div id="bthx" class="bk-thx" style="display:none">
+        <div class="stag">Inquiry Received</div>
+        <p>I just received your inquiry, thank you. Your details came through and I&rsquo;ll get back to you within a day. If it&rsquo;s time sensitive, text me at <a href="sms:+17342620755">734-262-0755</a> and I&rsquo;ll see it faster.</p>
+        <p class="sig">Tr&eacute;s</p>
+      </div>
     </div>
   </div>
 </section>
@@ -715,6 +728,20 @@ var CONTACT_EMAIL = 'tres@ylccreative.com';
   }
   function mailLink(){
     return '<a href="mailto:' + CONTACT_EMAIL + '" style="color:inherit;text-decoration:underline">' + CONTACT_EMAIL + '</a>';
+  }
+  // Only on a confirmed send: swap the form out for the thank-you panel.
+  function thanks(){
+    var panel = document.getElementById('bthx');
+    form.style.display = 'none';
+    msg.className = 'fm';
+    panel.style.display = 'block';
+    panel.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+  // On failure the form stays put, details and all, so nothing has to be retyped.
+  function failed(){
+    show('er', 'That didn&rsquo;t send. Please text me at <a href="sms:+17342620755" ' +
+               'style="color:inherit;text-decoration:underline">734-262-0755</a> and I&rsquo;ll ' +
+               'see it right away \u2014 your details are still below if you&rsquo;d like to try again.');
   }
 
   form.addEventListener('submit', function(e){
@@ -762,15 +789,14 @@ var CONTACT_EMAIL = 'tres@ylccreative.com';
     .then(function(data){
       restore();
       if(data && data.success){
-        show('ok', '&#x2713; <strong>Message received.</strong> Tr&eacute;s will personally respond within 24 hours.');
-        form.reset();
+        thanks();
       } else {
-        show('er', 'Your inquiry didn&rsquo;t go through. Please email ' + mailLink() + ' directly \u2014 sorry for the trouble.');
+        failed();
       }
     })
     .catch(function(){
       restore();
-      show('er', 'Couldn&rsquo;t reach the server. Please email ' + mailLink() + ' directly \u2014 sorry for the trouble.');
+      failed();
     });
   });
 })();
