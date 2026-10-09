@@ -106,6 +106,28 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
 .ev-title{font-family:var(--PD);font-size:1.1rem;color:var(--white);line-height:1.2;margin-bottom:.35rem}
 .ev-venue{font-size:.68rem;color:rgba(248,246,240,.55);margin-bottom:.75rem}
 .ev-cta-sm{font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:.2rem}
+/* Past highlights (added 2026-10-08). Deliberately unlike the flyer cards
+   above: wider, shorter, caption under the still rather than over it. Those
+   sell a date that is coming; these are evidence of work already done. */
+.hl-head{max-width:1240px;margin:0 auto;padding:0 3rem 1.5rem;display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.hl-head p{color:var(--muted);font-size:.9rem;line-height:1.8;max-width:540px;margin:.5rem 0 0}
+.hl-all{font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:.2rem;white-space:nowrap}
+.hl-all:hover{border-bottom-color:var(--gold)}
+.hl-grid{display:flex;gap:1.25rem;width:max-content}
+.hl-card{position:relative;flex-shrink:0;width:290px;background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:2px;cursor:pointer;overflow:hidden;transition:border-color .4s,transform .35s}
+.hl-card:hover{border-color:rgba(201,168,76,.45);transform:translateY(-4px)}
+.hl-shot{position:relative;height:190px;overflow:hidden}
+.hl-shot img{width:100%;height:100%;object-fit:cover;filter:brightness(.72);transition:filter .5s,transform .5s;display:block}
+.hl-card:hover .hl-shot img{filter:brightness(.95);transform:scale(1.05)}
+.hl-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.hl-play span{width:44px;height:44px;border-radius:50%;background:rgba(7,7,7,.6);border:1px solid rgba(201,168,76,.6);display:flex;align-items:center;justify-content:center;transition:background .4s}
+.hl-card:hover .hl-play span{background:rgba(201,168,76,.9)}
+.hl-play svg{margin-left:3px}
+.hl-card:hover .hl-play svg polygon{fill:#070707}
+.hl-cap{padding:.9rem 1rem 1.1rem}
+.hl-type{font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.hl-name{font-family:var(--PD);font-size:.98rem;color:var(--white);line-height:1.25}
+@media(max-width:700px){.hl-head{padding:0 1.5rem 1.25rem}.hl-card{width:250px}.hl-shot{height:165px}}
 /* MODAL */
 .ev-modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:800;align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(6px)}
 .ev-modal-bg.open{display:flex}
@@ -481,6 +503,21 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:5rem 3r
   </div>
 </div>
 
+<!-- PAST HIGHLIGHTS -->
+<section style="padding:5rem 0 1rem">
+  <div class="hl-head rv">
+    <div>
+      <div class="stag">Recent Highlights</div>
+      <h2 class="sh" style="font-size:2.1rem;margin:.4rem 0 0">Beyond the <em>Residencies</em></h2>
+      <p>The three nights above are the standing calendar. These are festivals, conferences and private events from the last two years &mdash; click any one to watch the recap.</p>
+    </div>
+    <a href="media.html" class="hl-all">See All Reels &rarr;</a>
+  </div>
+  <div class="ev-scroll-wrap" id="hlScroll">
+    <div class="hl-grid" id="hlGrid"></div>
+  </div>
+</section>
+
 <!-- MODAL -->
 <div class="ev-modal-bg" id="evModalBg">
   <div class="ev-modal">
@@ -514,7 +551,7 @@ var EVENTS=[
     details:[{l:'Venue',v:'Alley Bar, 112 W. Michigan Ave &mdash; Ann Arbor, MI'},{l:'Hosted By',v:'3Steez'},{l:'Special Guest',v:'Buff1 of AML joins the 3rd Wednesday of every month'},{l:'Schedule',v:'Every Wednesday'},{l:'Hours',v:'9PM &ndash; 1AM'},{l:'Cover',v:'No Cover'},{l:'Vibe',v:'Throwback 80s-2000s'},{l:'Follow',v:'@getpropsoverhere'}],
     reel:null},
   {img:'flyer-afterwork-2026-09.jpg',status:'First Friday of the Month',title:'A2 After Work Party',
-    video:'reel-afterwork-2026-10.mp4',poster:'reel-afterwork-2026-10-poster.jpg',
+    video:'reel-afterwork-2026-10.mp4',poster:'reel-afterwork-2026-10-poster.jpg',wide:true,
     venue:'The Rabbit Hole &mdash; Ann Arbor',statusClass:'on',
     details:[{l:'Venue',v:'The Rabbit Hole, 210 S. 1st St &mdash; Ann Arbor, MI'},{l:'Hosted By',v:'3Steez &mdash; Resident Host/DJ'},{l:'Schedule',v:'First Friday of Every Month'},{l:'Doors',v:'9PM'},{l:'Genre',v:'Hip-Hop &middot; R&B &middot; House &middot; Afrobeats & Remixes'},{l:'Cover',v:'$5'},{l:'Admission',v:'21+'},{l:'Follow',v:'@getpropsoverhere'}],
     reel:null},
@@ -524,6 +561,66 @@ var EVENTS=[
     details:[{l:'Venue',v:'LIVE Nightclub, 102 S. First St &mdash; Ann Arbor, MI'},{l:'Hosted &amp; Curated By',v:'3Steez'},{l:'Schedule',v:'2nd Saturday of Every Month'},{l:'Hours',v:'7PM &ndash; 10PM'},{l:'Admission',v:'Free with RSVP &middot; 21+ Only'},{l:'Food & Drink',v:'Specials available &middot; limited capacity, come early'},{l:'Vibe',v:'Throwback R&B Only'}],
     reel:null}
 ];
+// Past work, ordered to lead with range rather than recency — a promoter
+// sizing up whether 3Steez fits a festival or a conference should see that
+// first. Names and types match media.html, which holds the full set.
+var HIGHLIGHTS=[
+  {video:'reel-a2sf26.mp4',poster:'reel-a2sf26-poster.jpg',type:'Festival',wide:true,
+   name:'A2SF 2026 &mdash; Top of the Park',where:'Ann Arbor Summer Festival',
+   meta:[{l:'Type',v:'Festival main stage'},{l:'Stage',v:'O&amp;W Grove Stage'},{l:'Year',v:'2026'}]},
+  {video:'reel-fabtech-chicago.mp4',poster:'reel-fabtech-chicago-poster.jpg',type:'Corporate Event',
+   name:'FabTech &mdash; Chicago',where:'Vegas Theme Party',
+   meta:[{l:'Type',v:'Corporate trade show party'},{l:'City',v:'Chicago, IL'},{l:'Theme',v:'Vegas night'}]},
+  {video:'reel-mtw2024-a.mp4',poster:'reel-mtw2024-a-poster.jpg',type:'Corporate Event',
+   name:'Michigan Tech Week &mdash; Conference',where:'Conference floor, indoor',
+   meta:[{l:'Type',v:'Conference'},{l:'Year',v:'2024'}]},
+  {video:'reel-gamewatch-tailgate.mp4',poster:'reel-gamewatch-tailgate-poster.jpg',type:'Street Party',
+   name:'Game Watch &amp; Tailgate',where:'State Street District',
+   meta:[{l:'Type',v:'Outdoor street party'},{l:'Occasion',v:'U-M Football'},{l:'Year',v:'2024'}]},
+  {video:'reel-mtw2024-b.mp4',poster:'reel-mtw2024-b-poster.jpg',type:'Corporate Event',
+   name:'Michigan Tech Week &mdash; Closing Party',where:'Restaurant takeover',
+   meta:[{l:'Type',v:'Corporate closing party'},{l:'Year',v:'2024'}]},
+  {video:'reel-a2sf25.mp4',poster:'reel-a2sf25-poster.jpg',type:'Festival',wide:true,
+   name:'A2SF 2025 &mdash; After Dark',where:'Closing Party',
+   meta:[{l:'Type',v:'Festival closing party'},{l:'Year',v:'2025'}]},
+  {video:'reel-necto.mp4',poster:'reel-necto-poster.jpg',type:'Nightclub &middot; Resident MC',
+   name:'Necto Nightclub',where:'4+ year residency',
+   meta:[{l:'Role',v:'Resident MC'},{l:'Run',v:'4+ years'},{l:'Room',v:'Frequency Saturdays'}]}
+];
+
+(function(){
+  var g=document.getElementById('hlGrid');
+  if(!g)return;
+  HIGHLIGHTS.forEach(function(h,i){
+    var c=document.createElement('div');
+    c.className='hl-card';
+    c.setAttribute('onclick','openHighlight('+i+')');
+    c.innerHTML='<div class="hl-shot"><img src="'+h.poster+'" alt="'+h.name.replace(/&[a-z]+;/g,' ')+'" loading="lazy"/>'+
+                '<div class="hl-play"><span><svg width="13" height="13" viewBox="0 0 24 24" fill="#c9a84c">'+
+                '<polygon points="6,3 20,12 6,21"/></svg></span></div></div>'+
+                '<div class="hl-cap"><div class="hl-type">'+h.type+'</div><div class="hl-name">'+h.name+'</div></div>';
+    g.appendChild(c);
+  });
+})();
+
+function openHighlight(i){
+  var h=HIGHLIGHTS[i];
+  if(!h)return;
+  document.getElementById('evMStatus').className='ev-modal-status';
+  document.getElementById('evMStatus').innerHTML=h.type;
+  document.getElementById('evMTitle').innerHTML=h.name;
+  document.getElementById('evMVenue').innerHTML=h.where;
+  var det=document.getElementById('evMDetails');
+  det.innerHTML='';
+  h.meta.forEach(function(d){
+    det.innerHTML+='<div class="ev-detail-row"><span class="ev-detail-label">'+d.l+'</span><span class="ev-detail-val">'+d.v+'</span></div>';
+  });
+  document.getElementById('vibeBtn').style.display='none';
+  document.getElementById('evModalBg').classList.add('open');
+  document.body.style.overflow='hidden';
+  playVideo(h);
+}
+
 var curIdx=0;
 
 function openEvent(i){
@@ -558,13 +655,16 @@ function playVideo(ev){
   var wrap=document.getElementById('evReelWrap');
   // muted is what lets it start on its own — every browser blocks autoplay
   // with sound. controls are there so the music can be turned back on.
-  wrap.innerHTML='<video src="'+ev.video+'" poster="'+(ev.poster||'')+'" autoplay muted loop playsinline controls '+
-                 'style="width:100%;height:100%;object-fit:cover;background:#070707"></video>';
   // The panel is portrait, so cover suits a vertical reel but would crop a
-  // landscape clip down to a centre sliver. Fit those inside instead.
+  // landscape clip down to a centre sliver. `wide` is declared so the poster
+  // is fitted from the first frame rather than snapping once metadata lands;
+  // the listener below still catches anything added without the flag.
+  var fit=ev.wide?'contain':'cover';
+  wrap.innerHTML='<video src="'+ev.video+'" poster="'+(ev.poster||'')+'" autoplay muted loop playsinline controls '+
+                 'style="width:100%;height:100%;object-fit:'+fit+';background:#070707"></video>';
   var v=wrap.querySelector('video');
   v.addEventListener('loadedmetadata',function(){
-    if(v.videoWidth>v.videoHeight)v.style.objectFit='contain';
+    v.style.objectFit=v.videoWidth>v.videoHeight?'contain':'cover';
   });
   wrap.style.display='block';
   document.getElementById('evMFlyer').style.display='none';
@@ -592,14 +692,15 @@ document.getElementById('evModalBg').addEventListener('click',function(e){
   if(e.target===this)closeEvent();
 });
 
-(function(){
-  var el=document.getElementById('evScroll');
+// drag-to-scroll, for the events row and the highlights row below it
+['evScroll','hlScroll'].forEach(function(id){
+  var el=document.getElementById(id);
   if(!el)return;
   var d=false,sx=0,sl=0;
   el.addEventListener('mousedown',function(e){d=true;sx=e.pageX-el.offsetLeft;sl=el.scrollLeft;});
   document.addEventListener('mouseup',function(){d=false;});
   el.addEventListener('mousemove',function(e){if(!d)return;e.preventDefault();el.scrollLeft=sl-(e.pageX-el.offsetLeft-sx)*1.2;});
-})();
+});
 </script>
 
 
