@@ -552,6 +552,15 @@ var EVENTS=[
 // thumbnail saved locally as the card image. Add entries as they come in; the
 // section stays hidden while this is empty.
 var PAST=[
+  {img:'flyer-ranch-2026-10.jpg',status:'Saturday, October 3, 2026',
+    title:'The Ranch &mdash; Honky-Tonk',venue:'The Ranch &mdash; Ann Arbor',
+    details:[{l:'Venue',v:'The Ranch, 122 W. Washington St &mdash; Ann Arbor, MI'},
+             {l:'Date',v:'Saturday, October 3, 2026'},
+             {l:'Hours',v:'9PM &ndash; 2AM &middot; Downstairs'},
+             {l:'Lineup',v:'3Steez + DJ Damon'},
+             {l:'Format',v:'Classic country + Top 40 country hits'},
+             {l:'Cover',v:'$5 &middot; 21+'}],
+    reel:null}
 ];
 
 (function(){
@@ -565,7 +574,7 @@ var PAST=[
                 '<div class="ev-ov"><div class="ev-status">'+p.status+'</div>'+
                 '<div class="ev-title">'+p.title+'</div>'+
                 '<div class="ev-venue">'+p.venue+'</div>'+
-                '<div class="ev-cta-sm">Watch Recap &rarr;</div></div>';
+                '<div class="ev-cta-sm">'+((p.video||p.reel)?'Watch Recap':'View Details')+' &rarr;</div></div>';
     g.appendChild(c);
   });
   sec.style.display='';
